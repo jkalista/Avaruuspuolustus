@@ -1,9 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Avaruuspuolustus;
+
+import Avaruuspuolustus.Avaruuspuolustus.Avaruuspuolustus;
+import Avaruuspuolustus.Kayttoliittyma.Kayttoliittyma;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -12,7 +11,8 @@ package Avaruuspuolustus;
 public class Main {
     
     public static void main(String[] args) {
-        System.out.print("Aloitellaan ohjelmointi seuraavalla viikolla :D");
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Avaruuspuolustus());
+        SwingUtilities.invokeLater(kayttoliittyma);
     }
     
     
