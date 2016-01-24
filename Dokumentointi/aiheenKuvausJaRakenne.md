@@ -6,6 +6,6 @@
 
 **K‰ytt‰j‰t:** Pelaaja
 
-**Pelaajan toiminnot:** Lis‰t‰‰n sen j‰lkeen, kun ohjelmointi alkanut ja toiminnot varmistuneet.
+**Pelaajan toiminnot:** Kun pelaaja k‰ynnist‰‰ pelin, niin lopullisessa versiossa h‰n p‰‰see "Menu" -valikosta valitsemaan toiminnot "Aloita peli" (Aloittaa uuden pelin), "Ohjeet" (Avaa ikkunan, jossa ohjeet peli‰ varten) ja "Lopeta peli" (Sulkee pelin). Kun pelaaja k‰ynnist‰‰ pelin, h‰nen toimintonsa ovat liikkuminen (vasemmalle ja oikealle) sek‰ ampuminen.
 
 **Rakenne:** Lis‰t‰‰n sen j‰lkeen, kun ohjelmointi alkanut ja rakenne alkaa hahmottumaan.
