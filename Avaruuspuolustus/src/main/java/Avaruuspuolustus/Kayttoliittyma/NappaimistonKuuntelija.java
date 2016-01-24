@@ -12,11 +12,11 @@ import java.awt.event.KeyListener;
 public class NappaimistonKuuntelija implements KeyListener {
     
     Pelaaja pelaaja;
-    Component komponentti;
+    Component component;
     
-    public NappaimistonKuuntelija(Pelaaja pelaaja, Component komponentti) {
+    public NappaimistonKuuntelija(Pelaaja pelaaja, Component component) {
         this.pelaaja = pelaaja;
-        this.komponentti = komponentti;
+        this.component = component;
     }
 
     @Override
@@ -30,10 +30,16 @@ public class NappaimistonKuuntelija implements KeyListener {
             this.pelaaja.liiku(-5);
         }
         
-        this.komponentti.repaint();
+        this.component.repaint();
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {}
+    public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_H) {
+            pelaaja.ammuOhjus();
+        }
+        
+        this.component.repaint();
+    }
     
 }

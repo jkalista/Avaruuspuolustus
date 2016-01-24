@@ -1,7 +1,9 @@
 package Avaruuspuolustus.Kayttoliittyma;
 
 import Avaruuspuolustus.Avaruuspuolustus.Avaruuspuolustus;
+import Avaruuspuolustus.Objektit.Ohjus;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -23,9 +25,16 @@ public class Piirtoalusta extends JPanel {
     }
     
     @Override
-    public void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         this.avaruuspuolustus.getPelaaja().piirra(g);
+        piirraOhjukset(g);
+    }
+    
+    public void piirraOhjukset(Graphics g) {
+        for(Ohjus ohjus : this.avaruuspuolustus.getPelaaja().getOhjukset()) {
+            ohjus.piirra(g);
+        }
     }
     
 }

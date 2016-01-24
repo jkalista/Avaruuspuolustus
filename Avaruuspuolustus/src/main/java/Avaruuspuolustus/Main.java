@@ -11,8 +11,20 @@ import javax.swing.SwingUtilities;
 public class Main {
     
     public static void main(String[] args) {
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Avaruuspuolustus());
+        Avaruuspuolustus avaruuspuolustus = new Avaruuspuolustus();
+        
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(avaruuspuolustus);
         SwingUtilities.invokeLater(kayttoliittyma);
+        
+        while (kayttoliittyma.getPiirtoalusta() == null) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                System.out.println("Piirtoalustaa ei ole vielä luotu.");
+            }
+        }
+         
+        avaruuspuolustus.setPiirtoalusta(kayttoliittyma.getPiirtoalusta());
     }
     
     

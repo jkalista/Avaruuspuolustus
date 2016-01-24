@@ -16,7 +16,7 @@ public class Ohjus extends Objekti {
     
     @Override
     public void liiku(int sijainninMuutos) {
-        this.y = this.y - 10;
+        this.y = this.y + sijainninMuutos;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Ohjus extends Objekti {
 
     @Override
     public Rectangle getEsineenSijainninAlue() {
-        return new Rectangle(this.x, this.y, 5, 3);
+        return new Rectangle(this.x, this.y, 5, 15);
     }
     
 }

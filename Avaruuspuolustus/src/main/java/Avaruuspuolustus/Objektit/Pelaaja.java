@@ -18,7 +18,6 @@ public class Pelaaja extends Objekti {
     
     public Pelaaja(int x, int y) {
         super(x,y);
-        
         this.ohjukset = new ArrayList<>();
     }
     

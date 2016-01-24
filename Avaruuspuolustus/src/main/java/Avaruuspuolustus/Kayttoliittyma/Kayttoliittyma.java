@@ -38,11 +38,15 @@ public class Kayttoliittyma implements Runnable {
          this.piirtoalusta = new Piirtoalusta(this.avaruuspuolustus);
          container.add(this.piirtoalusta);
          
-         this.pelinKehykset.addKeyListener(new NappaimistonKuuntelija(this.avaruuspuolustus.getPelaaja(), this.piirtoalusta));
+         this.pelinKehykset.addKeyListener(new NappaimistonKuuntelija(this.avaruuspuolustus.getPelaaja(), piirtoalusta));
     }
 
     public JFrame getFrame() {
         return this.pelinKehykset;
+    }
+    
+    public Piirtoalusta getPiirtoalusta() {
+        return this.piirtoalusta;
     }
     
 }
