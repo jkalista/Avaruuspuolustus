@@ -55,7 +55,7 @@ public class Avaruuspuolustus implements ActionListener {
                 Thread.sleep((lastLoopTime - System.nanoTime() + OPTIMAL_TIME) / 1000000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Avaruuspuolustus.class.getName()).log(Level.SEVERE, null, ex);
-            };
+            }
 
         }
         
