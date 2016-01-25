@@ -25,6 +25,7 @@ public class Main {
         }
          
         avaruuspuolustus.setPiirtoalusta(kayttoliittyma.getPiirtoalusta());
+        avaruuspuolustus.pelinLoop();
     }
     
     

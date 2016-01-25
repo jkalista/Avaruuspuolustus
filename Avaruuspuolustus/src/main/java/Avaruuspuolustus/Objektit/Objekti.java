@@ -33,8 +33,6 @@ public abstract class Objekti {
         this.y = y;
     }
     
-    public abstract void liiku(int sijainninMuutos);
-    
     public abstract void piirra(Graphics g);
     
     public abstract Rectangle getEsineenSijainninAlue();

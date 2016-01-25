@@ -15,23 +15,32 @@ import javax.imageio.ImageIO;
 public class Pelaaja extends Objekti {
 
     private ArrayList<Ohjus> ohjukset;
+    public boolean liikuOikealle;
+    public boolean liikuVasemmalle;
     
     public Pelaaja(int x, int y) {
         super(x,y);
         this.ohjukset = new ArrayList<>();
+        this.liikuOikealle = false;
+        this.liikuVasemmalle = false;
     }
     
-    @Override
-    public void liiku(int xKoordinaatinMuutos) {
-        this.x = this.x + xKoordinaatinMuutos;
+    public void liikuOikealle() {
+        this.x = this.x + 5;
         
-        if(this.x < 0) {
-            this.x = 0;
-        } else if(this.x > 595) {
+        if(this.x > 595) {
             this.x = 595;
         }
     }
-
+    
+    public void liikuVasemmalle() {
+        this.x = this.x - 5;
+        
+        if(this.x < 0) {
+            this.x = 0;
+        }
+    }
+    
     @Override
     public void piirra(Graphics g) {
         g.setColor(Color.RED);
