@@ -69,4 +69,12 @@ public class OhjusTest {
         }
         assertEquals(new Rectangle(350, 735, 5, 15), this.ohjus.getEsineenSijainninAlue());
     }
+    
+    @Test
+    public void pelaajanAmpuessaOhjusLuodaanOikeaanPaikkaan() {
+        Pelaaja pelaaja = new Pelaaja(300, 300);
+        pelaaja.ammuOhjus();
+        assertEquals(pelaaja.getX(), pelaaja.getOhjukset().get(0).getX() - 25);
+        assertEquals(pelaaja.getY(), pelaaja.getOhjukset().get(0).getY() + 15);
+    }
 }

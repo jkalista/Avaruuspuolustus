@@ -5,9 +5,9 @@ import Avaruuspuolustus.Objektit.Ohjus;
 import Avaruuspuolustus.Objektit.Pelaaja;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Timer;
 
 /**
  *
@@ -47,7 +47,9 @@ public class Avaruuspuolustus implements ActionListener {
                     this.pelaaja.liikuVasemmalle();
             }
 
+            poistaOhjukset();
             liikutaOhjuksia();
+            
 
             this.piirtoalusta.paivita();
 
@@ -65,6 +67,16 @@ public class Avaruuspuolustus implements ActionListener {
         for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
             ohjus.liiku();
         }
+    }
+    
+    public void poistaOhjukset() {
+        ArrayList<Ohjus> poistettavat = new ArrayList<>();
+        for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
+            if(ohjus.getY() == 0) {
+                poistettavat.add(ohjus);
+            }
+        }
+        this.pelaaja.getOhjukset().removeAll(poistettavat);
     }
     
     public Pelaaja getPelaaja() {
