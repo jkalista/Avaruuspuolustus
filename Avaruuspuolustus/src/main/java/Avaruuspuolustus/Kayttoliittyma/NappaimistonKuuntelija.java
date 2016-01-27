@@ -37,7 +37,7 @@ public class NappaimistonKuuntelija implements KeyListener {
         
         
         if (e.getKeyCode() == KeyEvent.VK_H) {
-            pelaaja.ammuOhjus();
+            this.pelaaja.ammuOhjus();
         }
     }
     

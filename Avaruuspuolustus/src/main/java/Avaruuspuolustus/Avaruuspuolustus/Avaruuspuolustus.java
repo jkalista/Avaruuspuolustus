@@ -41,10 +41,10 @@ public class Avaruuspuolustus implements ActionListener {
             long updateLength = now - lastLoopTime;
             lastLoopTime = now;
 
-            if(pelaaja.liikuOikealle == true) {
-                    pelaaja.liikuOikealle();
-            } else if(pelaaja.liikuVasemmalle == true) {
-                    pelaaja.liikuVasemmalle();
+            if(this.pelaaja.liikuOikealle == true) {
+                    this.pelaaja.liikuOikealle();
+            } else if(this.pelaaja.liikuVasemmalle == true) {
+                    this.pelaaja.liikuVasemmalle();
             }
 
             liikutaOhjuksia();
@@ -63,7 +63,7 @@ public class Avaruuspuolustus implements ActionListener {
     
     public void liikutaOhjuksia() {
         for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
-            ohjus.liiku(-10);
+            ohjus.liiku();
         }
     }
     

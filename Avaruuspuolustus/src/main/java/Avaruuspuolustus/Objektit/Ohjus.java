@@ -14,8 +14,8 @@ public class Ohjus extends Objekti {
         super(x,y);
     }
     
-    public void liiku(int ySijainninMuutos) {
-        this.y = this.y + ySijainninMuutos;
+    public void liiku() {
+        this.y = this.y - 5;
     }
 
     @Override
