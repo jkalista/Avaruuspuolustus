@@ -1,3 +1,3 @@
 # Käyttöohjeet
 
-Lisätään käyttöohjeet sen jälkeen, kun ohjelman rakenne ja toiminnot on varmistuneet.
+Pelaaja liikkuu oikealle "D" näppäimestä ja vasemmalle "A" näppäimestä. Pelaaja ampuu ohjuksia "H" näppäimestä.
