@@ -42,15 +42,17 @@ public class PelaajaTest {
     }
 
     @Test
-    public void pelaajanLiikkuminenOikealle() {
+    public void pelaajaLiikkuuOikealleOikeanMaaranKunKutsutaanLiikuOikealleMetodia() {
         this.pelaaja.liikuOikealle();
         assertEquals(330, this.pelaaja.getX());
+        assertEquals(770, this.pelaaja.getY());
     }
     
     @Test
-    public void pelaajanLiikkuminenVasemmalle() {
+    public void pelaajaLiikkuuVasemmalleOikeanMaaranKunKutsutaanLiikuVasemmalleMetodia() {
         this.pelaaja.liikuVasemmalle();
         assertEquals(320, this.pelaaja.getX());
+        assertEquals(770, this.pelaaja.getY());
     }
     
     @Test
@@ -59,6 +61,7 @@ public class PelaajaTest {
             this.pelaaja.liikuOikealle();
         }
         assertEquals(595, this.pelaaja.getX());
+        assertEquals(770, this.pelaaja.getY());
     }
     
     @Test
@@ -67,6 +70,7 @@ public class PelaajaTest {
             this.pelaaja.liikuVasemmalle();
         }
         assertEquals(0, this.pelaaja.getX());
+        assertEquals(770, this.pelaaja.getY());
     }
     
     @Test
@@ -75,6 +79,13 @@ public class PelaajaTest {
             this.pelaaja.ammuOhjus();
         }
         assertEquals(5, this.pelaaja.getOhjukset().size());
+    }
+    
+    @Test
+    public void pelaajanAmpuessaOhjusLuodaanOikeaanPaikkaan() {
+        this.pelaaja.ammuOhjus();
+        assertEquals(this.pelaaja.getX(), this.pelaaja.getOhjukset().get(0).getX() - 25);
+        assertEquals(this.pelaaja.getY(), this.pelaaja.getOhjukset().get(0).getY() + 15);
     }
     
     @Test
@@ -88,5 +99,19 @@ public class PelaajaTest {
             this.pelaaja.liikuOikealle();
         }
         assertEquals(new Rectangle(350, 770, 50, 50), this.pelaaja.getEsineenSijainninAlue());
+    }
+    
+    @Test
+    public void pelaajanXKoordinaattiAlleVasemmanRajanMuttaMuuttuuRajaArvoksiKunLiikkuuVasemmalle() {
+        Pelaaja pelaajanHahmo = new Pelaaja(-50, 770);
+        pelaajanHahmo.liikuVasemmalle();
+        assertEquals(0, pelaajanHahmo.getX());
+    }
+    
+    @Test
+    public void pelaajanXKoordinaattiYliOikeanRajanMuttaMuuttuuRajaArvoksiKunLiikkuuOikealle() {
+        Pelaaja pelaajanHahmo = new Pelaaja(1000, 770);
+        pelaajanHahmo.liikuOikealle();
+        assertEquals(595, pelaajanHahmo.getX());
     }
 }
