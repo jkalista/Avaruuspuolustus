@@ -10,4 +10,4 @@ Avaruuspuolustus on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaises
 
 [Kayttoohjeet](dokumentaatio/kayttoohjeet.md)
 
-[Testausdokumentti](dokumentaatio/testaudokumentti.md)
+[Testausdokumentti](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/testausdokumentti.md)
