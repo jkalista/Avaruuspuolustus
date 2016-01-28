@@ -6,6 +6,7 @@ import Avaruuspuolustus.Objektit.Pelaaja;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,15 +42,14 @@ public class Avaruuspuolustus implements ActionListener {
             long updateLength = now - lastLoopTime;
             lastLoopTime = now;
 
-            if(this.pelaaja.liikuOikealle == true) {
+            if(this.pelaaja.getLiikuOikealle() == true) {
                     this.pelaaja.liikuOikealle();
-            } else if(this.pelaaja.liikuVasemmalle == true) {
+            } else if(this.pelaaja.getLiikuVasemmalle() == true) {
                     this.pelaaja.liikuVasemmalle();
             }
 
-            poistaOhjukset();
+            poistaAlueeltaPoistuneetOhjukset();
             liikutaOhjuksia();
-            
 
             this.piirtoalusta.paivita();
 
@@ -68,11 +68,11 @@ public class Avaruuspuolustus implements ActionListener {
             ohjus.liiku();
         }
     }
-    
-    public void poistaOhjukset() {
+        
+    public void poistaAlueeltaPoistuneetOhjukset() {
         ArrayList<Ohjus> poistettavat = new ArrayList<>();
         for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
-            if(ohjus.getY() == 0) {
+            if(ohjus.getY() == -15) {
                 poistettavat.add(ohjus);
             }
         }

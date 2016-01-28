@@ -18,8 +18,8 @@ import javax.imageio.ImageIO;
 public class Pelaaja extends Objekti {
 
     private ArrayList<Ohjus> ohjukset;
-    public boolean liikuOikealle;
-    public boolean liikuVasemmalle;
+    private boolean liikuOikealle;
+    private boolean liikuVasemmalle;
     
     public Pelaaja(int x, int y) {
         super(x,y);
@@ -63,4 +63,19 @@ public class Pelaaja extends Objekti {
         return this.ohjukset;
     }
     
+    public boolean getLiikuOikealle() {
+        return this.liikuOikealle;
+    }
+    
+    public void setLiikuOikealle(boolean liikuOikealle) {
+        this.liikuOikealle = liikuOikealle;
+    }
+    
+    public boolean getLiikuVasemmalle() {
+        return this.liikuVasemmalle;
+    }
+    
+    public void setLiikuVasemmalle(boolean liikuVasemmalle) {
+        this.liikuVasemmalle = liikuVasemmalle;
+    }
 }

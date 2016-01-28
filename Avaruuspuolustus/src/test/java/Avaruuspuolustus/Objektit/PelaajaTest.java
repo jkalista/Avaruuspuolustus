@@ -122,4 +122,26 @@ public class PelaajaTest {
         assertEquals(200, this.pelaaja.getX());
         assertEquals(200, this.pelaaja.getY());
     }
+    
+    @Test
+    public void liikuVasemmalleBooleanOnFalseKunPelaajaLuodaan() {
+        assertEquals(false, this.pelaaja.getLiikuVasemmalle());
+    }
+    
+    @Test
+    public void liikuOikealleBooleanOnFalseKunPelaajaLuodaan() {
+        assertEquals(false, this.pelaaja.getLiikuOikealle());
+    }
+    
+    @Test
+    public void liikuVasemmalleMuuttuuTrueksiSetteriaKutsumalla() {
+        this.pelaaja.setLiikuVasemmalle(true);
+        assertEquals(true, this.pelaaja.getLiikuVasemmalle());
+    }
+    
+    @Test
+    public void liikuOikealleMuuttuuTrueksiSetteriaKutsumalla() {
+        this.pelaaja.setLiikuOikealle(true);
+        assertEquals(true, this.pelaaja.getLiikuOikealle());
+    }
 }

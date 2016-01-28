@@ -20,9 +20,9 @@ public class NappaimistonKuuntelija implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_D) {
-            this.pelaaja.liikuOikealle = true;
+            this.pelaaja.setLiikuOikealle(true);
         } else if(e.getKeyCode() == KeyEvent.VK_A) {
-            this.pelaaja.liikuVasemmalle = true;
+            this.pelaaja.setLiikuVasemmalle(true);
         }
         
     }
@@ -30,9 +30,9 @@ public class NappaimistonKuuntelija implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_D) {
-            this.pelaaja.liikuOikealle = false;
+            this.pelaaja.setLiikuOikealle(false);
         } else if(e.getKeyCode() == KeyEvent.VK_A) {
-            this.pelaaja.liikuVasemmalle = false;
+            this.pelaaja.setLiikuVasemmalle(false);
         }
         
         
