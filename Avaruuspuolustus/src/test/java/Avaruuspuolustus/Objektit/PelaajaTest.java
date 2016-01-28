@@ -114,4 +114,12 @@ public class PelaajaTest {
         pelaajanHahmo.liikuOikealle();
         assertEquals(595, pelaajanHahmo.getX());
     }
+    
+    @Test
+    public void asettamallaUudetXJaYArvotPelaajallePalautuuUudetArvot() {
+        this.pelaaja.setX(200);
+        this.pelaaja.setY(200);
+        assertEquals(200, this.pelaaja.getX());
+        assertEquals(200, this.pelaaja.getY());
+    }
 }
