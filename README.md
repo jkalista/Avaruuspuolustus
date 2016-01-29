@@ -4,7 +4,7 @@ Avaruuspuolustus on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaises
 
 Pelaaja liikkuu "A" ja "D" näppäimistä ja ampuu "H" näppäimestä.
 
-### Linkit dokumentaatioihin
+### Dokumentaatio
 
 * [Aiheen kuvaus ja rakenne](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/aiheenKuvausJaRakenne.md)
 
