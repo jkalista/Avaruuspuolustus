@@ -11,3 +11,5 @@
 **27.1.2016** 3 tuntia, Koitin miettiä miksi ohjelma toimi erilailla omalla ja laitoksen koneella. Tein testejä luokille "Pelaaja" ja "Ohjus".
 
 **28.1.2016** 3 tuntia, Muokkasin koodia hieman ja lisäsin testejä. Muokkasin myös markdown tiedostoja.
+
+**29.1.2016** 1 tunti, Tein luokkakaavion viikon 2 palautusta varten.

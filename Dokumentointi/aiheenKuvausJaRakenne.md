@@ -14,3 +14,7 @@
 * Pelin lopettaminen.
 
 **Rakenne:** Avaruuspuolus projektin "Main" -luokka luo ensin "Avaruuspuolustus" -luokasta ilmentymän, jonka jälkeen luodaan "Käyttöliittymä" -luokasta ilmentymä, joka saa parametriksi tämän Avaruuspuolustuksen. Käyttöliittymässä luodaan pelille frame ja siihen lisätään komponentit "Piirtoalusta" ja "NäppäimistönKuuntelija". Tämä näppäimistönkuuntelija saa parametrikseen Avaruuspuolustukselta "Pelaaja" -luokan ilmentymän "getPelaaja" -metodilla. Kun käyttöliittymä on luonut piirtoalustan, niin se asetetaan "Main" -luokassa Avaruuspuolustus pelille "setPiirtoalusta" -metodilla. "Main" -luokassa ruvetaan pyörittämään Avaruuspuolustuksen GameLooppia, joka siirtää pelaajaa ja sen tuntemia ohjuksia. Piirtoalustan uudelleenpiirtoa kutsutaan aina jokaisen loopin lopussa.
+
+**Luokkakaavio:**
+
+![Alt text](/Avaruuspuolustus/Dokumentointi/luokkakaaviot/LuokkakaavioVko2.jpg)
