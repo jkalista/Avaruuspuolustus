@@ -6,10 +6,10 @@ Pelaaja liikkuu "A" ja "D" näppäimistä ja ampuu "H" näppäimestä.
 
 ### Linkit dokumentaatioihin
 
-[Aiheen kuvaus ja rakenne](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/aiheenKuvausJaRakenne.md)
+* [Aiheen kuvaus ja rakenne](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/aiheenKuvausJaRakenne.md)
 
-[Tuntikirjanpito](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/tuntikirjanpito.md)
+* [Tuntikirjanpito](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/tuntikirjanpito.md)
 
-[Kayttöohjeet](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/kayttoohjeet.md)
+* [Kayttöohjeet](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/kayttoohjeet.md)
 
-[Testausdokumentti](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/testausdokumentti.md)
+* [Testausdokumentti](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/testausdokumentti.md)
