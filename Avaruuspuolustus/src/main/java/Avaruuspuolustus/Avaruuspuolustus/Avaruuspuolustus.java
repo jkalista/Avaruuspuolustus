@@ -21,7 +21,7 @@ public class Avaruuspuolustus implements ActionListener {
     private Piirtoalusta piirtoalusta;
     private Pelaaja pelaaja;
     private ArrayList<Meteoroidi> meteoroidit;
-    Timer luoUusiMeteoroidi = new Timer(5000, this);
+    Timer luoUusiMeteoroidi = new Timer(6000, this);
     private boolean peliKaynnissa;
     
     public Avaruuspuolustus() {
