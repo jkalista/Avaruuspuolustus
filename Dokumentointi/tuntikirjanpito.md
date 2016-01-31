@@ -13,3 +13,5 @@
 **28.1.2016** 3 tuntia, Muokkasin koodia hieman ja lisäsin testejä. Muokkasin myös markdown tiedostoja.
 
 **29.1.2016** 1 tunti, Tein luokkakaavion viikon 2 palautusta varten.
+
+**31.1.2016** 3 tuntia, Tein Meteoroidi luokan ja muokkasin Piirtoalustaa ja Avaruuspuolustus luokkaa hieman, että sain luotua meteoroideja peliin.
