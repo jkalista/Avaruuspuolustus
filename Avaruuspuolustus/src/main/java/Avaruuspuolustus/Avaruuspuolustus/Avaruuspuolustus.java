@@ -34,7 +34,7 @@ public class Avaruuspuolustus implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.luoUusiMeteoroidi) {
-            this.meteoroidit.add(new Meteoroidi(200,25));
+            this.meteoroidit.add(new Meteoroidi(200,0));
         }
     }
     
@@ -57,11 +57,12 @@ public class Avaruuspuolustus implements ActionListener {
             }
 
             poistaAlueeltaPoistuneetOhjukset();
+            poistaAlueeltaPoistuneetMeteoroidit();
             liikutaOhjuksia();
             liikutaMeteoroideja();
             ohjusOsuuMeteoroidiin();
             meteoroidiTuhoutuu();
-
+            
             this.piirtoalusta.paivita();
 
             try{
@@ -121,6 +122,16 @@ public class Avaruuspuolustus implements ActionListener {
             }
         }
         this.pelaaja.getOhjukset().removeAll(poistettavat);
+    }
+    
+    public void poistaAlueeltaPoistuneetMeteoroidit() {
+        ArrayList<Meteoroidi> poistettavat = new ArrayList<>();
+        for(Meteoroidi meteoroidi : this.meteoroidit) {
+            if(meteoroidi.getY() == 900) {
+                poistettavat.add(meteoroidi);
+            }
+        }
+        this.meteoroidit.removeAll(poistettavat);
     }
     
     public Pelaaja getPelaaja() {
