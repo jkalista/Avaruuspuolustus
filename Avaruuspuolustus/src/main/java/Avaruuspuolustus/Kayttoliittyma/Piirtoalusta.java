@@ -1,6 +1,7 @@
 package Avaruuspuolustus.Kayttoliittyma;
 
 import Avaruuspuolustus.Avaruuspuolustus.Avaruuspuolustus;
+import Avaruuspuolustus.Objektit.Meteoroidi;
 import Avaruuspuolustus.Objektit.Ohjus;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -29,11 +30,18 @@ public class Piirtoalusta extends JPanel {
         super.paintComponent(g);        
         this.avaruuspuolustus.getPelaaja().piirra(g);
         piirraOhjukset(g);
+        piirraMeteoroidit(g);
     }
     
     public void piirraOhjukset(Graphics g) {
         for(Ohjus ohjus : this.avaruuspuolustus.getPelaaja().getOhjukset()) {
             ohjus.piirra(g);
+        }
+    }
+    
+    public void piirraMeteoroidit(Graphics g) {
+        for(Meteoroidi meteoroidi : this.avaruuspuolustus.getMeteoroidit()) {
+            meteoroidi.piirra(g);
         }
     }
     

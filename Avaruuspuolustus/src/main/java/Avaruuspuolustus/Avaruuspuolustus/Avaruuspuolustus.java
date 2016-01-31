@@ -1,6 +1,7 @@
 package Avaruuspuolustus.Avaruuspuolustus;
 
 import Avaruuspuolustus.Kayttoliittyma.Piirtoalusta;
+import Avaruuspuolustus.Objektit.Meteoroidi;
 import Avaruuspuolustus.Objektit.Ohjus;
 import Avaruuspuolustus.Objektit.Pelaaja;
 import java.awt.event.ActionEvent;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Timer;
 
 /**
  *
@@ -18,16 +20,22 @@ public class Avaruuspuolustus implements ActionListener {
     
     private Piirtoalusta piirtoalusta;
     private Pelaaja pelaaja;
+    private ArrayList<Meteoroidi> meteoroidit;
+    Timer luoUusiMeteoroidi = new Timer(5000, this);
     private boolean peliKaynnissa;
     
     public Avaruuspuolustus() {
         this.pelaaja = new Pelaaja(325, 770);
+        this.meteoroidit = new ArrayList<>();
+        this.luoUusiMeteoroidi.start();
         this.peliKaynnissa = true;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource() == this.luoUusiMeteoroidi) {
+            this.meteoroidit.add(new Meteoroidi(200,25));
+        }
     }
     
     public void pelinLoop() {
@@ -50,6 +58,9 @@ public class Avaruuspuolustus implements ActionListener {
 
             poistaAlueeltaPoistuneetOhjukset();
             liikutaOhjuksia();
+            liikutaMeteoroideja();
+            ohjusOsuuMeteoroidiin();
+            meteoroidiTuhoutuu();
 
             this.piirtoalusta.paivita();
 
@@ -68,6 +79,39 @@ public class Avaruuspuolustus implements ActionListener {
             ohjus.liiku();
         }
     }
+    
+    public void liikutaMeteoroideja() {
+        for(Meteoroidi meteoroidi : this.meteoroidit) {
+            meteoroidi.liiku();
+        }
+    }
+    
+    public void ohjusOsuuMeteoroidiin() {
+        ArrayList<Ohjus> meteoroidiinOsuneetOhjukset = new ArrayList<>();
+        
+        for(Meteoroidi meteoroidi : this.meteoroidit) {
+            for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
+                if(ohjus.getEsineenSijainninAlue().intersects(meteoroidi.getEsineenSijainninAlue())) {
+                    meteoroidi.menetaElamapiste();
+                    meteoroidiinOsuneetOhjukset.add(ohjus);
+                }
+            }
+        }
+        
+        this.pelaaja.getOhjukset().removeAll(meteoroidiinOsuneetOhjukset);
+    }
+    
+    public void meteoroidiTuhoutuu() {
+        ArrayList<Meteoroidi> tuhoutuneetMeteoroidit = new ArrayList<>();
+        
+        for(Meteoroidi meteoroidi : this.meteoroidit) {
+            if(meteoroidi.getElamapisteet() == 0) {
+                tuhoutuneetMeteoroidit.add(meteoroidi);
+            }
+        }
+        
+        this.meteoroidit.removeAll(tuhoutuneetMeteoroidit);
+    }
         
     public void poistaAlueeltaPoistuneetOhjukset() {
         ArrayList<Ohjus> poistettavat = new ArrayList<>();
@@ -85,5 +129,9 @@ public class Avaruuspuolustus implements ActionListener {
     
     public void setPiirtoalusta(Piirtoalusta piirtoalusta) {
         this.piirtoalusta = piirtoalusta;
+    }
+    
+    public ArrayList<Meteoroidi> getMeteoroidit() {
+        return this.meteoroidit;
     }
 }
