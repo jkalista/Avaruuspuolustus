@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
@@ -23,6 +24,7 @@ public class Avaruuspuolustus implements ActionListener {
     private ArrayList<Meteoroidi> meteoroidit;
     Timer luoUusiMeteoroidi = new Timer(6000, this);
     private boolean peliKaynnissa;
+    Random meteoroidinPaikanArpoja = new Random();
     
     public Avaruuspuolustus() {
         this.pelaaja = new Pelaaja(325, 770);
@@ -34,7 +36,7 @@ public class Avaruuspuolustus implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.luoUusiMeteoroidi) {
-            this.meteoroidit.add(new Meteoroidi(200,0));
+            this.meteoroidit.add(new Meteoroidi(25 + this.meteoroidinPaikanArpoja.nextInt(117)*5,0));
         }
     }
     
