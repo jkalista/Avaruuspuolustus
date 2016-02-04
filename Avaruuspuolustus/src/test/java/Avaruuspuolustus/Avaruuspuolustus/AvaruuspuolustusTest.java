@@ -5,6 +5,8 @@
  */
 package Avaruuspuolustus.Avaruuspuolustus;
 
+import Avaruuspuolustus.Objektit.Meteoroidi;
+import Avaruuspuolustus.Objektit.Ohjus;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -40,7 +42,55 @@ public class AvaruuspuolustusTest {
     public void tearDown() {
     }
 
-    // Testejä tulossa myöhemmin tähänkin luokkaan.
-    // @Test
-    // public void hello() {}
+    @Test
+    public void kunMeteoroidiLiikkuuPoisPelialueeltaNiinSePoistuu() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,0));
+        this.avaruuspuolustus.poistaAlueeltaPoistuneetMeteoroidit();
+        assertEquals(1, this.avaruuspuolustus.getMeteoroidit().size());
+        for(int i = 0; i < 900; i++) {
+            this.avaruuspuolustus.liikutaMeteoroideja();
+        }
+        this.avaruuspuolustus.poistaAlueeltaPoistuneetMeteoroidit();
+        assertEquals(0, this.avaruuspuolustus.getMeteoroidit().size());
+    }
+    
+    @Test
+    public void kunOhjusLiikkuuPoisPelialueeltaNiinSePoistuu() {
+        this.avaruuspuolustus.getPelaaja().getOhjukset().add(new Ohjus(100,755));
+        this.avaruuspuolustus.poistaAlueeltaPoistuneetOhjukset();
+        assertEquals(1, this.avaruuspuolustus.getPelaaja().getOhjukset().size());
+        for(int i = 0; i < 154; i++) {
+            this.avaruuspuolustus.liikutaOhjuksia();
+        }
+        this.avaruuspuolustus.poistaAlueeltaPoistuneetOhjukset();
+        assertEquals(0, this.avaruuspuolustus.getPelaaja().getOhjukset().size());
+    }
+    
+    @Test
+    public void liikutaMeteoroidejaMetodiLiikuttaaKaikkiaMeteoroidejaOikein() {
+        for(int i = 0; i < 3; i++) {
+            this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100 + i*20, 0 + i*10));
+        }
+        this.avaruuspuolustus.liikutaMeteoroideja();
+        assertEquals(100, this.avaruuspuolustus.getMeteoroidit().get(0).getX());
+        assertEquals(1, this.avaruuspuolustus.getMeteoroidit().get(0).getY());
+        assertEquals(120, this.avaruuspuolustus.getMeteoroidit().get(1).getX());
+        assertEquals(11, this.avaruuspuolustus.getMeteoroidit().get(1).getY());
+        assertEquals(140, this.avaruuspuolustus.getMeteoroidit().get(2).getX());
+        assertEquals(21, this.avaruuspuolustus.getMeteoroidit().get(2).getY());
+    }
+    
+    @Test
+    public void liikutaOhjuksiaMetodiLiikuttaaKaikkiaPelaajanOhjuksiaOikein() {
+        for(int i = 0; i < 3; i++) {
+            this.avaruuspuolustus.getPelaaja().getOhjukset().add(new Ohjus(100 + i*15, 755 + i*10));
+        }
+        this.avaruuspuolustus.liikutaOhjuksia();
+        assertEquals(100, this.avaruuspuolustus.getPelaaja().getOhjukset().get(0).getX());
+        assertEquals(750, this.avaruuspuolustus.getPelaaja().getOhjukset().get(0).getY());
+        assertEquals(115, this.avaruuspuolustus.getPelaaja().getOhjukset().get(1).getX());
+        assertEquals(760, this.avaruuspuolustus.getPelaaja().getOhjukset().get(1).getY());
+        assertEquals(130, this.avaruuspuolustus.getPelaaja().getOhjukset().get(2).getX());
+        assertEquals(770, this.avaruuspuolustus.getPelaaja().getOhjukset().get(2).getY());
+    }
 }
