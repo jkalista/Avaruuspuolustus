@@ -41,7 +41,26 @@ public class AvaruuspuolustusTest {
     @After
     public void tearDown() {
     }
-
+    
+    @Test
+    public void kunMeteoroidinElamapisteetMeneeNollaanNiinSeTuhoutuu() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,100));
+        assertEquals(1, this.avaruuspuolustus.getMeteoroidit().size());
+        this.avaruuspuolustus.getMeteoroidit().get(0).setElamapisteet(0);
+        this.avaruuspuolustus.meteoroidiTuhoutuu();
+        assertEquals(0, this.avaruuspuolustus.getMeteoroidit().size());
+    }
+    
+    @Test
+    public void kunOhjusOsuuMeteoroidiinNiinOhjusHaviaaJaMeteoroidiMenettaaElaman() {
+        this.avaruuspuolustus.getPelaaja().getOhjukset().add(new Ohjus(100, 100));
+        assertEquals(1, this.avaruuspuolustus.getPelaaja().getOhjukset().size());
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,100));
+        this.avaruuspuolustus.ohjusOsuuMeteoroidiin();
+        assertEquals(4, this.avaruuspuolustus.getMeteoroidit().get(0).getElamapisteet());
+        assertEquals(0, this.avaruuspuolustus.getPelaaja().getOhjukset().size());
+    }
+    
     @Test
     public void kunMeteoroidiLiikkuuPoisPelialueeltaNiinSePoistuu() {
         this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,0));
@@ -92,5 +111,16 @@ public class AvaruuspuolustusTest {
         assertEquals(760, this.avaruuspuolustus.getPelaaja().getOhjukset().get(1).getY());
         assertEquals(130, this.avaruuspuolustus.getPelaaja().getOhjukset().get(2).getX());
         assertEquals(770, this.avaruuspuolustus.getPelaaja().getOhjukset().get(2).getY());
+    }
+    
+    @Test
+    public void kunPeliKaynnissaNiinGetPeliKaynnissaPalauttaaOikeanBooleanin() {
+        assertEquals(true, this.avaruuspuolustus.getPeliKaynnissa());
+    }
+    
+    @Test
+    public void kunAsetetaanPeliKaynnissaFalseksiSetMetodillaNiinSeMuuttuu() {
+        this.avaruuspuolustus.setPeliKaynnissa(false);
+        assertEquals(false, this.avaruuspuolustus.getPeliKaynnissa());
     }
 }

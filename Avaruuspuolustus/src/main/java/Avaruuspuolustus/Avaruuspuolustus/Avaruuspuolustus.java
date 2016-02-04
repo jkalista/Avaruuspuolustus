@@ -147,4 +147,12 @@ public class Avaruuspuolustus implements ActionListener {
     public ArrayList<Meteoroidi> getMeteoroidit() {
         return this.meteoroidit;
     }
+    
+    public boolean getPeliKaynnissa() {
+        return this.peliKaynnissa;
+    }
+    
+    public void setPeliKaynnissa(boolean peliKaynnissa) {
+        this.peliKaynnissa = peliKaynnissa;
+    }
 }
