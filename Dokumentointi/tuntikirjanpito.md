@@ -15,3 +15,7 @@
 **29.1.2016** 1 tunti, Tein luokkakaavion viikon 2 palautusta varten.
 
 **31.1.2016** 5 tuntia, Tein Meteoroidi luokan ja muokkasin Piirtoalustaa ja Avaruuspuolustus luokkaa hieman, että sain luotua meteoroideja peliin.
+
+**3.2.2016** 4 tuntia, Muokkasin koodia siten, että meteoroidit syntyvät satunnaiseen x-akselin kohtaan, kun ne ilmestyvät. Tein testejä Meteoroidi luokalle.
+
+**4.2.2016** 5 tuntia, Tein testejä Avaruuspuolustus luokalle. Muokkailin ja kokeilin koodilla kaikkea erikoista, muun muassa muokkasin meteoroideista ympyrän muotoisia. Päivitin luokkakaaviota.
