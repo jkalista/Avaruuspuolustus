@@ -62,14 +62,14 @@ public class Avaruuspuolustus implements ActionListener {
             poistaAlueeltaPoistuneetMeteoroidit();
             liikutaOhjuksia();
             liikutaMeteoroideja();
-            ohjusOsuuMeteoroidiin();
-            meteoroidiTuhoutuu();
+            tarkastaOhjustenOsuminenMeteoroideihin();
+            poistaTuhoutuneetMeteoroidit();
             
             this.piirtoalusta.paivita();
 
             try{
                 Thread.sleep((lastLoopTime - System.nanoTime() + OPTIMAL_TIME) / 1000000);
-                } catch (InterruptedException ex) {
+            } catch (InterruptedException ex) {
                     Logger.getLogger(Avaruuspuolustus.class.getName()).log(Level.SEVERE, null, ex);
             }
 
@@ -89,12 +89,12 @@ public class Avaruuspuolustus implements ActionListener {
         }
     }
     
-    public void ohjusOsuuMeteoroidiin() {
+    public void tarkastaOhjustenOsuminenMeteoroideihin() {
         ArrayList<Ohjus> meteoroidiinOsuneetOhjukset = new ArrayList<>();
         
         for(Meteoroidi meteoroidi : this.meteoroidit) {
             for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
-                if(ohjus.getEsineenSijainninAlue().intersects(meteoroidi.getEsineenSijainninAlue())) {
+                if(ohjus.getObjektinSijainninAlue().intersects(meteoroidi.getObjektinSijainninAlue())) {
                     meteoroidi.menetaElamapiste();
                     meteoroidiinOsuneetOhjukset.add(ohjus);
                 }
@@ -104,12 +104,13 @@ public class Avaruuspuolustus implements ActionListener {
         this.pelaaja.getOhjukset().removeAll(meteoroidiinOsuneetOhjukset);
     }
     
-    public void meteoroidiTuhoutuu() {
+    public void poistaTuhoutuneetMeteoroidit() {
         ArrayList<Meteoroidi> tuhoutuneetMeteoroidit = new ArrayList<>();
         
         for(Meteoroidi meteoroidi : this.meteoroidit) {
             if(meteoroidi.getElamapisteet() == 0) {
                 tuhoutuneetMeteoroidit.add(meteoroidi);
+                this.pelaaja.lisaaPiste();
             }
         }
         

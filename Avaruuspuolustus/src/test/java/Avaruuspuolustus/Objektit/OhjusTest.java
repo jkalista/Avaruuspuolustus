@@ -59,7 +59,7 @@ public class OhjusTest {
     
     @Test
     public void ohjuksenSijainninAlueOikea() {
-        assertEquals(new Rectangle(350, 760, 5, 15), this.ohjus.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(350, 760, 5, 15), this.ohjus.getObjektinSijainninAlue());
     }
     
     @Test
@@ -67,7 +67,7 @@ public class OhjusTest {
         for(int i = 0; i < 5; i++) {
             this.ohjus.liiku();
         }
-        assertEquals(new Rectangle(350, 735, 5, 15), this.ohjus.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(350, 735, 5, 15), this.ohjus.getObjektinSijainninAlue());
     }
     
     @Test

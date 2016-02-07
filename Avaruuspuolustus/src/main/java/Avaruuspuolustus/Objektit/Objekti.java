@@ -35,6 +35,6 @@ public abstract class Objekti {
     
     public abstract void piirra(Graphics g);
     
-    public abstract Rectangle getEsineenSijainninAlue();
+    public abstract Rectangle getObjektinSijainninAlue();
     
 }

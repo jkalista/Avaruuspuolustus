@@ -90,7 +90,7 @@ public class PelaajaTest {
     
     @Test
     public void pelaajanSijainninAlueOikea() {
-        assertEquals(new Rectangle(325, 770, 50, 50), this.pelaaja.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(325, 770, 50, 50), this.pelaaja.getObjektinSijainninAlue());
     }
     
     @Test
@@ -98,7 +98,7 @@ public class PelaajaTest {
         for(int i = 0; i < 5; i++) {
             this.pelaaja.liikuOikealle();
         }
-        assertEquals(new Rectangle(350, 770, 50, 50), this.pelaaja.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(350, 770, 50, 50), this.pelaaja.getObjektinSijainninAlue());
     }
     
     @Test

@@ -27,7 +27,7 @@ public class Ohjus extends Objekti {
     }
 
     @Override
-    public Rectangle getEsineenSijainninAlue() {
+    public Rectangle getObjektinSijainninAlue() {
         return new Rectangle(this.x, this.y, 5, 15);
     }
     

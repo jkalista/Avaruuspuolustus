@@ -20,12 +20,14 @@ public class Pelaaja extends Objekti {
     private ArrayList<Ohjus> ohjukset;
     private boolean liikuOikealle;
     private boolean liikuVasemmalle;
+    private int pisteet;
     
     public Pelaaja(int x, int y) {
         super(x,y);
         this.ohjukset = new ArrayList<>();
         this.liikuOikealle = false;
         this.liikuVasemmalle = false;
+        this.pisteet = 0;
     }
     
     public void liikuOikealle() {
@@ -51,7 +53,7 @@ public class Pelaaja extends Objekti {
     }
 
     @Override
-    public Rectangle getEsineenSijainninAlue() {
+    public Rectangle getObjektinSijainninAlue() {
         return new Rectangle(this.x, this.y, 50, 50);
     }
     
@@ -61,6 +63,14 @@ public class Pelaaja extends Objekti {
     
     public ArrayList<Ohjus> getOhjukset() {
         return this.ohjukset;
+    }
+    
+    public void lisaaPiste() {
+        this.pisteet = this.pisteet + 1;
+    }
+    
+    public int getPisteet() {
+        return this.pisteet;
     }
     
     public boolean getLiikuOikealle() {

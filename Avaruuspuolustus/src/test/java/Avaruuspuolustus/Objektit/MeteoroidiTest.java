@@ -72,14 +72,14 @@ public class MeteoroidiTest {
     
     @Test
     public void meteoroidinSijainninAlueetOvatOikeinJokaisellaEriElamapisteella() {
-        assertEquals(new Rectangle(100, 100, 40, 40), this.meteoroidi.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(100, 100, 40, 40), this.meteoroidi.getObjektinSijainninAlue());
         this.meteoroidi.menetaElamapiste();
-        assertEquals(new Rectangle(100, 100, 35, 35), this.meteoroidi.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(100, 100, 35, 35), this.meteoroidi.getObjektinSijainninAlue());
         this.meteoroidi.menetaElamapiste();
-        assertEquals(new Rectangle(100, 100, 30, 30), this.meteoroidi.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(100, 100, 30, 30), this.meteoroidi.getObjektinSijainninAlue());
         this.meteoroidi.menetaElamapiste();
-        assertEquals(new Rectangle(100, 100, 25, 25), this.meteoroidi.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(100, 100, 25, 25), this.meteoroidi.getObjektinSijainninAlue());
         this.meteoroidi.menetaElamapiste();
-        assertEquals(new Rectangle(100, 100, 20, 20), this.meteoroidi.getEsineenSijainninAlue());
+        assertEquals(new Rectangle(100, 100, 20, 20), this.meteoroidi.getObjektinSijainninAlue());
     }
 }
