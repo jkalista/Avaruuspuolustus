@@ -19,3 +19,5 @@
 **3.2.2016** 4 tuntia, Muokkasin koodia siten, että meteoroidit syntyvät satunnaiseen x-akselin kohtaan, kun ne ilmestyvät. Tein testejä Meteoroidi luokalle.
 
 **4.2.2016** 5 tuntia, Tein testejä Avaruuspuolustus luokalle. Muokkailin ja kokeilin koodilla kaikkea erikoista, muun muassa muokkasin meteoroideista ympyrän muotoisia. Päivitin luokkakaaviota.
+
+**7.2.2016** 4 tuntia, Hyvien katselmointipalautteiden pohjalta tein pieniä muutoksia koodiin ja uudelleennimesin muutaman metodin. Lähin myös suunnittelemaan ja tekemään Pelaajalle pisteitä tuhotuista meteoroideista.
