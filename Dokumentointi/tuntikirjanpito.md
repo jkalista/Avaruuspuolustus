@@ -22,4 +22,4 @@
 
 **7.2.2016** 4 tuntia, Hyvien katselmointipalautteiden pohjalta tein pieniä muutoksia koodiin ja uudelleennimesin muutaman metodin. Lähin myös suunnittelemaan ja tekemään Pelaajalle pisteitä tuhotuista meteoroideista.
 
-**8.2.2016** 2 tuntia, Tein "TiedostojenKasittelija" luokan ja piirsin paintissa avaruusaluksen kuvan, jolla korvasin aiemman pelaajan ohjaaman punaisen neliön.
+**8.2.2016** 4 tuntia, Tein "TiedostojenKasittelija" luokan ja piirsin paintissa avaruusaluksen kuvan, jolla korvasin aiemman pelaajan ohjaaman punaisen neliön. Lisäsin myös muutaman testin ja pelin päätös ikkunan, joka ilmestyy, kun meteoroidi osuu pelaajaan.
