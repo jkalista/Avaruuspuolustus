@@ -1,5 +1,6 @@
 package Avaruuspuolustus.Objektit;
 
+import Avaruuspuolustus.TiedostojenKasittely.TiedostojenKasittelija;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.List;
@@ -17,6 +18,8 @@ import javax.imageio.ImageIO;
  */
 public class Pelaaja extends Objekti {
 
+    TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
+    
     private ArrayList<Ohjus> ohjukset;
     private boolean liikuOikealle;
     private boolean liikuVasemmalle;
@@ -27,7 +30,7 @@ public class Pelaaja extends Objekti {
         this.ohjukset = new ArrayList<>();
         this.liikuOikealle = false;
         this.liikuVasemmalle = false;
-        this.pisteet = 0;
+        this.pisteet = 0;        
     }
     
     public void liikuOikealle() {
@@ -48,8 +51,9 @@ public class Pelaaja extends Objekti {
     
     @Override
     public void piirra(Graphics g) {
-        g.setColor(Color.RED);
-        g.fillRect(x, y, 50, 50);
+        //g.setColor(Color.RED);
+        //g.fillRect(x, y, 50, 50);
+        g.drawImage(this.tiedostojenKasittelija.getAvaruusaluksenKuva(), this.x, this.y, null);
     }
 
     @Override
