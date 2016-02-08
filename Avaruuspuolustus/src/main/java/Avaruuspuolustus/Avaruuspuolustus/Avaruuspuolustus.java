@@ -20,8 +20,8 @@ import javax.swing.Timer;
 public class Avaruuspuolustus implements ActionListener {
     
     private Piirtoalusta piirtoalusta;
-    private Pelaaja pelaaja;
-    private ArrayList<Meteoroidi> meteoroidit;
+    private final Pelaaja pelaaja;
+    private final ArrayList<Meteoroidi> meteoroidit;
     Timer luoUusiMeteoroidi = new Timer(6000, this);
     private boolean peliKaynnissa;
     Random meteoroidinPaikanArpoja = new Random();
@@ -42,15 +42,15 @@ public class Avaruuspuolustus implements ActionListener {
     
     public void pelinLoop() {
         
-        long lastLoopTime = System.nanoTime();
-        final int TARGET_FPS = 60;
-        final long OPTIMAL_TIME = 1000000000 / TARGET_FPS;
+        long viimeLoopinAika = System.nanoTime();
+        final int tavoiteFPS = 60;
+        final long optimaalinenAika = 1000000000 / tavoiteFPS;
 
         while (this.peliKaynnissa == true) {
 
-            long now = System.nanoTime();
-            long updateLength = now - lastLoopTime;
-            lastLoopTime = now;
+            long aikaTallaHetkella = System.nanoTime();
+            long updateLength = aikaTallaHetkella - viimeLoopinAika;
+            viimeLoopinAika = aikaTallaHetkella;
 
             if(this.pelaaja.getLiikuOikealle() == true) {
                     this.pelaaja.liikuOikealle();
@@ -62,19 +62,28 @@ public class Avaruuspuolustus implements ActionListener {
             poistaAlueeltaPoistuneetMeteoroidit();
             liikutaOhjuksia();
             liikutaMeteoroideja();
+            tarkastaMeteoroidienOsuminenPelaajaan();
             tarkastaOhjustenOsuminenMeteoroideihin();
             poistaTuhoutuneetMeteoroidit();
             
             this.piirtoalusta.paivita();
 
             try{
-                Thread.sleep((lastLoopTime - System.nanoTime() + OPTIMAL_TIME) / 1000000);
+                Thread.sleep((viimeLoopinAika - System.nanoTime() + optimaalinenAika) / 1000000);
             } catch (InterruptedException ex) {
                     Logger.getLogger(Avaruuspuolustus.class.getName()).log(Level.SEVERE, null, ex);
             }
-
         }
-        
+    }
+    
+    public void paivitaPelia() {
+            poistaAlueeltaPoistuneetOhjukset();
+            poistaAlueeltaPoistuneetMeteoroidit();
+            liikutaOhjuksia();
+            liikutaMeteoroideja();
+            tarkastaMeteoroidienOsuminenPelaajaan();
+            tarkastaOhjustenOsuminenMeteoroideihin();
+            poistaTuhoutuneetMeteoroidit();
     }
     
     public void liikutaOhjuksia() {
@@ -86,6 +95,14 @@ public class Avaruuspuolustus implements ActionListener {
     public void liikutaMeteoroideja() {
         for(Meteoroidi meteoroidi : this.meteoroidit) {
             meteoroidi.liiku();
+        }
+    }
+    
+    public void tarkastaMeteoroidienOsuminenPelaajaan() {
+        for(Meteoroidi meteoroidi : this.meteoroidit) {
+            if(meteoroidi.getObjektinSijainninAlue().intersects(this.pelaaja.getObjektinSijainninAlue())) {
+                this.peliKaynnissa = false;
+            }
         }
     }
     

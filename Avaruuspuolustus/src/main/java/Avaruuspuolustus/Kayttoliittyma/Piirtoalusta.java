@@ -28,11 +28,12 @@ public class Piirtoalusta extends JPanel {
     
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);        
+        super.paintComponent(g);
         piirraPelaaja(g);
         piirraOhjukset(g);
         piirraMeteoroidit(g);
         piirraPelaajanPisteet(g);
+        piirraPelinPaatosIkkuna(g);
     }
     
     public void piirraPelaaja(Graphics g) {
@@ -57,4 +58,16 @@ public class Piirtoalusta extends JPanel {
         }
     }
     
+    public void piirraPelinPaatosIkkuna(Graphics g) {
+        if(this.avaruuspuolustus.getPeliKaynnissa() == false) {
+            g.setColor(Color.RED);
+            g.fillRoundRect(120, 250, 410, 300, 200, 50);
+            g.setColor(Color.DARK_GRAY);
+            g.fillRoundRect(150, 280, 350, 240, 200, 50);
+            g.setColor(Color.LIGHT_GRAY);
+            g.setFont(new Font("BAZOOKA", Font.BOLD, 20));
+            g.drawString("Peli päättyi!", 280, 340);
+            g.drawString("Onneksi olkoon! Sait " + this.avaruuspuolustus.getPelaaja().getPisteet() + " pistettä.", 180, 380);
+        }
+    }
 }

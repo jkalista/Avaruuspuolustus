@@ -52,6 +52,14 @@ public class AvaruuspuolustusTest {
     }
     
     @Test
+    public void kunMeteoroidiTuhoutuuNiinPelaajaSaaPisteen() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,100));
+        this.avaruuspuolustus.getMeteoroidit().get(0).setElamapisteet(0);
+        this.avaruuspuolustus.poistaTuhoutuneetMeteoroidit();
+        assertEquals(1, this.avaruuspuolustus.getPelaaja().getPisteet());
+    }
+    
+    @Test
     public void kunOhjusOsuuMeteoroidiinNiinOhjusHaviaaJaMeteoroidiMenettaaElaman() {
         this.avaruuspuolustus.getPelaaja().getOhjukset().add(new Ohjus(100, 100));
         assertEquals(1, this.avaruuspuolustus.getPelaaja().getOhjukset().size());

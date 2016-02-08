@@ -144,4 +144,10 @@ public class PelaajaTest {
         this.pelaaja.setLiikuOikealle(true);
         assertEquals(true, this.pelaaja.getLiikuOikealle());
     }
+    
+    @Test
+    public void pelaajaSaaPisteenKunKutsutaanLisaaPisteMetodia() {
+        this.pelaaja.lisaaPiste();
+        assertEquals(1, this.pelaaja.getPisteet());
+    }
 }

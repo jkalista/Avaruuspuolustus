@@ -1,16 +1,9 @@
 package Avaruuspuolustus.Objektit;
 
 import Avaruuspuolustus.TiedostojenKasittely.TiedostojenKasittelija;
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.List;
 import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Vector;
-import javax.imageio.ImageIO;
 
 /**
  *
