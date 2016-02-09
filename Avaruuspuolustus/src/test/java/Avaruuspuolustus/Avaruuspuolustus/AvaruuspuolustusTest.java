@@ -131,4 +131,13 @@ public class AvaruuspuolustusTest {
         this.avaruuspuolustus.setPeliKaynnissa(false);
         assertEquals(false, this.avaruuspuolustus.getPeliKaynnissa());
     }
+    
+    @Test
+    public void kunMeteoroidiOsuuPelaajaanNiinPeliKaynnissaBooleanMuuttuuFalseksi() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,100));
+        this.avaruuspuolustus.getPelaaja().setX(100);
+        this.avaruuspuolustus.getPelaaja().setY(100);
+        this.avaruuspuolustus.tarkastaMeteoroidienOsuminenPelaajaan();
+        assertEquals(false, this.avaruuspuolustus.getPeliKaynnissa());
+    }
 }

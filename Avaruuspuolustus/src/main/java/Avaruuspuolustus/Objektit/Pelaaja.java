@@ -4,6 +4,7 @@ import Avaruuspuolustus.TiedostojenKasittely.TiedostojenKasittelija;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  *
@@ -13,14 +14,14 @@ public class Pelaaja extends Objekti {
 
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
-    private ArrayList<Ohjus> ohjukset;
+    private CopyOnWriteArrayList<Ohjus> ohjukset;
     private boolean liikuOikealle;
     private boolean liikuVasemmalle;
     private int pisteet;
     
     public Pelaaja(int x, int y) {
         super(x,y);
-        this.ohjukset = new ArrayList<>();
+        this.ohjukset = new CopyOnWriteArrayList<>();
         this.liikuOikealle = false;
         this.liikuVasemmalle = false;
         this.pisteet = 0;        
@@ -58,7 +59,7 @@ public class Pelaaja extends Objekti {
         this.ohjukset.add(new Ohjus(this.x + 25, this.y - 15));
     }
     
-    public ArrayList<Ohjus> getOhjukset() {
+    public CopyOnWriteArrayList<Ohjus> getOhjukset() {
         return this.ohjukset;
     }
     

@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
@@ -21,14 +22,14 @@ public class Avaruuspuolustus implements ActionListener {
     
     private Piirtoalusta piirtoalusta;
     private final Pelaaja pelaaja;
-    private final ArrayList<Meteoroidi> meteoroidit;
+    private final CopyOnWriteArrayList<Meteoroidi> meteoroidit;
     Timer luoUusiMeteoroidi = new Timer(6000, this);
     private boolean peliKaynnissa;
     Random meteoroidinPaikanArpoja = new Random();
     
     public Avaruuspuolustus() {
         this.pelaaja = new Pelaaja(325, 770);
-        this.meteoroidit = new ArrayList<>();
+        this.meteoroidit = new CopyOnWriteArrayList<>();
         this.luoUusiMeteoroidi.start();
         this.peliKaynnissa = true;
     }
@@ -58,13 +59,7 @@ public class Avaruuspuolustus implements ActionListener {
                     this.pelaaja.liikuVasemmalle();
             }
 
-            poistaAlueeltaPoistuneetOhjukset();
-            poistaAlueeltaPoistuneetMeteoroidit();
-            liikutaOhjuksia();
-            liikutaMeteoroideja();
-            tarkastaMeteoroidienOsuminenPelaajaan();
-            tarkastaOhjustenOsuminenMeteoroideihin();
-            poistaTuhoutuneetMeteoroidit();
+            paivitaPelia();
             
             this.piirtoalusta.paivita();
 
@@ -77,13 +72,13 @@ public class Avaruuspuolustus implements ActionListener {
     }
     
     public void paivitaPelia() {
-            poistaAlueeltaPoistuneetOhjukset();
-            poistaAlueeltaPoistuneetMeteoroidit();
             liikutaOhjuksia();
             liikutaMeteoroideja();
             tarkastaMeteoroidienOsuminenPelaajaan();
             tarkastaOhjustenOsuminenMeteoroideihin();
             poistaTuhoutuneetMeteoroidit();
+            poistaAlueeltaPoistuneetOhjukset();
+            poistaAlueeltaPoistuneetMeteoroidit();
     }
     
     public void liikutaOhjuksia() {
@@ -162,7 +157,7 @@ public class Avaruuspuolustus implements ActionListener {
         this.piirtoalusta = piirtoalusta;
     }
     
-    public ArrayList<Meteoroidi> getMeteoroidit() {
+    public CopyOnWriteArrayList<Meteoroidi> getMeteoroidit() {
         return this.meteoroidit;
     }
     

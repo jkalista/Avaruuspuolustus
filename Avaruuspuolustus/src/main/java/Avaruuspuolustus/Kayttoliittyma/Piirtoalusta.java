@@ -62,6 +62,10 @@ public class Piirtoalusta extends JPanel {
         if(this.avaruuspuolustus.getPeliKaynnissa() == false) {
             g.setColor(Color.RED);
             g.fillRoundRect(120, 250, 410, 300, 200, 50);
+            g.setColor(Color.YELLOW);
+            g.fillRoundRect(130, 260, 390, 280, 200, 50);
+            g.setColor(Color.RED);
+            g.fillRoundRect(140, 270, 370, 260, 200, 50);
             g.setColor(Color.DARK_GRAY);
             g.fillRoundRect(150, 280, 350, 240, 200, 50);
             g.setColor(Color.LIGHT_GRAY);
