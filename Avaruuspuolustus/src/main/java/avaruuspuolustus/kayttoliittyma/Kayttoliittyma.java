@@ -14,7 +14,7 @@ import javax.swing.WindowConstants;
 public class Kayttoliittyma implements Runnable {
 
     private JFrame pelinKehykset;
-    private Avaruuspuolustus avaruuspuolustus;
+    private final Avaruuspuolustus avaruuspuolustus;
     private Piirtoalusta piirtoalusta;
     
     public Kayttoliittyma(Avaruuspuolustus avaruuspuolustus) {
