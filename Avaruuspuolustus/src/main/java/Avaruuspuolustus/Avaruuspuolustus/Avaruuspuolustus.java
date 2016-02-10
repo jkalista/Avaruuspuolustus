@@ -42,8 +42,8 @@ public class Avaruuspuolustus implements ActionListener {
     */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this.luoUusiMeteoroidi) {
-            this.meteoroidit.add(new Meteoroidi(25 + this.meteoroidinPaikanArpoja.nextInt(117)*5,0));
+        if (e.getSource() == this.luoUusiMeteoroidi) {
+            this.meteoroidit.add(new Meteoroidi(25 + this.meteoroidinPaikanArpoja.nextInt(117) * 5, 0));
         }
     }
     
@@ -51,7 +51,6 @@ public class Avaruuspuolustus implements ActionListener {
     * Metodi, joka pyörittää Avaruuspuolustus peliä päivittämällä sitä ja piirtoalustaa.
     */
     public void pelinLoop() {
-        
         long viimeLoopinAika = System.nanoTime();
         final int tavoiteFPS = 60;
         final long optimaalinenAika = 1000000000 / tavoiteFPS;
@@ -63,13 +62,12 @@ public class Avaruuspuolustus implements ActionListener {
             viimeLoopinAika = aikaTallaHetkella;
 
             paivitaPelia();
-            
             this.piirtoalusta.paivita();
 
-            try{
+            try {
                 Thread.sleep((viimeLoopinAika - System.nanoTime() + optimaalinenAika) / 1000000);
             } catch (InterruptedException ex) {
-                    Logger.getLogger(Avaruuspuolustus.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Avaruuspuolustus.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -80,26 +78,26 @@ public class Avaruuspuolustus implements ActionListener {
     * poistuneet objektit.
     */
     public void paivitaPelia() {
-            if(this.pelaaja.getLiikuOikealle() == true) {
-                    this.pelaaja.liikuOikealle();
-            } else if(this.pelaaja.getLiikuVasemmalle() == true) {
-                    this.pelaaja.liikuVasemmalle();
-            }
-            
-            liikutaOhjuksia();
-            liikutaMeteoroideja();
-            tarkastaMeteoroidienOsuminenPelaajaan();
-            tarkastaOhjustenOsuminenMeteoroideihin();
-            poistaTuhoutuneetMeteoroidit();
-            poistaAlueeltaPoistuneetOhjukset();
-            poistaAlueeltaPoistuneetMeteoroidit();
+        if (this.pelaaja.getLiikuOikealle() == true) {
+            this.pelaaja.liikuOikealle();
+        } else if (this.pelaaja.getLiikuVasemmalle() == true) {
+            this.pelaaja.liikuVasemmalle();
+        }
+        
+        liikutaOhjuksia();
+        liikutaMeteoroideja();
+        tarkastaMeteoroidienOsuminenPelaajaan();
+        tarkastaOhjustenOsuminenMeteoroideihin();
+        poistaTuhoutuneetMeteoroidit();
+        poistaAlueeltaPoistuneetOhjukset();
+        poistaAlueeltaPoistuneetMeteoroidit();
     }
     
     /**
     * Kutsuu liikkumismetodia kaikille pelissä oleville ohjuksille.
     */
     public void liikutaOhjuksia() {
-        for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
+        for (Ohjus ohjus : this.pelaaja.getOhjukset()) {
             ohjus.liiku();
         }
     }
@@ -108,7 +106,7 @@ public class Avaruuspuolustus implements ActionListener {
     * Kutsuu liikkumismetodia kaikille pelissä oleville meteoroideille.
     */
     public void liikutaMeteoroideja() {
-        for(Meteoroidi meteoroidi : this.meteoroidit) {
+        for (Meteoroidi meteoroidi : this.meteoroidit) {
             meteoroidi.liiku();
         }
     }
@@ -118,8 +116,8 @@ public class Avaruuspuolustus implements ActionListener {
     * niin peliKäynnissä boolean muuttuu falseksi.
     */
     public void tarkastaMeteoroidienOsuminenPelaajaan() {
-        for(Meteoroidi meteoroidi : this.meteoroidit) {
-            if(meteoroidi.getObjektinSijainninAlue().intersects(this.pelaaja.getObjektinSijainninAlue())) {
+        for (Meteoroidi meteoroidi : this.meteoroidit) {
+            if (meteoroidi.getObjektinSijainninAlue().intersects(this.pelaaja.getObjektinSijainninAlue())) {
                 this.peliKaynnissa = false;
             }
         }
@@ -133,9 +131,9 @@ public class Avaruuspuolustus implements ActionListener {
     public void tarkastaOhjustenOsuminenMeteoroideihin() {
         ArrayList<Ohjus> meteoroidiinOsuneetOhjukset = new ArrayList<>();
         
-        for(Meteoroidi meteoroidi : this.meteoroidit) {
-            for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
-                if(ohjus.getObjektinSijainninAlue().intersects(meteoroidi.getObjektinSijainninAlue())) {
+        for (Meteoroidi meteoroidi : this.meteoroidit) {
+            for (Ohjus ohjus : this.pelaaja.getOhjukset()) {
+                if (ohjus.getObjektinSijainninAlue().intersects(meteoroidi.getObjektinSijainninAlue())) {
                     meteoroidi.menetaElamapiste();
                     meteoroidiinOsuneetOhjukset.add(ohjus);
                 }
@@ -153,8 +151,8 @@ public class Avaruuspuolustus implements ActionListener {
     public void poistaTuhoutuneetMeteoroidit() {
         ArrayList<Meteoroidi> tuhoutuneetMeteoroidit = new ArrayList<>();
         
-        for(Meteoroidi meteoroidi : this.meteoroidit) {
-            if(meteoroidi.getElamapisteet() == 0) {
+        for (Meteoroidi meteoroidi : this.meteoroidit) {
+            if (meteoroidi.getElamapisteet() == 0) {
                 tuhoutuneetMeteoroidit.add(meteoroidi);
                 this.pelaaja.lisaaPiste();
                 vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa();
@@ -168,7 +166,7 @@ public class Avaruuspuolustus implements ActionListener {
     * Lyhentää uuden meteoroidin luovan ajastimen viiveaikaa vähentämällä kaksikymmentä millisekuntia.
     */
     public void vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa() {
-        if(this.luoUusiMeteoroidi.getDelay() > 1000) {
+        if (this.luoUusiMeteoroidi.getDelay() > 1000) {
             this.luoUusiMeteoroidi.setDelay(this.luoUusiMeteoroidi.getDelay() - 20);
         }
     }
@@ -178,8 +176,8 @@ public class Avaruuspuolustus implements ActionListener {
     */
     public void poistaAlueeltaPoistuneetOhjukset() {
         ArrayList<Ohjus> poistettavat = new ArrayList<>();
-        for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
-            if(ohjus.getY() <= -15) {
+        for (Ohjus ohjus : this.pelaaja.getOhjukset()) {
+            if (ohjus.getY() <= -15) {
                 poistettavat.add(ohjus);
             }
         }
@@ -191,8 +189,8 @@ public class Avaruuspuolustus implements ActionListener {
     */
     public void poistaAlueeltaPoistuneetMeteoroidit() {
         ArrayList<Meteoroidi> poistettavat = new ArrayList<>();
-        for(Meteoroidi meteoroidi : this.meteoroidit) {
-            if(meteoroidi.getY() >= 900) {
+        for (Meteoroidi meteoroidi : this.meteoroidit) {
+            if (meteoroidi.getY() >= 900) {
                 poistettavat.add(meteoroidi);
             }
         }

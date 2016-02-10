@@ -1,6 +1,6 @@
 package Avaruuspuolustus.Objektit;
 
-import Avaruuspuolustus.TiedostojenKasittely.TiedostojenKasittelija;
+import Avaruuspuolustus.TiedostojenKasittelija.TiedostojenKasittelija;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -21,7 +21,7 @@ public class Pelaaja extends Objekti {
     private int pisteet;
     
     public Pelaaja(int x, int y) {
-        super(x,y);
+        super(x, y);
         this.ohjukset = new CopyOnWriteArrayList<>();
         this.liikuOikealle = false;
         this.liikuVasemmalle = false;
@@ -34,7 +34,7 @@ public class Pelaaja extends Objekti {
     public void liikuOikealle() {
         this.x = this.x + 5;
         
-        if(this.x > 595) {
+        if (this.x > 595) {
             this.x = 595;
         }
     }
@@ -45,7 +45,7 @@ public class Pelaaja extends Objekti {
     public void liikuVasemmalle() {
         this.x = this.x - 5;
         
-        if(this.x < 0) {
+        if (this.x < 0) {
             this.x = 0;
         }
     }

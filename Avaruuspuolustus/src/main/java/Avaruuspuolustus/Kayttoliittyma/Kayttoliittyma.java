@@ -42,10 +42,10 @@ public class Kayttoliittyma implements Runnable {
     * @param container 
     */
     private void luoKomponentit(Container container) {
-         this.piirtoalusta = new Piirtoalusta(this.avaruuspuolustus);
-         container.add(this.piirtoalusta);
+        this.piirtoalusta = new Piirtoalusta(this.avaruuspuolustus);
+        container.add(this.piirtoalusta);
          
-         this.pelinKehykset.addKeyListener(new NappaimistonKuuntelija(this.avaruuspuolustus.getPelaaja()));
+        this.pelinKehykset.addKeyListener(new NappaimistonKuuntelija(this.avaruuspuolustus.getPelaaja()));
     }
 
     public JFrame getFrame() {

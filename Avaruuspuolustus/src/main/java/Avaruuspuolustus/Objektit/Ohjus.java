@@ -12,7 +12,7 @@ import java.awt.Rectangle;
 public class Ohjus extends Objekti {
 
     public Ohjus(int x, int y) {
-        super(x,y);
+        super(x, y);
     }
     
     /**

@@ -70,7 +70,7 @@ public class Piirtoalusta extends JPanel {
     * @param g
     */
     public void piirraOhjukset(Graphics g) {
-        for(Ohjus ohjus : this.avaruuspuolustus.getPelaaja().getOhjukset()) {
+        for (Ohjus ohjus : this.avaruuspuolustus.getPelaaja().getOhjukset()) {
             ohjus.piirra(g);
         }
     }
@@ -81,7 +81,7 @@ public class Piirtoalusta extends JPanel {
     * @param g
     */
     public void piirraMeteoroidit(Graphics g) {
-        for(Meteoroidi meteoroidi : this.avaruuspuolustus.getMeteoroidit()) {
+        for (Meteoroidi meteoroidi : this.avaruuspuolustus.getMeteoroidit()) {
             meteoroidi.piirra(g);
         }
     }
@@ -92,7 +92,7 @@ public class Piirtoalusta extends JPanel {
     * @param g
     */
     public void piirraPelinPaatosIkkuna(Graphics g) {
-        if(this.avaruuspuolustus.getPeliKaynnissa() == false) {
+        if (this.avaruuspuolustus.getPeliKaynnissa() == false) {
             g.setColor(Color.RED);
             g.fillRoundRect(120, 250, 410, 300, 200, 50);
             g.setColor(Color.YELLOW);

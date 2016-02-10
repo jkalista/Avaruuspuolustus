@@ -14,7 +14,7 @@ public class Meteoroidi extends Objekti {
     private int elamapisteet;
     
     public Meteoroidi(int x, int y) {
-        super(x,y);
+        super(x, y);
         this.elamapisteet = 5;
     }
     
@@ -34,7 +34,7 @@ public class Meteoroidi extends Objekti {
     @Override
     public void piirra(Graphics g) {
         g.setColor(Color.LIGHT_GRAY);
-        g.fillOval(this.x, this.y, 15 + this.elamapisteet*5, 15 + this.elamapisteet*5);
+        g.fillOval(this.x, this.y, 15 + this.elamapisteet * 5, 15 + this.elamapisteet * 5);
     }
 
     /**
@@ -47,7 +47,7 @@ public class Meteoroidi extends Objekti {
     */
     @Override
     public Rectangle getObjektinSijainninAlue() {
-        return new Rectangle(this.x, this.y, 15 + this.elamapisteet*5, 15 + this.elamapisteet*5);
+        return new Rectangle(this.x, this.y, 15 + this.elamapisteet * 5, 15 + this.elamapisteet * 5);
     }
     
     /**

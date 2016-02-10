@@ -1,4 +1,4 @@
-package Avaruuspuolustus.TiedostojenKasittely;
+package Avaruuspuolustus.TiedostojenKasittelija;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -26,6 +26,7 @@ public class TiedostojenKasittelija {
     
     /**
     * Palauttaa pelaajan avaruusaluksen kuvan.
+    * 
     * @return 
     */
     public BufferedImage getAvaruusaluksenKuva() {
