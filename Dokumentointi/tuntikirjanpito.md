@@ -26,4 +26,4 @@
 
 **9.2.2016** 2 tuntia, Pieniä muutoksia "Avaruuspuolustus" luokkaan, uusi testi ja pieniä visuaalisia muutoksia.
 
-**10.2.2016** 4 tuntia, Pieniä muutoksia peliin ja muutama testi. Lisäksi paljon JavaDocia. Kokeilin myös CheckStyleä ja korjasin pahimmat virheet.
+**10.2.2016** 5 tuntia, Pieniä muutoksia peliin ja muutama testi. Lisäksi paljon JavaDocia. Kokeilin myös CheckStyleä ja korjasin pahimmat virheet.
