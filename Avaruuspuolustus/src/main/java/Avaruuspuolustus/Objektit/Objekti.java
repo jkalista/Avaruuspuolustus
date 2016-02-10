@@ -4,7 +4,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- *
+ * Abstrakti luokka, jonka kaikki pelin objektit perivät.
+ * 
  * @author Jyri
  */
 public abstract class Objekti {
@@ -33,8 +34,18 @@ public abstract class Objekti {
         this.y = y;
     }
     
+    /**
+    * Metodi, joka piirtää objektin.
+    * 
+    * @param g
+    */
     public abstract void piirra(Graphics g);
     
+    /**
+    * Metodi, joka palauttaa alueen, jolla objekti sijaitsee.
+    * 
+    * @return 
+    */
     public abstract Rectangle getObjektinSijainninAlue();
     
 }

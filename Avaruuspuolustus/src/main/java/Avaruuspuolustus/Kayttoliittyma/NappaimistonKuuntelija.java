@@ -1,12 +1,13 @@
 package Avaruuspuolustus.Kayttoliittyma;
 
 import Avaruuspuolustus.Objektit.Pelaaja;
-import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
- *
+ * Luokka, jossa määritellään miten eri näppäimistön näppäimet käyttäytyvät
+ * Avaruuspuolustus pelissä.
+ * 
  * @author Jyri
  */
 public class NappaimistonKuuntelija implements KeyListener {
@@ -17,6 +18,13 @@ public class NappaimistonKuuntelija implements KeyListener {
         this.pelaaja = pelaaja;
     }
 
+    /**
+    * Asettaa pelaajan LiikuOikealle booleanin trueksi silloin, kun painetaan
+    * näppäintä "D", ja LiikuVasemmalle booleanin trueksi silloin, kun painetaan
+    * näppäintä "A".
+    *
+    * @param e
+    */
     @Override
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_D) {
@@ -27,6 +35,16 @@ public class NappaimistonKuuntelija implements KeyListener {
         
     }
 
+    /**
+    * Asettaa pelaajan LiikuOikealle booleanin falseksi silloin, kun nostetaan
+    * sormi näppäimeltä "D", ja LiikuVasemmalle booleanin falseksi silloin, kun
+    * nostetaan sormi näppäimeltä "A".
+    * 
+    * Pelaajan avaruusalus ampuu ohjuksen silloin, kun nostetaan sormi näppäimeltä
+    * "H".
+    * 
+    * @param e 
+    */
     @Override
     public void keyReleased(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_D) {

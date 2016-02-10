@@ -57,7 +57,7 @@ public class PelaajaTest {
     
     @Test
     public void pelaajaEiVoiLiikkuaYliOikeanRajan() {
-        for(int i = 0; i <= 100; i++) {
+        for(int i = 0; i <= 200; i++) {
             this.pelaaja.liikuOikealle();
         }
         assertEquals(595, this.pelaaja.getX());
@@ -66,7 +66,7 @@ public class PelaajaTest {
     
     @Test
     public void pelaajaEiVoiLiikkuaYliVasemmanRajan() {
-        for(int i = 0; i <= 100; i++) {
+        for(int i = 0; i <= 200; i++) {
             this.pelaaja.liikuVasemmalle();
         }
         assertEquals(0, this.pelaaja.getX());

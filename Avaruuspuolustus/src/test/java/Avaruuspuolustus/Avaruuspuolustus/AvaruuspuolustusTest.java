@@ -52,6 +52,14 @@ public class AvaruuspuolustusTest {
     }
     
     @Test
+    public void kunMeteoroidiTuhoutuuNiinUudenMeteoroidinLuovanTimerinViiveVahentyy() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100, 100));
+        this.avaruuspuolustus.getMeteoroidit().get(0).setElamapisteet(0);
+        this.avaruuspuolustus.poistaTuhoutuneetMeteoroidit();
+        assertEquals(5980, this.avaruuspuolustus.luoUusiMeteoroidi.getDelay());
+    }
+    
+    @Test
     public void kunMeteoroidiTuhoutuuNiinPelaajaSaaPisteen() {
         this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,100));
         this.avaruuspuolustus.getMeteoroidit().get(0).setElamapisteet(0);
@@ -140,4 +148,95 @@ public class AvaruuspuolustusTest {
         this.avaruuspuolustus.tarkastaMeteoroidienOsuminenPelaajaan();
         assertEquals(false, this.avaruuspuolustus.getPeliKaynnissa());
     }
+    
+    @Test
+    public void paivitaPeliaMetodiLiikuttaaPelaajaaKunPelaajanOikealleLiikkuminenOnTrue() {
+        this.avaruuspuolustus.getPelaaja().setLiikuOikealle(true);
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(330, this.avaruuspuolustus.getPelaaja().getX());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiLiikuttaaPelaajaaKunPelaajanVasemmalleLiikkuminenOnTrue() {
+        this.avaruuspuolustus.getPelaaja().setLiikuVasemmalle(true);
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(320, this.avaruuspuolustus.getPelaaja().getX());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiLiikuttaaMeteoroidiaOikein() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,100));
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(101, this.avaruuspuolustus.getMeteoroidit().get(0).getY());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiLiikuttaaOhjustaOikein() {
+        this.avaruuspuolustus.getPelaaja().getOhjukset().add(new Ohjus(100, 100));
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(95, this.avaruuspuolustus.getPelaaja().getOhjukset().get(0).getY());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiTuhoaaOhjuksenJosOhjusOnKosketuksissaMeteoroidinKanssa() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100,100));
+        this.avaruuspuolustus.getPelaaja().getOhjukset().add(new Ohjus(100, 100));
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(0, this.avaruuspuolustus.getPelaaja().getOhjukset().size());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiPoistaaAlueeltaPoistuneenMeteoroidin() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100, 850));
+        for(int i=0; i <= 50; i++) {
+            this.avaruuspuolustus.getMeteoroidit().get(0).liiku();
+        }
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(0, this.avaruuspuolustus.getMeteoroidit().size());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiaaPoistaaAlueeltaPoistuneenOhjuksen() {
+        this.avaruuspuolustus.getPelaaja().getOhjukset().add(new Ohjus(100, 100));
+        for(int i=0; i <= 50; i++) {
+            this.avaruuspuolustus.getPelaaja().getOhjukset().get(0).liiku();
+        }
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(0, this.avaruuspuolustus.getPelaaja().getOhjukset().size());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiPoistaaTuhoutuneetMeteoroiditEliMeteoroiditJoillaNollaElamapistetta() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(100, 100));
+        this.avaruuspuolustus.getMeteoroidit().get(0).setElamapisteet(0);
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(0, this.avaruuspuolustus.getMeteoroidit().size());
+    }
+    
+    @Test
+    public void paivitaPeliaMetodiMuuttaaPeliKaynnissaBooleaninFalseksiKunPelaajaKoskettaaMeteoroidia() {
+        this.avaruuspuolustus.getMeteoroidit().add(new Meteoroidi(325, 770));
+        this.avaruuspuolustus.paivitaPelia();
+        assertEquals(false, this.avaruuspuolustus.getPeliKaynnissa());
+    }
+    
+    @Test
+    public void uudenMeteoroidinLuovanTimerinViiveOnOikea() {
+        assertEquals(6000, this.avaruuspuolustus.luoUusiMeteoroidi.getDelay());
+    }
+    
+    @Test
+    public void metodiVaikeutaPeliaVahentaaUudenMeteoroidinLuovanTimerinViivettaOikein() {
+        this.avaruuspuolustus.vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa();
+        assertEquals(5980, this.avaruuspuolustus.luoUusiMeteoroidi.getDelay());
+    }
+    
+    @Test
+    public void metodiVaikeutaPeliaEiVoiVahentaaAikaaAlleTuhannen() {
+        for(int i=0; i <= 500; i++) {
+            this.avaruuspuolustus.vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa();
+        }
+        assertEquals(1000, this.avaruuspuolustus.luoUusiMeteoroidi.getDelay());
+    }
+    
 }

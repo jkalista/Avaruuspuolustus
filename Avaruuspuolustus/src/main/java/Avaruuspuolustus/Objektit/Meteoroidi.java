@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Avaruuspuolustus.Objektit;
 
 import java.awt.Color;
@@ -10,7 +5,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- *
+ * Luokka sisältää meteoroidiin liittyvät tiedot ja metodit.
+ * 
  * @author Jyri
  */
 public class Meteoroidi extends Objekti {
@@ -22,21 +18,41 @@ public class Meteoroidi extends Objekti {
         this.elamapisteet = 5;
     }
     
+    /**
+    * Liikuttaa meteoroidia.
+    */
     public void liiku() {
         this.y = this.y + 1;
     }
     
+    /**
+     * Piirtää meteoroidin sen elämäpisteiden mukaan, eli mitä vähemmän elämäpisteitä,
+     * niin sitä pienempi meteoroidi on.
+     * 
+     * @param g 
+     */
     @Override
     public void piirra(Graphics g) {
         g.setColor(Color.LIGHT_GRAY);
         g.fillOval(this.x, this.y, 15 + this.elamapisteet*5, 15 + this.elamapisteet*5);
     }
 
+    /**
+    * Palauttaa sen alueen, missä meteoroidi sillä hetkellä sijaitsee. Palautetun alueen
+    * kokoon vaikuttaa luonnollisesti elämäpisteiden määrä, sillä meteoroidi on sitä
+    * pienempi, mitä vähemmän sillä on elämäpisteitä. Tätä tietoa käytetään,
+    * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
+    * 
+    * @return 
+    */
     @Override
     public Rectangle getObjektinSijainninAlue() {
         return new Rectangle(this.x, this.y, 15 + this.elamapisteet*5, 15 + this.elamapisteet*5);
     }
     
+    /**
+    * Vähentää meteoroidilta yhden elämäpisteen.
+    */
     public void menetaElamapiste() {
         this.elamapisteet = this.elamapisteet - 1;
     }

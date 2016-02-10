@@ -7,7 +7,6 @@ import Avaruuspuolustus.Objektit.Pelaaja;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
@@ -15,7 +14,9 @@ import java.util.logging.Logger;
 import javax.swing.Timer;
 
 /**
- *
+ * Luokka, joka sisältää itse Avaruuspuolustus peliin liittyvät tiedot ja
+ * metodit.
+ * 
  * @author Jyri
  */
 public class Avaruuspuolustus implements ActionListener {
@@ -34,6 +35,11 @@ public class Avaruuspuolustus implements ActionListener {
         this.peliKaynnissa = true;
     }
 
+    /**
+    * Luo peliin uuden meteoroidin "luoUusiMeteoroidi" -ajastimen viiveen mukaan.
+    * 
+    * @param e 
+    */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.luoUusiMeteoroidi) {
@@ -41,6 +47,9 @@ public class Avaruuspuolustus implements ActionListener {
         }
     }
     
+    /**
+    * Metodi, joka pyörittää Avaruuspuolustus peliä päivittämällä sitä ja piirtoalustaa.
+    */
     public void pelinLoop() {
         
         long viimeLoopinAika = System.nanoTime();
@@ -52,12 +61,6 @@ public class Avaruuspuolustus implements ActionListener {
             long aikaTallaHetkella = System.nanoTime();
             long updateLength = aikaTallaHetkella - viimeLoopinAika;
             viimeLoopinAika = aikaTallaHetkella;
-
-            if(this.pelaaja.getLiikuOikealle() == true) {
-                    this.pelaaja.liikuOikealle();
-            } else if(this.pelaaja.getLiikuVasemmalle() == true) {
-                    this.pelaaja.liikuVasemmalle();
-            }
 
             paivitaPelia();
             
@@ -71,7 +74,18 @@ public class Avaruuspuolustus implements ActionListener {
         }
     }
     
+    /**
+    * Päivittää peliä tarkistamalla pelaajan liikkumisen, liikuttaa ohjuksia ja meteoroideja,
+    * tarkistaa objektien osumisen toisiinsa, poistaa kaikki tuhoutuneet tai pelialueelta
+    * poistuneet objektit.
+    */
     public void paivitaPelia() {
+            if(this.pelaaja.getLiikuOikealle() == true) {
+                    this.pelaaja.liikuOikealle();
+            } else if(this.pelaaja.getLiikuVasemmalle() == true) {
+                    this.pelaaja.liikuVasemmalle();
+            }
+            
             liikutaOhjuksia();
             liikutaMeteoroideja();
             tarkastaMeteoroidienOsuminenPelaajaan();
@@ -81,18 +95,28 @@ public class Avaruuspuolustus implements ActionListener {
             poistaAlueeltaPoistuneetMeteoroidit();
     }
     
+    /**
+    * Kutsuu liikkumismetodia kaikille pelissä oleville ohjuksille.
+    */
     public void liikutaOhjuksia() {
         for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
             ohjus.liiku();
         }
     }
     
+    /**
+    * Kutsuu liikkumismetodia kaikille pelissä oleville meteoroideille.
+    */
     public void liikutaMeteoroideja() {
         for(Meteoroidi meteoroidi : this.meteoroidit) {
             meteoroidi.liiku();
         }
     }
     
+    /**
+    * Tarkastaa meteoroidien osumisen pelaajan avaruusalukseen. Jos meteoroidi osuu pelaajan avaruusalukseen
+    * niin peliKäynnissä boolean muuttuu falseksi.
+    */
     public void tarkastaMeteoroidienOsuminenPelaajaan() {
         for(Meteoroidi meteoroidi : this.meteoroidit) {
             if(meteoroidi.getObjektinSijainninAlue().intersects(this.pelaaja.getObjektinSijainninAlue())) {
@@ -101,6 +125,11 @@ public class Avaruuspuolustus implements ActionListener {
         }
     }
     
+    /**
+    * Tarkastaa pelaajan ampumien ohjusten osumisen meteoroideihin vertaamalla ohjusten ja meteoroidien
+    * sijaintia toisiinsa. Jos ohjus osuu meteoroidiin, niin ohjus tuhoutuu ja meteoroidi menettää yhden
+    * elämäpisteen.
+    */
     public void tarkastaOhjustenOsuminenMeteoroideihin() {
         ArrayList<Ohjus> meteoroidiinOsuneetOhjukset = new ArrayList<>();
         
@@ -116,6 +145,11 @@ public class Avaruuspuolustus implements ActionListener {
         this.pelaaja.getOhjukset().removeAll(meteoroidiinOsuneetOhjukset);
     }
     
+    /**
+    * Poistaa tuhoutuneet meteoroidit, eli sellaiset joilla on nolla elämäpistettä.
+    * Lisäksi lisää yhden pisteen pelaajalle ja vaikeuttaa peliä kutsumalla metodia, joka
+    * lyhentää uuden meteoroidin luovan ajastimen viivettä.
+    */
     public void poistaTuhoutuneetMeteoroidit() {
         ArrayList<Meteoroidi> tuhoutuneetMeteoroidit = new ArrayList<>();
         
@@ -123,26 +157,42 @@ public class Avaruuspuolustus implements ActionListener {
             if(meteoroidi.getElamapisteet() == 0) {
                 tuhoutuneetMeteoroidit.add(meteoroidi);
                 this.pelaaja.lisaaPiste();
+                vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa();
             }
         }
         
         this.meteoroidit.removeAll(tuhoutuneetMeteoroidit);
     }
+    
+    /**
+    * Lyhentää uuden meteoroidin luovan ajastimen viiveaikaa vähentämällä kaksikymmentä millisekuntia.
+    */
+    public void vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa() {
+        if(this.luoUusiMeteoroidi.getDelay() > 1000) {
+            this.luoUusiMeteoroidi.setDelay(this.luoUusiMeteoroidi.getDelay() - 20);
+        }
+    }
         
+    /**
+    * Poistaa ohjukset, jotka eivät ole enää pelialueella.
+    */
     public void poistaAlueeltaPoistuneetOhjukset() {
         ArrayList<Ohjus> poistettavat = new ArrayList<>();
         for(Ohjus ohjus : this.pelaaja.getOhjukset()) {
-            if(ohjus.getY() == -15) {
+            if(ohjus.getY() <= -15) {
                 poistettavat.add(ohjus);
             }
         }
         this.pelaaja.getOhjukset().removeAll(poistettavat);
     }
     
+    /**
+    * Poistaa meteoroidit, jotka eivät ole enää pelialueella.
+    */
     public void poistaAlueeltaPoistuneetMeteoroidit() {
         ArrayList<Meteoroidi> poistettavat = new ArrayList<>();
         for(Meteoroidi meteoroidi : this.meteoroidit) {
-            if(meteoroidi.getY() == 900) {
+            if(meteoroidi.getY() >= 900) {
                 poistettavat.add(meteoroidi);
             }
         }
