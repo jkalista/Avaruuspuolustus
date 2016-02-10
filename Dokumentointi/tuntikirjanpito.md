@@ -25,3 +25,5 @@
 **8.2.2016** 4 tuntia, Tein "TiedostojenKasittelija" luokan ja piirsin paintissa avaruusaluksen kuvan, jolla korvasin aiemman pelaajan ohjaaman punaisen neliön. Lisäsin myös muutaman testin ja pelin päätös ikkunan, joka ilmestyy, kun meteoroidi osuu pelaajaan.
 
 **9.2.2016** 2 tuntia, Pieniä muutoksia "Avaruuspuolustus" luokkaan, uusi testi ja pieniä visuaalisia muutoksia.
+
+**10.2.2016** 3 tuntia, Pieniä muutoksia peliin ja muutama testi. Lisäksi JavaDoccia paljon.
