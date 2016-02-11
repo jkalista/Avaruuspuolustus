@@ -46,7 +46,105 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Avaruuspuolustus.Avaruuspuolustus.java">Avaruuspuolustus/Avaruuspuolustus/Avaruuspuolustus.java</a>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.kayttoliittyma.Piirtoalusta.java">avaruuspuolustus/kayttoliittyma/Piirtoalusta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.kayttoliittyma.NappaimistonKuuntelija.java">avaruuspuolustus/kayttoliittyma/NappaimistonKuuntelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.Objektit.Objekti.java">avaruuspuolustus/Objektit/Objekti.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.Objektit.Ohjus.java">avaruuspuolustus/Objektit/Ohjus.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.TiedostojenKasittelija.TiedostojenKasittelija.java">avaruuspuolustus/TiedostojenKasittelija/TiedostojenKasittelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.Objektit.Pelaaja.java">avaruuspuolustus/Objektit/Pelaaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.Objektit.Meteoroidi.java">avaruuspuolustus/Objektit/Meteoroidi.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.avaruuspuolustus.Avaruuspuolustus.java">avaruuspuolustus/avaruuspuolustus/Avaruuspuolustus.java</a>
                 </td>
                 <td>
                   0
@@ -60,7 +158,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Kayttoliittyma.Kayttoliittyma.java">Avaruuspuolustus/Kayttoliittyma/Kayttoliittyma.java</a>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.Main.java">avaruuspuolustus/Main.java</a>
                 </td>
                 <td>
                   0
@@ -74,105 +172,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Kayttoliittyma.NappaimistonKuuntelija.java">Avaruuspuolustus/Kayttoliittyma/NappaimistonKuuntelija.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Objektit.Ohjus.java">Avaruuspuolustus/Objektit/Ohjus.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.TiedostojenKasittelija.TiedostojenKasittelija.java">Avaruuspuolustus/TiedostojenKasittelija/TiedostojenKasittelija.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Objektit.Meteoroidi.java">Avaruuspuolustus/Objektit/Meteoroidi.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Objektit.Pelaaja.java">Avaruuspuolustus/Objektit/Pelaaja.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Main.java">Avaruuspuolustus/Main.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Objektit.Objekti.java">Avaruuspuolustus/Objektit/Objekti.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#Avaruuspuolustus.Kayttoliittyma.Piirtoalusta.java">Avaruuspuolustus/Kayttoliittyma/Piirtoalusta.java</a>
+                  <a href="${project.url}/checkstyle.html#avaruuspuolustus.kayttoliittyma.Kayttoliittyma.java">avaruuspuolustus/kayttoliittyma/Kayttoliittyma.java</a>
                 </td>
                 <td>
                   0
