@@ -29,7 +29,7 @@ public class Meteoroidi extends Objekti {
      * Piirtää meteoroidin sen elämäpisteiden mukaan, eli mitä vähemmän elämäpisteitä,
      * niin sitä pienempi meteoroidi on.
      * 
-     * @param g 
+     * @param g Meteoroidin grafiikka
      */
     @Override
     public void piirra(Graphics g) {
@@ -43,7 +43,7 @@ public class Meteoroidi extends Objekti {
     * pienempi, mitä vähemmän sillä on elämäpisteitä. Tätä tietoa käytetään,
     * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
     * 
-    * @return 
+    * @return Rectangle Meteoroidin sijainnin alue
     */
     @Override
     public Rectangle getObjektinSijainninAlue() {

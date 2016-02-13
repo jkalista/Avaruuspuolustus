@@ -30,10 +30,10 @@ public class TiedostojenKasittelija {
     }
     
     /**
-    * Palauttaa pelaajan avaruusaluksen kuvan.
-    * 
-    * @return 
-    */
+     * Palauttaa pelaajan ohjaaman avaruusaluksen kuvan.
+     * 
+     * @return BufferedImage Avaruusaluksen kuva
+     */
     public BufferedImage getAvaruusaluksenKuva() {
         return this.avaruusaluksenKuva;
     }

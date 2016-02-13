@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 
 /**
  * Luokka, jossa määritellään miten eri näppäimistön näppäimet käyttäytyvät
- * Avaruuspuolustus pelissä.
+ * Avaruustaistelu pelissä.
  * 
  * @author Jyri
  */
@@ -19,11 +19,11 @@ public class NappaimistonKuuntelija implements KeyListener {
     }
 
     /**
-    * Asettaa pelaajan LiikuOikealle booleanin trueksi silloin, kun painetaan
+    * Asettaa pelaajan avaruusaluksen LiikuOikealle booleanin trueksi silloin, kun painetaan
     * näppäintä "D", ja LiikuVasemmalle booleanin trueksi silloin, kun painetaan
     * näppäintä "A".
     *
-    * @param e
+    * @param e Alas painettu näppäin
     */
     @Override
     public void keyPressed(KeyEvent e) {
@@ -43,7 +43,7 @@ public class NappaimistonKuuntelija implements KeyListener {
     * Pelaajan avaruusalus ampuu ohjuksen silloin, kun nostetaan sormi näppäimeltä
     * "H".
     * 
-    * @param e 
+    * @param e Ylös nostettu näppäin
     */
     @Override
     public void keyReleased(KeyEvent e) {

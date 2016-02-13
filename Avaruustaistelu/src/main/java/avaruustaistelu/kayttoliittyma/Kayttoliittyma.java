@@ -7,7 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 /**
- *
+ * Luokka, jossa luodaan käyttöliittymä.
+ * 
  * @author Jyri
  */
 public class Kayttoliittyma implements Runnable {
@@ -38,7 +39,7 @@ public class Kayttoliittyma implements Runnable {
     * Luo piirtoalustan Avaruuspuolustus pelille ja lisää näppäimistönkuuntelijan
     * Avaruuspuolustus pelin tuntemalle pelaajalle.
     * 
-    * @param container 
+    * @param container Container
     */
     private void luoKomponentit(Container container) {
         this.piirtoalusta = new Piirtoalusta(this.avaruustaistelu);

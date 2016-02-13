@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- * Luokka sisältää pelaajan avaruusaluksen ampumaan ohjukseen liittyvät tiedot ja metodit.
+ * Luokka sisältää pelaajan ohjaaman avaruusaluksen ampumaan ohjukseen liittyvät tiedot ja metodit.
  * 
  * @author Jyri
  */
@@ -25,7 +25,7 @@ public class Ohjus extends Objekti {
     /**
     * Piirtää ohjuksen, eli siihen kuuluvat harmaan ja punaisen alueen.
     * 
-    * @param g
+    * @param g Ohjuksen grafiikka
     */
     @Override
     public void piirra(Graphics g) {
@@ -39,7 +39,7 @@ public class Ohjus extends Objekti {
     * Palauttaa sen alueen, missä ohjus sillä hetkellä sijaitsee. Tätä tietoa käytetään,
     * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
     * 
-    * @return 
+    * @return Rectangle Ohjuksen sijainnin alue
     */
     @Override
     public Rectangle getObjektinSijainninAlue() {

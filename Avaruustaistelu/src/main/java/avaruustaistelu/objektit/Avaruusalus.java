@@ -8,6 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * Luokka sisältää kaikki pelaajan ohjaamaan avaruusalukseen liittyvät tiedot
  * ja metodit.
+ * 
  * @author Jyri
  */
 public class Avaruusalus extends Objekti {
@@ -52,7 +53,7 @@ public class Avaruusalus extends Objekti {
     /**
      * Piirtää pelaajan avaruusaluksen kuvan TiedostojenKasittelijan antaman kuvatiedoston perusteella.
      * 
-     * @param g 
+     * @param g Avaruusaluksen grafiikka
      */
     @Override
     public void piirra(Graphics g) {
@@ -63,7 +64,7 @@ public class Avaruusalus extends Objekti {
     * Palauttaa sen alueen, missä pelaajan avaruusalus sillä hetkellä sijaitsee. Tätä tietoa käytetään,
     * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
     * 
-    * @return 
+    * @return Rectangle Avaruusaluksen sijainnin alue
     */
     @Override
     public Rectangle getObjektinSijainninAlue() {

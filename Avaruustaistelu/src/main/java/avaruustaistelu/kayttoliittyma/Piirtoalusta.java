@@ -32,7 +32,7 @@ public class Piirtoalusta extends JPanel {
     /**
     * Piirtää kaikki Avaruuspuolustus peliin liittyvät asiat.
     * 
-    * @param g 
+    * @param g Grafiikka
     */
     @Override
     protected void paintComponent(Graphics g) {
@@ -47,7 +47,7 @@ public class Piirtoalusta extends JPanel {
     /**
     * Piirtää pelaajan avaruusaluksen.
     * 
-    * @param g
+    * @param g Avaruusaluksen grafiikka
     */
     public void piirraAvaruusalus(Graphics g) {
         this.avaruustaistelu.getAvaruusalus().piirra(g);
@@ -56,7 +56,7 @@ public class Piirtoalusta extends JPanel {
     /**
     * Piirtää pelaajan pisteet oikeaan yläkulmaan.
     * 
-    * @param g
+    * @param g Pelaajan pisteiden grafiikka
     */
     public void piirraPelaajanPisteet(Graphics g) {
         g.setFont(new Font("BAZOOKA", Font.BOLD, 24));
@@ -67,7 +67,7 @@ public class Piirtoalusta extends JPanel {
     /**
     * Piirtää kaikki Avaruuspuolustus pelissä olevat ohjukset.
     * 
-    * @param g
+    * @param g Ohjusten grafiikka
     */
     public void piirraOhjukset(Graphics g) {
         for (Ohjus ohjus : this.avaruustaistelu.getAvaruusalus().getOhjukset()) {
@@ -78,7 +78,7 @@ public class Piirtoalusta extends JPanel {
     /**
     * Piirtää kaikki Avaruuspuolustus pelissä olevat meteoroidit.
     * 
-    * @param g
+    * @param g Meteoroidien grafiikka
     */
     public void piirraMeteoroidit(Graphics g) {
         for (Meteoroidi meteoroidi : this.avaruustaistelu.getMeteoroidit()) {
@@ -89,7 +89,7 @@ public class Piirtoalusta extends JPanel {
     /**
     * Piirtää ikkunan, joka ilmestyy silloin, kun pelaaja häviää pelin.
     * 
-    * @param g
+    * @param g Päätösikkunan grafiikka
     */
     public void piirraPelinPaatosIkkuna(Graphics g) {
         if (this.avaruustaistelu.getPeliKaynnissa() == false) {

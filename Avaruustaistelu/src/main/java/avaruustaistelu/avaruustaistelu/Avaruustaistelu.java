@@ -14,7 +14,8 @@ import java.util.logging.Logger;
 import javax.swing.Timer;
 
 /**
- *
+ * Luokka, joka sisältää Avaruustaistelu peliin liittyvät tiedot ja metodit.
+ * 
  * @author Jyri
  */
 public class Avaruustaistelu implements ActionListener {
@@ -22,7 +23,7 @@ public class Avaruustaistelu implements ActionListener {
     private Piirtoalusta piirtoalusta;
     private final Avaruusalus avaruusalus;
     private final CopyOnWriteArrayList<Meteoroidi> meteoroidit;
-    Timer luoUusiMeteoroidi = new Timer(6000, this);
+    Timer luoUusiMeteoroidi = new Timer(5000, this);
     private boolean peliKaynnissa;
     Random meteoroidinPaikanArpoja = new Random();
     
@@ -36,7 +37,7 @@ public class Avaruustaistelu implements ActionListener {
     /**
     * Luo peliin uuden meteoroidin "luoUusiMeteoroidi" -ajastimen viiveen mukaan.
     * 
-    * @param e 
+    * @param e Ajastin
     */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -46,7 +47,7 @@ public class Avaruustaistelu implements ActionListener {
     }
     
     /**
-    * Metodi, joka pyörittää Avaruuspuolustus peliä päivittämällä sitä ja piirtoalustaa.
+    * Metodi, joka pyörittää Avaruuspuolustus peliä päivittämällä sitä ja piirtoalustaa 60 FPS:n nopeudella.
     */
     public void pelinLoop() {
         long viimeLoopinAika = System.nanoTime();
@@ -165,7 +166,7 @@ public class Avaruustaistelu implements ActionListener {
     */
     public void vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa() {
         if (this.luoUusiMeteoroidi.getDelay() > 1000) {
-            this.luoUusiMeteoroidi.setDelay(this.luoUusiMeteoroidi.getDelay() - 20);
+            this.luoUusiMeteoroidi.setDelay(this.luoUusiMeteoroidi.getDelay() - 50);
         }
     }
         
