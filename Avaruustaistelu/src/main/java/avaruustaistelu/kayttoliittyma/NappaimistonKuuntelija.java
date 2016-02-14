@@ -36,7 +36,7 @@ public class NappaimistonKuuntelija implements KeyListener {
     }
 
     /**
-    * Asettaa pelaajan LiikuOikealle booleanin falseksi silloin, kun nostetaan
+    * Asettaa pelaajan avaruusaluksen LiikuOikealle booleanin falseksi silloin, kun nostetaan
     * sormi näppäimeltä "D", ja LiikuVasemmalle booleanin falseksi silloin, kun
     * nostetaan sormi näppäimeltä "A".
     * 

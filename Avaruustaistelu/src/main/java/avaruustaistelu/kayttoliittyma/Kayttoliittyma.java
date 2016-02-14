@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 /**
- * Luokka, jossa luodaan käyttöliittymä.
+ * Luokka, jossa luodaan pelin käyttöliittymä.
  * 
  * @author Jyri
  */
@@ -23,7 +23,7 @@ public class Kayttoliittyma implements Runnable {
     
     @Override
     public void run() {
-        this.pelinKehykset = new JFrame("Avaruuspuolustus");
+        this.pelinKehykset = new JFrame("Avaruustaistelu");
         this.pelinKehykset.setPreferredSize(new Dimension(650, 900));
 
         this.pelinKehykset.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -36,8 +36,8 @@ public class Kayttoliittyma implements Runnable {
     }
     
     /**
-    * Luo piirtoalustan Avaruuspuolustus pelille ja lisää näppäimistönkuuntelijan
-    * Avaruuspuolustus pelin tuntemalle pelaajalle.
+    * Luo piirtoalustan Avaruustaistelu pelille ja lisää näppäimistönkuuntelijan
+    * Avaruustaistelu pelin tuntemalle pelaajalle.
     * 
     * @param container Container
     */

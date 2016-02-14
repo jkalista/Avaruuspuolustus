@@ -145,4 +145,30 @@ public class AvaruusalusTest {
         this.avaruusalus.lisaaPiste();
         assertEquals(1, this.avaruusalus.getPisteet());
     }
+    
+    @Test
+    public void menetaElamapisteMetodiVahentaaAvaruusalukseltaYhdenElamapisteen() {
+        this.avaruusalus.menetaElamapiste();
+        assertEquals(4, this.avaruusalus.getElamapisteet());
+    }
+    
+    @Test
+    public void lisaaElamapisteLisaaYhdenElamapisteenPelaajalleJosElamapisteetOvatAlleViisi() {
+        this.avaruusalus.setElamapisteet(4);
+        this.avaruusalus.lisaaElamapiste();
+        assertEquals(5, this.avaruusalus.getElamapisteet());
+        this.avaruusalus.lisaaElamapiste();
+        assertEquals(5, this.avaruusalus.getElamapisteet());
+    }
+    
+    @Test
+    public void setElamapisteAsettaaElamapisteetOikein() {
+        this.avaruusalus.setElamapisteet(3);
+        assertEquals(3, this.avaruusalus.getElamapisteet());
+    }
+    
+    @Test
+    public void getElamapistePalauttaaElamapisteetOikein() {
+        assertEquals(5, this.avaruusalus.getElamapisteet());
+    }
 }

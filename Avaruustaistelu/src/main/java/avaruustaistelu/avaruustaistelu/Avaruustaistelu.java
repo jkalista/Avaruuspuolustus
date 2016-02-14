@@ -26,7 +26,7 @@ public class Avaruustaistelu implements ActionListener {
     private final CopyOnWriteArrayList<Meteoroidi> meteoroidit;
     private final CopyOnWriteArrayList<Elamapaketti> elamapaketit;
     Timer luoUusiMeteoroidi = new Timer(5000, this);
-    Timer luoUusiElamapaketti = new Timer(5000, this);
+    Timer luoUusiElamapaketti = new Timer(8000, this);
     private boolean peliKaynnissa;
     Random meteoroidinPaikanArpoja = new Random();
     Random elamapaketinPaikanArpoja = new Random();
@@ -41,7 +41,8 @@ public class Avaruustaistelu implements ActionListener {
     }
 
     /**
-    * Luo peliin uuden meteoroidin "luoUusiMeteoroidi" -ajastimen viiveen mukaan.
+    * Luo peliin uuden meteoroidin "luoUusiMeteoroidi" -ajastimen viiveen mukaan ja uuden elämäpaketin
+    * "luoUusiElamapaketti" -ajastimen viiveen mukaan.
     * 
     * @param e Ajastin
     */
@@ -51,7 +52,7 @@ public class Avaruustaistelu implements ActionListener {
             this.meteoroidit.add(new Meteoroidi(25 + this.meteoroidinPaikanArpoja.nextInt(117) * 5, 0));
         }
         if(e.getSource() == this.luoUusiElamapaketti) {
-            this.elamapaketit.add(new Elamapaketti(200, 0));
+            this.elamapaketit.add(new Elamapaketti(this.elamapaketinPaikanArpoja.nextInt(126) * 5, 0));
         }
     }
     
@@ -66,7 +67,7 @@ public class Avaruustaistelu implements ActionListener {
         while (this.peliKaynnissa == true) {
 
             long aikaTallaHetkella = System.nanoTime();
-            long updateLength = aikaTallaHetkella - viimeLoopinAika;
+            //long updateLength = aikaTallaHetkella - viimeLoopinAika;
             viimeLoopinAika = aikaTallaHetkella;
 
             paivitaPelia();
