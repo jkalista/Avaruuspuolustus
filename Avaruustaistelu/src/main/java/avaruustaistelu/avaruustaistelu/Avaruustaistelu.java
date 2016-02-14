@@ -2,6 +2,7 @@ package avaruustaistelu.avaruustaistelu;
 
 import avaruustaistelu.kayttoliittyma.Piirtoalusta;
 import avaruustaistelu.objektit.Avaruusalus;
+import avaruustaistelu.objektit.Elamapaketti;
 import avaruustaistelu.objektit.Meteoroidi;
 import avaruustaistelu.objektit.Ohjus;
 import java.awt.event.ActionEvent;
@@ -23,14 +24,19 @@ public class Avaruustaistelu implements ActionListener {
     private Piirtoalusta piirtoalusta;
     private final Avaruusalus avaruusalus;
     private final CopyOnWriteArrayList<Meteoroidi> meteoroidit;
+    private final CopyOnWriteArrayList<Elamapaketti> elamapaketit;
     Timer luoUusiMeteoroidi = new Timer(5000, this);
+    Timer luoUusiElamapaketti = new Timer(5000, this);
     private boolean peliKaynnissa;
     Random meteoroidinPaikanArpoja = new Random();
+    Random elamapaketinPaikanArpoja = new Random();
     
     public Avaruustaistelu() {
         this.avaruusalus = new Avaruusalus(325, 770);
         this.meteoroidit = new CopyOnWriteArrayList<>();
+        this.elamapaketit = new CopyOnWriteArrayList<>();
         this.luoUusiMeteoroidi.start();
+        this.luoUusiElamapaketti.start();
         this.peliKaynnissa = true;
     }
 
@@ -43,6 +49,9 @@ public class Avaruustaistelu implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.luoUusiMeteoroidi) {
             this.meteoroidit.add(new Meteoroidi(25 + this.meteoroidinPaikanArpoja.nextInt(117) * 5, 0));
+        }
+        if(e.getSource() == this.luoUusiElamapaketti) {
+            this.elamapaketit.add(new Elamapaketti(200, 0));
         }
     }
     
@@ -85,11 +94,14 @@ public class Avaruustaistelu implements ActionListener {
         
         liikutaOhjuksia();
         liikutaMeteoroideja();
+        liikutaElamapaketteja();
         tarkastaMeteoroidienOsuminenPelaajaan();
         tarkastaOhjustenOsuminenMeteoroideihin();
+        tarkastaElamapakettienOsuminenPelaajaan();
         poistaTuhoutuneetMeteoroidit();
         poistaAlueeltaPoistuneetOhjukset();
-        poistaAlueeltaPoistuneetMeteoroidit();
+        poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
+        tarkastaAvaruusaluksenElamapisteidenMeneminenNollaan();
     }
     
     /**
@@ -110,6 +122,25 @@ public class Avaruustaistelu implements ActionListener {
         }
     }
     
+    public void liikutaElamapaketteja() {
+        for (Elamapaketti elamapaketti : this.elamapaketit) {
+            elamapaketti.liiku();
+        }
+    }
+    
+    public void tarkastaElamapakettienOsuminenPelaajaan() {
+        ArrayList<Elamapaketti> pelaajaanOsuneetElamapaketit = new ArrayList<>();
+        
+        for (Elamapaketti elamapaketti : this.elamapaketit) {
+            if (elamapaketti.getObjektinSijainninAlue().intersects(this.avaruusalus.getObjektinSijainninAlue())) {
+                this.avaruusalus.lisaaElamapiste();
+                pelaajaanOsuneetElamapaketit.add(elamapaketti);
+            }
+        }
+        
+        this.elamapaketit.removeAll(pelaajaanOsuneetElamapaketit);
+    }
+    
     /**
     * Tarkastaa meteoroidien osumisen pelaajan avaruusalukseen. Jos meteoroidi osuu pelaajan avaruusalukseen
     * niin peliKäynnissä boolean muuttuu falseksi.
@@ -119,6 +150,12 @@ public class Avaruustaistelu implements ActionListener {
             if (meteoroidi.getObjektinSijainninAlue().intersects(this.avaruusalus.getObjektinSijainninAlue())) {
                 this.peliKaynnissa = false;
             }
+        }
+    }
+    
+    public void tarkastaAvaruusaluksenElamapisteidenMeneminenNollaan() {
+        if (this.avaruusalus.getElamapisteet() == 0) {
+            this.peliKaynnissa = false;
         }
     }
     
@@ -184,13 +221,15 @@ public class Avaruustaistelu implements ActionListener {
     }
     
     /**
-    * Poistaa meteoroidit, jotka eivät ole enää pelialueella.
+    * Poistaa meteoroidit, jotka eivät ole enää pelialueella. Vähentää yhden elämäpisteen avaruusalukselta
+    * jokaista poistunutta meteoroidia kohden.
     */
-    public void poistaAlueeltaPoistuneetMeteoroidit() {
+    public void poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta() {
         ArrayList<Meteoroidi> poistettavat = new ArrayList<>();
         for (Meteoroidi meteoroidi : this.meteoroidit) {
             if (meteoroidi.getY() >= 900) {
                 poistettavat.add(meteoroidi);
+                this.avaruusalus.menetaElamapiste();
             }
         }
         this.meteoroidit.removeAll(poistettavat);
@@ -206,6 +245,10 @@ public class Avaruustaistelu implements ActionListener {
     
     public CopyOnWriteArrayList<Meteoroidi> getMeteoroidit() {
         return this.meteoroidit;
+    }
+    
+    public CopyOnWriteArrayList<Elamapaketti> getElamapaketit() {
+        return this.elamapaketit;
     }
     
     public boolean getPeliKaynnissa() {

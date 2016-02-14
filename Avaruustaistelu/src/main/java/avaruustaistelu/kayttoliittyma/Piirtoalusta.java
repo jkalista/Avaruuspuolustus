@@ -1,6 +1,7 @@
 package avaruustaistelu.kayttoliittyma;
 
 import avaruustaistelu.avaruustaistelu.Avaruustaistelu;
+import avaruustaistelu.objektit.Elamapaketti;
 import avaruustaistelu.objektit.Meteoroidi;
 import avaruustaistelu.objektit.Ohjus;
 import java.awt.Color;
@@ -40,7 +41,9 @@ public class Piirtoalusta extends JPanel {
         piirraAvaruusalus(g);
         piirraOhjukset(g);
         piirraMeteoroidit(g);
+        piirraElamapaketit(g);
         piirraPelaajanPisteet(g);
+        piirraPelaajanElamapisteet(g);
         piirraPelinPaatosIkkuna(g);
     }
     
@@ -54,7 +57,7 @@ public class Piirtoalusta extends JPanel {
     }
     
     /**
-    * Piirtää pelaajan pisteet oikeaan yläkulmaan.
+    * Piirtää pelaajan avaruusaluksen pisteet oikeaan yläkulmaan.
     * 
     * @param g Pelaajan pisteiden grafiikka
     */
@@ -62,6 +65,17 @@ public class Piirtoalusta extends JPanel {
         g.setFont(new Font("BAZOOKA", Font.BOLD, 24));
         g.setColor(Color.WHITE);
         g.drawString("Pisteet: " + Integer.toString(this.avaruustaistelu.getAvaruusalus().getPisteet()), 510, 30);
+    }
+    
+    /**
+     * Piirtää pelaajan avaruusaluksen elämäpisteet vasempaan yläkulmaan.
+     * 
+     * @param g Pelaajan elämäpisteiden grafiikka
+     */
+    public void piirraPelaajanElamapisteet(Graphics g) {
+        g.setFont(new Font("BAZOOKA", Font.BOLD, 24));
+        g.setColor(Color.WHITE);
+        g.drawString("Elämät: " + Integer.toString(this.avaruustaistelu.getAvaruusalus().getElamapisteet()) + "/5", 10, 30);
     }
     
     /**
@@ -83,6 +97,17 @@ public class Piirtoalusta extends JPanel {
     public void piirraMeteoroidit(Graphics g) {
         for (Meteoroidi meteoroidi : this.avaruustaistelu.getMeteoroidit()) {
             meteoroidi.piirra(g);
+        }
+    }
+    
+    /**
+     * Piirtää kaikki Avaruuspuolustus pelissä olevat elämäpaketit.
+     * 
+     * @param g Elamapakettien grafiikka
+     */
+    public void piirraElamapaketit(Graphics g) {
+        for (Elamapaketti elamapaketti : this.avaruustaistelu.getElamapaketit()) {
+            elamapaketti.piirra(g);
         }
     }
     

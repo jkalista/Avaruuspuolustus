@@ -35,17 +35,17 @@ public abstract class Objekti {
     }
     
     /**
-    * Metodi, joka piirtää objektin.
-    * 
-    * @param g Grafiikka
-    */
+     * Metodi, joka piirtää objektin.
+     * 
+     * @param g Objektin grafiikka
+     */
     public abstract void piirra(Graphics g);
     
     /**
-    * Metodi, joka palauttaa alueen, jolla objekti sijaitsee.
-    * 
-    * @return Rectangle Objektin sijainnin alue
-    */
+     * Metodi, joka palauttaa alueen, jolla objekti sijaitsee.
+     * 
+     * @return Rectangle Objektin sijainnin alue
+     */
     public abstract Rectangle getObjektinSijainninAlue();
     
 }

@@ -75,12 +75,12 @@ public class AvaruustaisteluTest {
     @Test
     public void kunMeteoroidiLiikkuuPoisPelialueeltaNiinSePoistuu() {
         this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100,0));
-        this.avaruustaistelu.poistaAlueeltaPoistuneetMeteoroidit();
+        this.avaruustaistelu.poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
         assertEquals(1, this.avaruustaistelu.getMeteoroidit().size());
         for(int i = 0; i < 900; i++) {
             this.avaruustaistelu.liikutaMeteoroideja();
         }
-        this.avaruustaistelu.poistaAlueeltaPoistuneetMeteoroidit();
+        this.avaruustaistelu.poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
         assertEquals(0, this.avaruustaistelu.getMeteoroidit().size());
     }
     

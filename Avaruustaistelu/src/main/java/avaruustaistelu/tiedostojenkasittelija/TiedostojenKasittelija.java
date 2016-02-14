@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package avaruustaistelu.tiedostojenkasittelija;
 
 import java.awt.image.BufferedImage;
@@ -18,15 +13,24 @@ import javax.imageio.ImageIO;
 public class TiedostojenKasittelija {
     
     private final BufferedImage avaruusaluksenKuva;
+    private final BufferedImage elamapaketinKuva;
     
     public TiedostojenKasittelija() {
-        BufferedImage avaruusAlusKuva = null;
+        BufferedImage avaruusalusKuva = null;
         try {
-            avaruusAlusKuva = ImageIO.read(this.getClass().getResource("/tiedostot/Alus.png"));
+            avaruusalusKuva = ImageIO.read(this.getClass().getResource("/tiedostot/Alus.png"));
         } catch (IOException e) {
             System.out.print(e);
         }
-        this.avaruusaluksenKuva = avaruusAlusKuva;
+        this.avaruusaluksenKuva = avaruusalusKuva;
+        
+        BufferedImage elamapakettiKuva = null;
+        try {
+            elamapakettiKuva = ImageIO.read(this.getClass().getResource("/tiedostot/Elamapaketti.png"));
+        } catch (IOException e) {
+            System.out.print(e);
+        }
+        this.elamapaketinKuva = elamapakettiKuva;
     }
     
     /**
@@ -36,5 +40,14 @@ public class TiedostojenKasittelija {
      */
     public BufferedImage getAvaruusaluksenKuva() {
         return this.avaruusaluksenKuva;
+    }
+    
+    /**
+     * Palauttaa elämäpaketin kuvan.
+     * 
+     * @return BufferedImage Elamapaketin kuva
+     */
+    public BufferedImage getElamapaketinKuva() {
+        return this.elamapaketinKuva;
     }
 }

@@ -18,6 +18,7 @@ public class Avaruusalus extends Objekti {
     private final CopyOnWriteArrayList<Ohjus> ohjukset;
     private boolean liikuOikealle;
     private boolean liikuVasemmalle;
+    private int elamapisteet;
     private int pisteet;
     
     public Avaruusalus(int x, int y) {
@@ -25,6 +26,7 @@ public class Avaruusalus extends Objekti {
         this.ohjukset = new CopyOnWriteArrayList<>();
         this.liikuOikealle = false;
         this.liikuVasemmalle = false;
+        this.elamapisteet = 5;
         this.pisteet = 0;        
     }
     
@@ -72,7 +74,7 @@ public class Avaruusalus extends Objekti {
     }
     
     /**
-    * Lisää ohjuksen pelaajan ohjuksia sisältävään CopyOnWriteArrayListiin.
+    * Lisää ohjuksen pelaajan avaruusaluksen ohjuksia sisältävään CopyOnWriteArrayListiin.
     */
     public void ammuOhjus() {
         this.ohjukset.add(new Ohjus(this.x + 25, this.y - 15));
@@ -83,7 +85,7 @@ public class Avaruusalus extends Objekti {
     }
     
     /**
-    * Lisää pelaajalle yhden pisteen.
+    * Lisää pelaajan avaruusalukselle yhden pisteen.
     */
     public void lisaaPiste() {
         this.pisteet = this.pisteet + 1;
@@ -109,4 +111,28 @@ public class Avaruusalus extends Objekti {
         this.liikuVasemmalle = liikuVasemmalle;
     }
     
+    /**
+     * Vähentää pelaajan avaruusalukselta yhden elämäpisteen.
+     */
+    public void menetaElamapiste() {
+        this.elamapisteet = this.elamapisteet - 1;
+    }
+    
+    /**
+     * Lisää pelaajan avaruusalukselle yhden elämäpisteen, jos elämäpisteet
+     * eivät ole täynnä (maksimi elämäpisteet ovat 5).
+     */
+    public void lisaaElamapiste() {
+        if(this.elamapisteet < 5) {
+            this.elamapisteet = this.elamapisteet + 1;
+        }
+    }
+    
+    public int getElamapisteet() {
+        return this.elamapisteet;
+    }
+    
+    public void setElamapisteet(int elamapisteet) {
+        this.elamapisteet = elamapisteet;
+    }
 }

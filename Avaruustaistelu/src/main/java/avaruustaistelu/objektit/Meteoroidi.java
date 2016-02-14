@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- * Luokka sisältää meteoroidiin liittyvät tiedot ja metodit.
+ * Luokka, joka sisältää meteoroidiin liittyvät tiedot ja metodit.
  * 
  * @author Jyri
  */
@@ -19,8 +19,8 @@ public class Meteoroidi extends Objekti {
     }
     
     /**
-    * Liikuttaa meteoroidia.
-    */
+     * Liikuttaa meteoroidia.
+     */
     public void liiku() {
         this.y = this.y + 1;
     }
@@ -38,21 +38,21 @@ public class Meteoroidi extends Objekti {
     }
 
     /**
-    * Palauttaa sen alueen, missä meteoroidi sillä hetkellä sijaitsee. Palautetun alueen
-    * kokoon vaikuttaa luonnollisesti elämäpisteiden määrä, sillä meteoroidi on sitä
-    * pienempi, mitä vähemmän sillä on elämäpisteitä. Tätä tietoa käytetään,
-    * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
-    * 
-    * @return Rectangle Meteoroidin sijainnin alue
-    */
+     * Palauttaa sen alueen, missä meteoroidi sillä hetkellä sijaitsee. Palautetun alueen
+     * kokoon vaikuttaa luonnollisesti elämäpisteiden määrä, sillä meteoroidi on sitä
+     * pienempi, mitä vähemmän sillä on elämäpisteitä. Tätä tietoa käytetään,
+     * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
+     * 
+     * @return Rectangle Meteoroidin sijainnin alue
+     */
     @Override
     public Rectangle getObjektinSijainninAlue() {
         return new Rectangle(this.x, this.y, 15 + this.elamapisteet * 5, 15 + this.elamapisteet * 5);
     }
     
     /**
-    * Vähentää meteoroidilta yhden elämäpisteen.
-    */
+     * Vähentää meteoroidilta yhden elämäpisteen.
+     */
     public void menetaElamapiste() {
         this.elamapisteet = this.elamapisteet - 1;
     }
