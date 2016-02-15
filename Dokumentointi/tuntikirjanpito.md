@@ -29,3 +29,7 @@
 **10.2.2016** 5 tuntia, Pieniä muutoksia peliin ja muutama testi. Lisäksi paljon JavaDocia. Kokeilin myös CheckStyleä ja korjasin pahimmat virheet.
 
 **11.2.2016** 1 tunti, Tein viikon 4 palautusta varten muokkausta luokkakaavioon ja tarvittavia muutoksia dokumentointiin.
+
+**13.2.2016** 3 tuntia, Pieniä ongelmia ilmaantui Netbeansissa, kun koitin refaktoroida isoilla kirjaimella aloitettuja pakettien nimiä. Sain kaiken korjattua muuttamalla pelin nimen "Avaruustaistelu":ksi ja pakettien nimiä. Nimesin myös aiemmin käyttämäni "Pelaaja" luokan vähän paremmin kuvaavaksi "Avaruusalus" luokaksi.
+
+**14.2.2016** 3 tuntia, Tein uuden luokan "Elamapaketti", joka palauttaa pelaajan avaruusalukselle elämäpisteen, jos avaruusaluksen elämäpisteet eivät ole täynnä. Lisäsin elämäpaketit peliin ja tein uusia testejä.
