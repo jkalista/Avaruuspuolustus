@@ -21,6 +21,13 @@ public class Avaruusalus extends Objekti {
     private int elamapisteet;
     private int pisteet;
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen avaruusaluksen x- ja y-koordinaatit. Lisäksi konstruktori asettaa
+     * liikuOikealle ja liikuVasemmalle booleanit falseksi, elämäpisteet viitoseksi (5) ja pisteet nollaksi (0).
+     * 
+     * @param x x-koordinaatti
+     * @param y y-koordinaatti
+     */
     public Avaruusalus(int x, int y) {
         super(x, y);
         this.ohjukset = new CopyOnWriteArrayList<>();
@@ -31,8 +38,8 @@ public class Avaruusalus extends Objekti {
     }
     
     /**
-    * Liikuttaa pelaajan avaruusalusta oikealle silloin, kun ei olla ylitetty oikeaa rajaa.
-    */
+     * Liikuttaa pelaajan avaruusalusta oikealle silloin, kun ei olla ylitetty oikeaa rajaa.
+     */
     public void liikuOikealle() {
         this.x = this.x + 5;
         
@@ -42,8 +49,8 @@ public class Avaruusalus extends Objekti {
     }
     
     /**
-    * Liikuttaa pelaajan avaruusalusta vasemmalle silloin, kun ei olla ylitetty vasenta rajaa.
-    */
+     * Liikuttaa pelaajan avaruusalusta vasemmalle silloin, kun ei olla ylitetty vasenta rajaa.
+     */
     public void liikuVasemmalle() {
         this.x = this.x - 5;
         
@@ -63,19 +70,19 @@ public class Avaruusalus extends Objekti {
     }
 
     /**
-    * Palauttaa sen alueen, missä pelaajan avaruusalus sillä hetkellä sijaitsee. Tätä tietoa käytetään,
-    * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
-    * 
-    * @return Rectangle Avaruusaluksen sijainnin alue
-    */
+     * Palauttaa sen alueen, missä pelaajan avaruusalus sillä hetkellä sijaitsee. Tätä tietoa käytetään,
+     * kun tutkitaan koskettavatko eri objektit toisiaan "intersects" -metodin avulla.
+     * 
+     * @return Rectangle Avaruusaluksen sijainnin alue
+     */
     @Override
     public Rectangle getObjektinSijainninAlue() {
         return new Rectangle(this.x, this.y, 50, 50);
     }
     
     /**
-    * Lisää ohjuksen pelaajan avaruusaluksen ohjuksia sisältävään CopyOnWriteArrayListiin.
-    */
+     * Lisää ohjuksen pelaajan avaruusaluksen ohjuksia sisältävään CopyOnWriteArrayListiin.
+     */
     public void ammuOhjus() {
         this.ohjukset.add(new Ohjus(this.x + 25, this.y - 15));
     }
@@ -85,8 +92,8 @@ public class Avaruusalus extends Objekti {
     }
     
     /**
-    * Lisää pelaajan avaruusalukselle yhden pisteen.
-    */
+     * Lisää pelaajan avaruusalukselle yhden pisteen.
+     */
     public void lisaaPiste() {
         this.pisteet = this.pisteet + 1;
     }
@@ -123,7 +130,7 @@ public class Avaruusalus extends Objekti {
      * eivät ole täynnä (maksimi elämäpisteet ovat 5).
      */
     public void lisaaElamapiste() {
-        if(this.elamapisteet < 5) {
+        if (this.elamapisteet < 5) {
             this.elamapisteet = this.elamapisteet + 1;
         }
     }

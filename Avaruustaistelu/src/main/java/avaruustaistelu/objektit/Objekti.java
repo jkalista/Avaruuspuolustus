@@ -13,6 +13,12 @@ public abstract class Objekti {
     protected int x;
     protected int y;
 
+    /**
+     * Abstraktin luokan konstuktori, joka saa parametrikseen objektin x- ja y-koordinaatit.
+     * 
+     * @param x x-koordinaatti
+     * @param y y-koordinaatti
+     */
     public Objekti(int x, int y) {
         this.x = x;
         this.y = y;

@@ -15,6 +15,9 @@ public class TiedostojenKasittelija {
     private final BufferedImage avaruusaluksenKuva;
     private final BufferedImage elamapaketinKuva;
     
+    /**
+     * Luokan konstruktori, jossa haetaan tiedostoista peliin liittyvät kuvat.
+     */
     public TiedostojenKasittelija() {
         BufferedImage avaruusalusKuva = null;
         try {

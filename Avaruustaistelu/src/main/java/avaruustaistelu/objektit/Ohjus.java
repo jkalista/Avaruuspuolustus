@@ -11,12 +11,18 @@ import java.awt.Rectangle;
  */
 public class Ohjus extends Objekti {
 
+    /**
+     * Luokan konstruktori, joka saa parametrikseen ohjuksen x- ja y-koordinaatit.
+     * 
+     * @param x x-koordinaatti
+     * @param y y-koordinaatti
+     */
     public Ohjus(int x, int y) {
         super(x, y);
     }
     
     /**
-     * Liikuttaa ohjusta
+     * Liikuttaa ohjusta.
      */
     public void liiku() {
         this.y = this.y - 5;

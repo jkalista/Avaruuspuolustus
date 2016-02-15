@@ -13,6 +13,12 @@ public class Elamapaketti extends Objekti {
 
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen elämäpaketin x- ja y-koordinaatit.
+     * 
+     * @param x x-koordinaatti
+     * @param y y-koordinaatti
+     */
     public Elamapaketti(int x, int y) {
         super(x, y);
     }

@@ -17,6 +17,11 @@ public class Kayttoliittyma implements Runnable {
     private final Avaruustaistelu avaruustaistelu;
     private Piirtoalusta piirtoalusta;
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen Avaruustaistelu luokan ilmentymän.
+     * 
+     * @param avaruustaistelu Avaruustaistelu peli
+     */
     public Kayttoliittyma(Avaruustaistelu avaruustaistelu) {
         this.avaruustaistelu = avaruustaistelu;
     }
@@ -36,11 +41,11 @@ public class Kayttoliittyma implements Runnable {
     }
     
     /**
-    * Luo piirtoalustan Avaruustaistelu pelille ja lisää näppäimistönkuuntelijan
-    * Avaruustaistelu pelin tuntemalle pelaajalle.
-    * 
-    * @param container Container
-    */
+     * Luo piirtoalustan Avaruustaistelu pelille ja lisää näppäimistönkuuntelijan
+     * Avaruustaistelu pelin tuntemalle pelaajalle.
+     * 
+     * @param container Container
+     */
     private void luoKomponentit(Container container) {
         this.piirtoalusta = new Piirtoalusta(this.avaruustaistelu);
         container.add(this.piirtoalusta);

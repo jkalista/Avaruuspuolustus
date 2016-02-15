@@ -18,23 +18,28 @@ public class Piirtoalusta extends JPanel {
     
     private final Avaruustaistelu avaruustaistelu;
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen Avaruustaistelu luokan ilmentymän.
+     * 
+     * @param avaruustaistelu Avaruustaistelu peli
+     */
     public Piirtoalusta(Avaruustaistelu avaruustaistelu) {
         super.setBackground(Color.BLACK);
         this.avaruustaistelu = avaruustaistelu;
     }
     
-    /*
-    * Metodi, joka päivittää piirtoalustan.
-    */
+    /**
+     * Metodi, joka päivittää piirtoalustan.
+     */
     public void paivita() {
         this.repaint();
     }
     
     /**
-    * Piirtää kaikki Avaruuspuolustus peliin liittyvät asiat.
-    * 
-    * @param g Grafiikka
-    */
+     * Piirtää kaikki Avaruuspuolustus peliin liittyvät asiat.
+     * 
+     * @param g Grafiikka
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -48,19 +53,19 @@ public class Piirtoalusta extends JPanel {
     }
     
     /**
-    * Piirtää pelaajan avaruusaluksen.
-    * 
-    * @param g Avaruusaluksen grafiikka
-    */
+     * Piirtää pelaajan avaruusaluksen.
+     * 
+     * @param g Avaruusaluksen grafiikka
+     */
     public void piirraAvaruusalus(Graphics g) {
         this.avaruustaistelu.getAvaruusalus().piirra(g);
     }
     
     /**
-    * Piirtää pelaajan avaruusaluksen pisteet oikeaan yläkulmaan.
-    * 
-    * @param g Pelaajan pisteiden grafiikka
-    */
+     * Piirtää pelaajan avaruusaluksen pisteet oikeaan yläkulmaan.
+     * 
+     * @param g Pelaajan pisteiden grafiikka
+     */
     public void piirraPelaajanPisteet(Graphics g) {
         g.setFont(new Font("BAZOOKA", Font.BOLD, 24));
         g.setColor(Color.WHITE);
@@ -79,10 +84,10 @@ public class Piirtoalusta extends JPanel {
     }
     
     /**
-    * Piirtää kaikki Avaruuspuolustus pelissä olevat ohjukset.
-    * 
-    * @param g Ohjusten grafiikka
-    */
+     * Piirtää kaikki Avaruuspuolustus pelissä olevat ohjukset.
+     * 
+     * @param g Ohjusten grafiikka
+     */
     public void piirraOhjukset(Graphics g) {
         for (Ohjus ohjus : this.avaruustaistelu.getAvaruusalus().getOhjukset()) {
             ohjus.piirra(g);
@@ -90,10 +95,10 @@ public class Piirtoalusta extends JPanel {
     }
     
     /**
-    * Piirtää kaikki Avaruuspuolustus pelissä olevat meteoroidit.
-    * 
-    * @param g Meteoroidien grafiikka
-    */
+     * Piirtää kaikki Avaruuspuolustus pelissä olevat meteoroidit.
+     * 
+     * @param g Meteoroidien grafiikka
+     */
     public void piirraMeteoroidit(Graphics g) {
         for (Meteoroidi meteoroidi : this.avaruustaistelu.getMeteoroidit()) {
             meteoroidi.piirra(g);
@@ -112,10 +117,10 @@ public class Piirtoalusta extends JPanel {
     }
     
     /**
-    * Piirtää ikkunan, joka ilmestyy silloin, kun pelaaja häviää pelin.
-    * 
-    * @param g Päätösikkunan grafiikka
-    */
+     * Piirtää ikkunan, joka ilmestyy silloin, kun pelaaja häviää pelin.
+     * 
+     * @param g Päätösikkunan grafiikka
+     */
     public void piirraPelinPaatosIkkuna(Graphics g) {
         if (this.avaruustaistelu.getPeliKaynnissa() == false) {
             g.setColor(Color.RED);

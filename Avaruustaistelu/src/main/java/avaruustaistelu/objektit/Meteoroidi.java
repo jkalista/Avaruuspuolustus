@@ -13,6 +13,12 @@ public class Meteoroidi extends Objekti {
 
     private int elamapisteet;
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen meteoroidin x- ja y-koordinaatit.
+     * 
+     * @param x x-koordinaatti
+     * @param y y-koordinaatti
+     */
     public Meteoroidi(int x, int y) {
         super(x, y);
         this.elamapisteet = 5;

@@ -14,17 +14,22 @@ public class NappaimistonKuuntelija implements KeyListener {
     
     Avaruusalus avaruusalus;
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen pelaajan ohjaaman avaruusaluksen.
+     * 
+     * @param avaruusalus Pelaajan avaruusalus
+     */
     public NappaimistonKuuntelija(Avaruusalus avaruusalus) {
         this.avaruusalus = avaruusalus;
     }
 
     /**
-    * Asettaa pelaajan avaruusaluksen LiikuOikealle booleanin trueksi silloin, kun painetaan
-    * näppäintä "D", ja LiikuVasemmalle booleanin trueksi silloin, kun painetaan
-    * näppäintä "A".
-    *
-    * @param e Alas painettu näppäin
-    */
+     * Asettaa pelaajan avaruusaluksen LiikuOikealle booleanin trueksi silloin, kun painetaan
+     * näppäintä "D", ja LiikuVasemmalle booleanin trueksi silloin, kun painetaan
+     * näppäintä "A".
+     *
+     * @param e Alas painettu näppäin
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_D) {
@@ -36,15 +41,15 @@ public class NappaimistonKuuntelija implements KeyListener {
     }
 
     /**
-    * Asettaa pelaajan avaruusaluksen LiikuOikealle booleanin falseksi silloin, kun nostetaan
-    * sormi näppäimeltä "D", ja LiikuVasemmalle booleanin falseksi silloin, kun
-    * nostetaan sormi näppäimeltä "A".
-    * 
-    * Pelaajan avaruusalus ampuu ohjuksen silloin, kun nostetaan sormi näppäimeltä
-    * "H".
-    * 
-    * @param e Ylös nostettu näppäin
-    */
+     * Asettaa pelaajan avaruusaluksen LiikuOikealle booleanin falseksi silloin, kun nostetaan
+     * sormi näppäimeltä "D", ja LiikuVasemmalle booleanin falseksi silloin, kun
+     * nostetaan sormi näppäimeltä "A".
+     * 
+     * Pelaajan avaruusalus ampuu ohjuksen silloin, kun nostetaan sormi näppäimeltä
+     * "H".
+     * 
+     * @param e Ylös nostettu näppäin
+     */
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_D) {
