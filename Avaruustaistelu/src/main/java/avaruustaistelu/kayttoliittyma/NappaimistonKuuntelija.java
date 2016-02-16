@@ -1,8 +1,10 @@
 package avaruustaistelu.kayttoliittyma;
 
+import avaruustaistelu.avaruustaistelu.Avaruustaistelu;
 import avaruustaistelu.objektit.Avaruusalus;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JFrame;
 
 /**
  * Luokka, jossa määritellään miten eri näppäimistön näppäimet käyttäytyvät
@@ -12,15 +14,19 @@ import java.awt.event.KeyListener;
  */
 public class NappaimistonKuuntelija implements KeyListener {
     
-    Avaruusalus avaruusalus;
+    Avaruustaistelu avaruustaistelu;
+    JFrame pelinKehykset;
     
     /**
-     * Luokan konstruktori, joka saa parametrikseen pelaajan ohjaaman avaruusaluksen.
+     * Luokan konstruktori, joka saa parametrikseen Avaruustaistelu pelin, jonka kautta voidaan hakea
+     * muun muassa pelaajan ohjaama avaruusalus "getAvaruusalus" -metodin avulla.
      * 
-     * @param avaruusalus Pelaajan avaruusalus
+     * @param avaruustaistelu Avaruustaistelu peli
+     * @param pelinKehykset JFrame kehykset
      */
-    public NappaimistonKuuntelija(Avaruusalus avaruusalus) {
-        this.avaruusalus = avaruusalus;
+    public NappaimistonKuuntelija(Avaruustaistelu avaruustaistelu, JFrame pelinKehykset) {
+        this.avaruustaistelu = avaruustaistelu;
+        this.pelinKehykset = pelinKehykset;
     }
 
     /**
@@ -33,9 +39,9 @@ public class NappaimistonKuuntelija implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_D) {
-            this.avaruusalus.setLiikuOikealle(true);
+            this.avaruustaistelu.getAvaruusalus().setLiikuOikealle(true);
         } else if (e.getKeyCode() == KeyEvent.VK_A) {
-            this.avaruusalus.setLiikuVasemmalle(true);
+            this.avaruustaistelu.getAvaruusalus().setLiikuVasemmalle(true);
         }
         
     }
@@ -53,14 +59,13 @@ public class NappaimistonKuuntelija implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_D) {
-            this.avaruusalus.setLiikuOikealle(false);
+            this.avaruustaistelu.getAvaruusalus().setLiikuOikealle(false);
         } else if (e.getKeyCode() == KeyEvent.VK_A) {
-            this.avaruusalus.setLiikuVasemmalle(false);
+            this.avaruustaistelu.getAvaruusalus().setLiikuVasemmalle(false);
         }
         
-        
         if (e.getKeyCode() == KeyEvent.VK_H) {
-            this.avaruusalus.ammuOhjus();
+            this.avaruustaistelu.getAvaruusalus().ammuOhjus();
         }
     }
     

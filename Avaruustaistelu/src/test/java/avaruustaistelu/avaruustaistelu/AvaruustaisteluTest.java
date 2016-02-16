@@ -43,7 +43,7 @@ public class AvaruustaisteluTest {
         this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100,100));
         assertEquals(1, this.avaruustaistelu.getMeteoroidit().size());
         this.avaruustaistelu.getMeteoroidit().get(0).setElamapisteet(0);
-        this.avaruustaistelu.poistaTuhoutuneetMeteoroidit();
+        this.avaruustaistelu.getObjektienPoistaja().poistaTuhoutuneetMeteoroidit();
         assertEquals(0, this.avaruustaistelu.getMeteoroidit().size());
     }
     
@@ -51,7 +51,7 @@ public class AvaruustaisteluTest {
     public void kunMeteoroidiTuhoutuuNiinUudenMeteoroidinLuovanTimerinViiveVahentyy() {
         this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100, 100));
         this.avaruustaistelu.getMeteoroidit().get(0).setElamapisteet(0);
-        this.avaruustaistelu.poistaTuhoutuneetMeteoroidit();
+        this.avaruustaistelu.getObjektienPoistaja().poistaTuhoutuneetMeteoroidit();
         assertEquals(4950, this.avaruustaistelu.luoUusiMeteoroidi.getDelay());
     }
     
@@ -59,7 +59,7 @@ public class AvaruustaisteluTest {
     public void kunMeteoroidiTuhoutuuNiinPelaajaSaaPisteen() {
         this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100,100));
         this.avaruustaistelu.getMeteoroidit().get(0).setElamapisteet(0);
-        this.avaruustaistelu.poistaTuhoutuneetMeteoroidit();
+        this.avaruustaistelu.getObjektienPoistaja().poistaTuhoutuneetMeteoroidit();
         assertEquals(1, this.avaruustaistelu.getAvaruusalus().getPisteet());
     }
     
@@ -83,14 +83,14 @@ public class AvaruustaisteluTest {
     @Test
     public void kunMeteoroidiLiikkuuPoisPelialueeltaNiinSePoistuuJaAvaruusalusMenettaaYhdenElamapisteen() {
         this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100,0));
-        this.avaruustaistelu.poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
+        this.avaruustaistelu.getObjektienPoistaja().poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
         assertEquals(1, this.avaruustaistelu.getMeteoroidit().size());
         
         for(int i = 0; i < 900; i++) {
-            this.avaruustaistelu.liikutaMeteoroideja();
+            this.avaruustaistelu.getObjektienSiirtaja().liikutaMeteoroideja();
         }
         
-        this.avaruustaistelu.poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
+        this.avaruustaistelu.getObjektienPoistaja().poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
         assertEquals(0, this.avaruustaistelu.getMeteoroidit().size());
         assertEquals(4, this.avaruustaistelu.getAvaruusalus().getElamapisteet());
     }
@@ -98,13 +98,25 @@ public class AvaruustaisteluTest {
     @Test
     public void kunOhjusLiikkuuPoisPelialueeltaNiinSePoistuu() {
         this.avaruustaistelu.getAvaruusalus().getOhjukset().add(new Ohjus(100,755));
-        this.avaruustaistelu.poistaAlueeltaPoistuneetOhjukset();
+        this.avaruustaistelu.getObjektienPoistaja().poistaAlueeltaPoistuneetOhjukset();
         assertEquals(1, this.avaruustaistelu.getAvaruusalus().getOhjukset().size());
         for(int i = 0; i < 154; i++) {
-            this.avaruustaistelu.liikutaOhjuksia();
+            this.avaruustaistelu.getObjektienSiirtaja().liikutaOhjuksia();
         }
-        this.avaruustaistelu.poistaAlueeltaPoistuneetOhjukset();
+        this.avaruustaistelu.getObjektienPoistaja().poistaAlueeltaPoistuneetOhjukset();
         assertEquals(0, this.avaruustaistelu.getAvaruusalus().getOhjukset().size());
+    }
+    
+    @Test
+    public void kunElamapakettiLiikkuuPoisPelialueeltaNiinSePoistuu() {
+        this.avaruustaistelu.getElamapaketit().add(new Elamapaketti(100, 100));
+        this.avaruustaistelu.getObjektienPoistaja().poistaAlueeltaPoistuneetElamapaketit();
+        assertEquals(1, this.avaruustaistelu.getElamapaketit().size());
+        for(int i = 0; i < 500; i++) {
+            this.avaruustaistelu.getObjektienSiirtaja().liikutaElamapaketteja();
+        }
+        this.avaruustaistelu.getObjektienPoistaja().poistaAlueeltaPoistuneetElamapaketit();
+        assertEquals(0, this.avaruustaistelu.getElamapaketit().size());
     }
     
     @Test
@@ -112,7 +124,7 @@ public class AvaruustaisteluTest {
         for (int i = 0; i < 3; i++) {
             this.avaruustaistelu.getElamapaketit().add(new Elamapaketti(100 + i*20, 0 + i*10));
         }
-        this.avaruustaistelu.liikutaElamapaketteja();
+        this.avaruustaistelu.getObjektienSiirtaja().liikutaElamapaketteja();
         assertEquals(100, this.avaruustaistelu.getElamapaketit().get(0).getX());
         assertEquals(3, this.avaruustaistelu.getElamapaketit().get(0).getY());
         assertEquals(120, this.avaruustaistelu.getElamapaketit().get(1).getX());
@@ -126,7 +138,7 @@ public class AvaruustaisteluTest {
         for(int i = 0; i < 3; i++) {
             this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100 + i*20, 0 + i*10));
         }
-        this.avaruustaistelu.liikutaMeteoroideja();
+        this.avaruustaistelu.getObjektienSiirtaja().liikutaMeteoroideja();
         assertEquals(100, this.avaruustaistelu.getMeteoroidit().get(0).getX());
         assertEquals(1, this.avaruustaistelu.getMeteoroidit().get(0).getY());
         assertEquals(120, this.avaruustaistelu.getMeteoroidit().get(1).getX());
@@ -140,7 +152,7 @@ public class AvaruustaisteluTest {
         for(int i = 0; i < 3; i++) {
             this.avaruustaistelu.getAvaruusalus().getOhjukset().add(new Ohjus(100 + i*15, 755 + i*10));
         }
-        this.avaruustaistelu.liikutaOhjuksia();
+        this.avaruustaistelu.getObjektienSiirtaja().liikutaOhjuksia();
         assertEquals(100, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(0).getX());
         assertEquals(750, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(0).getY());
         assertEquals(115, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(1).getX());
