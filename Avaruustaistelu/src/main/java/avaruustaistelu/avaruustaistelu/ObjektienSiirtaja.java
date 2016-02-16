@@ -14,7 +14,8 @@ public class ObjektienSiirtaja {
     private final Avaruustaistelu avaruustaistelu;
     
     /**
-     * Luokan konstruktori, joka saa parametrikseen Avaruustaistelu pelin.
+     * Luokan konstruktori, joka saa parametrikseen "Avaruustaistelu" -luokan ilmentymän, josta voidaan hakea
+     * get-metodeilla kaikki tarpeellinen liikkumisoperaatioita varten.
      * 
      * @param avaruustaistelu Avaruustaistelu
      */

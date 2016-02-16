@@ -14,6 +14,12 @@ public class ObjektienPoistaja {
     
     private final Avaruustaistelu avaruustaistelu;
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen "Avaruustaistelu" -luokan ilmentymän, josta voidaan hakea
+     * get-metodeilla kaikki tarpeellinen poisto-operaatioita varten.
+     * 
+     * @param avaruustaistelu Avaruustaistelu
+     */
     public ObjektienPoistaja(Avaruustaistelu avaruustaistelu) {
         this.avaruustaistelu = avaruustaistelu;
     }

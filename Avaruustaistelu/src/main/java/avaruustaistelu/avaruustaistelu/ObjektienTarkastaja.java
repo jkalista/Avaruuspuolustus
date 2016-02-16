@@ -15,6 +15,12 @@ public class ObjektienTarkastaja {
     
     private final Avaruustaistelu avaruustaistelu;
     
+    /**
+     * Luokan konstruktori, joka saa parametrikseen "Avaruustaistelu" -luokan ilmentymän, josta voidaan hakea
+     * get-metodeilla kaikki tarpeellinen, kun tarkastellaan objektien yhteentörmäyksiä ja pelin jatkumista.
+     * 
+     * @param avaruustaistelu 
+     */
     public ObjektienTarkastaja(Avaruustaistelu avaruustaistelu) {
         this.avaruustaistelu = avaruustaistelu;
     }
