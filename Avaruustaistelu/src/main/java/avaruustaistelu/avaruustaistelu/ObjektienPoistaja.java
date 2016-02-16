@@ -1,11 +1,9 @@
 package avaruustaistelu.avaruustaistelu;
 
-import avaruustaistelu.objektit.Avaruusalus;
 import avaruustaistelu.objektit.Elamapaketti;
 import avaruustaistelu.objektit.Meteoroidi;
 import avaruustaistelu.objektit.Ohjus;
 import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Luokka, joka sisältää metodit kaikkien "Avaruustaistelu" -pelin pelialueella liikkuvien objektien poistamiseen.
@@ -67,7 +65,7 @@ public class ObjektienPoistaja {
     }
     
     /**
-     * Poistaa tuhoutuneet meteoroidit (Meteoroidi, jolla 0 elämäpistettä). Lisää yhden pisteen pelaajalle.
+     * Poistaa tuhoutuneet meteoroidit (Meteoroidi, jolla 0 elämäpistettä). Lisää yhden pisteen avaruusalukselle.
      * Vaikeuttaa peliä kutsumalla metodia, joka lyhentää uuden meteoroidin luovan ajastimen viivettä.
      */
     public void poistaTuhoutuneetMeteoroidit() {

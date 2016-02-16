@@ -1,10 +1,8 @@
 package avaruustaistelu.avaruustaistelu;
 
-import avaruustaistelu.objektit.Avaruusalus;
 import avaruustaistelu.objektit.Elamapaketti;
 import avaruustaistelu.objektit.Meteoroidi;
 import avaruustaistelu.objektit.Ohjus;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Luokka, joka sisältää metodit kaikkien "Avaruustaistelu" -pelin pelialueella liikkuvien objektien siirtämiseen.

@@ -4,10 +4,8 @@ import avaruustaistelu.kayttoliittyma.Piirtoalusta;
 import avaruustaistelu.objektit.Avaruusalus;
 import avaruustaistelu.objektit.Elamapaketti;
 import avaruustaistelu.objektit.Meteoroidi;
-import avaruustaistelu.objektit.Ohjus;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
@@ -31,9 +29,15 @@ public class Avaruustaistelu implements ActionListener {
     private final Random meteoroidinJaElamapaketinPaikanArpoja;
     private final ObjektienSiirtaja objektienSiirtaja;
     private final ObjektienPoistaja objektienPoistaja;
+    private final ObjektienTarkastaja objektienTarkastaja;
     
     /**
-     * Luokan konstruktori, jossa luodaan pelille avaruusalus, meteoroidi lista, elamapaketit lista, käynnistetään ajastimet ja asetetaan peliKaynnissa trueksi.
+     * Luokan konstruktori, jossa luodaan pelille avaruusalus, meteoroidi lista, elamapaketit lista, käynnistetään ajastimet ja
+     * asetetaan peliKaynnissa trueksi. Lisäksi luodaan meteoroidien ja elämäpakettien paikkojen arpoja.
+     * 
+     * Luodaan myös ObjektienSiirtäjä (sisältää kaikki objektien liikuttamiseen liittyvät metodit), ObjektienPoistaja (sisältää kaikki
+     * objektien poistamiseen liittyvät metodit) ja ObjektienTarkastaja (sisältää kaikki objektien keskenäiseen törmäämiseen ja käyttäytymiseen
+     * liittyvät metodit).
      */
     public Avaruustaistelu() {
         this.avaruusalus = new Avaruusalus(325, 770);
@@ -45,10 +49,12 @@ public class Avaruustaistelu implements ActionListener {
         this.meteoroidinJaElamapaketinPaikanArpoja = new Random();
         this.objektienSiirtaja = new ObjektienSiirtaja(this);
         this.objektienPoistaja = new ObjektienPoistaja(this);
+        this.objektienTarkastaja = new ObjektienTarkastaja(this);
     }
 
     /**
-     * Luo peliin uuden meteoroidin "luoUusiMeteoroidi" -ajastimen viiveen mukaan ja uuden elämäpaketin "luoUusiElamapaketti" -ajastimen viiveen mukaan.
+     * Luo peliin uuden meteoroidin "luoUusiMeteoroidi" -ajastimen viiveen mukaan ja uuden elämäpaketin "luoUusiElamapaketti"
+     * -ajastimen viiveen mukaan.
      * 
      * @param e Ajastin
      */
@@ -94,69 +100,16 @@ public class Avaruustaistelu implements ActionListener {
         this.objektienSiirtaja.liikutaOhjuksia();
         this.objektienSiirtaja.liikutaMeteoroideja();
         this.objektienSiirtaja.liikutaElamapaketteja();
-        tarkastaMeteoroidienOsuminenPelaajaan();
-        tarkastaOhjustenOsuminenMeteoroideihin();
-        tarkastaElamapakettienOsuminenPelaajaan();
+        this.objektienTarkastaja.tarkastaMeteoroidienOsuminenAvaruusalukseen();
+        this.objektienTarkastaja.tarkastaOhjustenOsuminenMeteoroideihin();
+        this.objektienTarkastaja.tarkastaElamapakettienOsuminenAvaruusalukseen();
         this.objektienPoistaja.poistaTuhoutuneetMeteoroidit();
         this.objektienPoistaja.poistaAlueeltaPoistuneetOhjukset();
         this.objektienPoistaja.poistaAlueeltaPoistuneetElamapaketit();
         this.objektienPoistaja.poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
-        tarkastaAvaruusaluksenElamapisteidenMeneminenNollaan();
+        this.objektienTarkastaja.tarkastaAvaruusaluksenElamapisteidenMeneminenNollaan();
     }
     
-    /**
-     * Tarkastaa elämäpakettien osumisen pelaajan avaruusalukseen. Jos elämäpaketti osuu avaruusalukseen, niin avaruusalus saa yhden elämäpisteen.
-     */
-    public void tarkastaElamapakettienOsuminenPelaajaan() {
-        ArrayList<Elamapaketti> pelaajaanOsuneetElamapaketit = new ArrayList<>();
-        
-        for (Elamapaketti elamapaketti : this.elamapaketit) {
-            if (elamapaketti.getObjektinSijainninAlue().intersects(this.avaruusalus.getObjektinSijainninAlue())) {
-                this.avaruusalus.lisaaElamapiste();
-                pelaajaanOsuneetElamapaketit.add(elamapaketti);
-            }
-        }
-        this.elamapaketit.removeAll(pelaajaanOsuneetElamapaketit);
-    }
-    
-    /**
-     * Tarkastaa meteoroidien osumisen pelaajan avaruusalukseen. Jos meteoroidi osuu avaruusalukseen, niin peliKäynnissä boolean muuttuu falseksi.
-     */
-    public void tarkastaMeteoroidienOsuminenPelaajaan() {
-        for (Meteoroidi meteoroidi : this.meteoroidit) {
-            if (meteoroidi.getObjektinSijainninAlue().intersects(this.avaruusalus.getObjektinSijainninAlue())) {
-                this.peliKaynnissa = false;
-            }
-        }
-    }
-    
-    /**
-     * Muuttaa peliKaynnissa booleanin falseksi, jos avaruusaluksen elämäpisteet ovat nolla.
-     */
-    public void tarkastaAvaruusaluksenElamapisteidenMeneminenNollaan() {
-        if (this.avaruusalus.getElamapisteet() == 0) {
-            this.peliKaynnissa = false;
-        }
-    }
-    
-    /**
-     * Tarkastaa pelaajan ampumien ohjusten osumisen meteoroideihin vertaamalla ohjusten ja meteoroidien sijaintia
-     * toisiinsa. Jos ohjus osuu meteoroidiin, niin ohjus tuhoutuu ja meteoroidi menettää yhden elämäpisteen.
-     */
-    public void tarkastaOhjustenOsuminenMeteoroideihin() {
-        ArrayList<Ohjus> meteoroidiinOsuneetOhjukset = new ArrayList<>();
-        
-        for (Meteoroidi meteoroidi : this.meteoroidit) {
-            for (Ohjus ohjus : this.avaruusalus.getOhjukset()) {
-                if (ohjus.getObjektinSijainninAlue().intersects(meteoroidi.getObjektinSijainninAlue())) {
-                    meteoroidi.menetaElamapiste();
-                    meteoroidiinOsuneetOhjukset.add(ohjus);
-                }
-            }
-        }
-        this.avaruusalus.getOhjukset().removeAll(meteoroidiinOsuneetOhjukset);
-    }
-        
     /**
      * Lyhentää uuden meteoroidin luovan ajastimen viiveaikaa vähentämällä kaksikymmentä millisekuntia.
      */
@@ -196,5 +149,13 @@ public class Avaruustaistelu implements ActionListener {
     
     public ObjektienPoistaja getObjektienPoistaja() {
         return this.objektienPoistaja;
+    }
+    
+    public ObjektienTarkastaja getObjektienTarkastaja() {
+        return this.objektienTarkastaja;
+    }
+    
+    public Timer getLuoUusiMeteoroidi() {
+        return this.luoUusiMeteoroidi;
     }
 }
