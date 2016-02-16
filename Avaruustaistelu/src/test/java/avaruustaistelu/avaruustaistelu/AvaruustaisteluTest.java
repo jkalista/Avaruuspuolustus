@@ -288,12 +288,12 @@ public class AvaruustaisteluTest {
     }
     
     @Test
-    public void uudenMeteoroidinLuovanTimerinViiveOnOikeaKunPeliAlkaa() {
+    public void uudenMeteoroidinLuovanTimerinViiveOnOikeaKunPeliAlkaaEliViisituhattaMillisekuntia() {
         assertEquals(5000, this.avaruustaistelu.luoUusiMeteoroidi.getDelay());
     }
     
     @Test
-    public void metodiVaikeutaPeliaVahentaaUudenMeteoroidinLuovanTimerinViivettaOikein() {
+    public void metodiVaikeutaPeliaVahentaaUudenMeteoroidinLuovanTimerinViivettaOikeinEliViisikymmentaMillisekuntia() {
         this.avaruustaistelu.vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa();
         assertEquals(4950, this.avaruustaistelu.luoUusiMeteoroidi.getDelay());
     }

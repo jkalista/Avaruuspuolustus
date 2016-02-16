@@ -97,20 +97,6 @@ public class AvaruusalusTest {
     }
     
     @Test
-    public void pelaajanXKoordinaattiAlleVasemmanRajanMuttaMuuttuuRajaArvoksiKunLiikkuuVasemmalle() {
-        Avaruusalus pelaajanAvaruusalus = new Avaruusalus(-50, 770);
-        pelaajanAvaruusalus.liikuVasemmalle();
-        assertEquals(0, pelaajanAvaruusalus.getX());
-    }
-    
-    @Test
-    public void pelaajanXKoordinaattiYliOikeanRajanMuttaMuuttuuRajaArvoksiKunLiikkuuOikealle() {
-        Avaruusalus pelaajanAvaruusalus = new Avaruusalus(1000, 770);
-        pelaajanAvaruusalus.liikuOikealle();
-        assertEquals(595, pelaajanAvaruusalus.getX());
-    }
-    
-    @Test
     public void asettamallaUudetXJaYArvotPelaajallePalautuuUudetArvot() {
         this.avaruusalus.setX(200);
         this.avaruusalus.setY(200);

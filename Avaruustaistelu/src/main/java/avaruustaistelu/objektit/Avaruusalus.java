@@ -41,10 +41,10 @@ public class Avaruusalus extends Objekti {
      * Liikuttaa pelaajan avaruusalusta oikealle silloin, kun ei olla ylitetty oikeaa rajaa.
      */
     public void liikuOikealle() {
-        this.x = this.x + 5;
-        
-        if (this.x > 595) {
-            this.x = 595;
+        if (this.x == 595) {
+            return;
+        } else {
+            this.x = this.x + 5;
         }
     }
     
@@ -52,10 +52,10 @@ public class Avaruusalus extends Objekti {
      * Liikuttaa pelaajan avaruusalusta vasemmalle silloin, kun ei olla ylitetty vasenta rajaa.
      */
     public void liikuVasemmalle() {
-        this.x = this.x - 5;
-        
-        if (this.x < 0) {
-            this.x = 0;
+        if (this.x == 0) {
+            return;
+        } else {
+            this.x = this.x - 5;
         }
     }
     
