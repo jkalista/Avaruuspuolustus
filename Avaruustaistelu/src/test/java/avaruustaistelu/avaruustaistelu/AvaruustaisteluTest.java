@@ -123,7 +123,7 @@ public class AvaruustaisteluTest {
     
     @Test
     public void liikutaElamapakettejaMetodiLiikuttaaKaikkiaElamapakettejaOikein() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             this.avaruustaistelu.getElamapaketit().add(new Elamapaketti(100 + i*20, 0 + i*10));
         }
         this.avaruustaistelu.getObjektienSiirtaja().liikutaElamapaketteja();
@@ -131,13 +131,11 @@ public class AvaruustaisteluTest {
         assertEquals(3, this.avaruustaistelu.getElamapaketit().get(0).getY());
         assertEquals(120, this.avaruustaistelu.getElamapaketit().get(1).getX());
         assertEquals(13, this.avaruustaistelu.getElamapaketit().get(1).getY());
-        assertEquals(140, this.avaruustaistelu.getElamapaketit().get(2).getX());
-        assertEquals(23, this.avaruustaistelu.getElamapaketit().get(2).getY());
     }
     
     @Test
     public void liikutaMeteoroidejaMetodiLiikuttaaKaikkiaMeteoroidejaOikein() {
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 2; i++) {
             this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100 + i*20, 0 + i*10));
         }
         this.avaruustaistelu.getObjektienSiirtaja().liikutaMeteoroideja();
@@ -145,13 +143,11 @@ public class AvaruustaisteluTest {
         assertEquals(1, this.avaruustaistelu.getMeteoroidit().get(0).getY());
         assertEquals(120, this.avaruustaistelu.getMeteoroidit().get(1).getX());
         assertEquals(11, this.avaruustaistelu.getMeteoroidit().get(1).getY());
-        assertEquals(140, this.avaruustaistelu.getMeteoroidit().get(2).getX());
-        assertEquals(21, this.avaruustaistelu.getMeteoroidit().get(2).getY());
     }
     
     @Test
     public void liikutaOhjuksiaMetodiLiikuttaaKaikkiaPelaajanOhjuksiaOikein() {
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 2; i++) {
             this.avaruustaistelu.getAvaruusalus().getOhjukset().add(new Ohjus(100 + i*15, 755 + i*10));
         }
         this.avaruustaistelu.getObjektienSiirtaja().liikutaOhjuksia();
@@ -159,8 +155,6 @@ public class AvaruustaisteluTest {
         assertEquals(750, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(0).getY());
         assertEquals(115, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(1).getX());
         assertEquals(760, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(1).getY());
-        assertEquals(130, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(2).getX());
-        assertEquals(770, this.avaruustaistelu.getAvaruusalus().getOhjukset().get(2).getY());
     }
     
     @Test

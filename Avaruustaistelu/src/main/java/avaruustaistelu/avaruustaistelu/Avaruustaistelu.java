@@ -4,12 +4,14 @@ import avaruustaistelu.kayttoliittyma.Piirtoalusta;
 import avaruustaistelu.objektit.Avaruusalus;
 import avaruustaistelu.objektit.Elamapaketti;
 import avaruustaistelu.objektit.Meteoroidi;
+import avaruustaistelu.tiedostojenkasittelija.TiedostojenKasittelija;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
 /**
@@ -18,6 +20,8 @@ import javax.swing.Timer;
  * @author Jyri
  */
 public class Avaruustaistelu implements ActionListener {
+    
+    TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
     private Piirtoalusta piirtoalusta;
     private final Avaruusalus avaruusalus;
@@ -89,6 +93,9 @@ public class Avaruustaistelu implements ActionListener {
                 Logger.getLogger(Avaruustaistelu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        this.tiedostojenKasittelija.tarkastaUusiEnnatys(this.avaruusalus.getPisteet());
+        
     }
     
     /**
@@ -96,18 +103,39 @@ public class Avaruustaistelu implements ActionListener {
      * poistaa kaikki tuhoutuneet ja pelialueelta poistuneet objektit, tarkistaa pelin jatkumisen.
      */
     public void paivitaPelia() {
+        siirraObjekteja();
+        poistaTuhoutuneetJaAlueeltaPoistuneetObjektit();
+        tarkastaObjektienYhteentormayksetJaPelinJatkuminen();
+    }
+    
+    /**
+     * Siirtää kaikkia pelissä liikkuvia objekteja.
+     */
+    public void siirraObjekteja() {
         this.objektienSiirtaja.liikutaAvaruusalusta();
         this.objektienSiirtaja.liikutaOhjuksia();
         this.objektienSiirtaja.liikutaMeteoroideja();
         this.objektienSiirtaja.liikutaElamapaketteja();
+    }
+    
+    /**
+     * Tarkastaa pelissä olevien objektien yhteentörmäykset sekä pelin jatkumisen.
+     */
+    public void tarkastaObjektienYhteentormayksetJaPelinJatkuminen() {
         this.objektienTarkastaja.tarkastaMeteoroidienOsuminenAvaruusalukseen();
         this.objektienTarkastaja.tarkastaOhjustenOsuminenMeteoroideihin();
         this.objektienTarkastaja.tarkastaElamapakettienOsuminenAvaruusalukseen();
+        this.objektienTarkastaja.tarkastaAvaruusaluksenElamapisteidenMeneminenNollaan();
+    }
+    
+    /**
+     * Poistaa tuhoutuneet ja pelialueelta poistuneet objektit.
+     */
+    public void poistaTuhoutuneetJaAlueeltaPoistuneetObjektit() {
         this.objektienPoistaja.poistaTuhoutuneetMeteoroidit();
         this.objektienPoistaja.poistaAlueeltaPoistuneetOhjukset();
         this.objektienPoistaja.poistaAlueeltaPoistuneetElamapaketit();
         this.objektienPoistaja.poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta();
-        this.objektienTarkastaja.tarkastaAvaruusaluksenElamapisteidenMeneminenNollaan();
     }
     
     /**

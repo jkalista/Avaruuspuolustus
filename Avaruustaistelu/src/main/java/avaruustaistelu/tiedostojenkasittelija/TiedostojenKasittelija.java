@@ -1,7 +1,10 @@
 package avaruustaistelu.tiedostojenkasittelija;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 import javax.imageio.ImageIO;
 
 /**
@@ -53,4 +56,47 @@ public class TiedostojenKasittelija {
     public BufferedImage getElamapaketinKuva() {
         return this.elamapaketinKuva;
     }
+    
+    public void tarkastaUusiEnnatys(int saadutPisteet) {
+        File tiedosto = new File("ennatykset.txt");
+        
+        try {
+            Scanner lukija = new Scanner(tiedosto);
+            
+            int ensimmainenSija = Integer.parseInt(lukija.nextLine());
+            int toinenSija = Integer.parseInt(lukija.nextLine());
+            int kolmasSija = Integer.parseInt(lukija.nextLine());
+            
+            FileWriter kirjoittaja = new FileWriter(tiedosto);
+            
+            if (saadutPisteet > ensimmainenSija) {
+                kirjoittaja.write(Integer.toString(saadutPisteet) + System.lineSeparator());
+                kirjoittaja.write(Integer.toString(ensimmainenSija) + System.lineSeparator());
+                kirjoittaja.write(Integer.toString(toinenSija));
+            } else {
+                kirjoittaja.write(ensimmainenSija + System.lineSeparator());
+                
+                if (saadutPisteet > toinenSija) {
+                    kirjoittaja.write(Integer.toString(saadutPisteet) + System.lineSeparator());
+                    kirjoittaja.write(Integer.toString(toinenSija));
+                } else {
+                    kirjoittaja.write(toinenSija + System.lineSeparator());
+                    
+                    if (saadutPisteet > kolmasSija) {
+                        kirjoittaja.write(Integer.toString(saadutPisteet));
+                    } else {
+                        kirjoittaja.write(kolmasSija);
+                    }
+                }
+                
+            }
+                        
+            lukija.close();
+            kirjoittaja.close();
+        } catch (IOException | NumberFormatException e) {
+            System.out.print(e);
+        }
+        
+    }
+    
 }
