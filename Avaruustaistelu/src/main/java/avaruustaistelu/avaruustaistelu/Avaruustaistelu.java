@@ -94,7 +94,7 @@ public class Avaruustaistelu implements ActionListener {
             }
         }
         
-        this.tiedostojenKasittelija.tarkastaUusiEnnatys(this.avaruusalus.getPisteet());
+        this.tiedostojenKasittelija.tarkastaRiittavatkoPisteetEnnatyslistalle(this.avaruusalus.getPisteet());
         
     }
     

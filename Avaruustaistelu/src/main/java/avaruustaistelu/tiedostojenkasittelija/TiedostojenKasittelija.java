@@ -57,7 +57,12 @@ public class TiedostojenKasittelija {
         return this.elamapaketinKuva;
     }
     
-    public void tarkastaUusiEnnatys(int saadutPisteet) {
+    /**
+     * Metodi, joka tarkistaa riittääkö pelistä saadut pisteet ennätyspisteluetteloon.
+     * 
+     * @param saadutPisteet Pisteet pelistä
+     */
+    public void tarkastaRiittavatkoPisteetEnnatyslistalle(int saadutPisteet) {
         File tiedosto = new File("ennatykset.txt");
         
         try {
@@ -74,29 +79,27 @@ public class TiedostojenKasittelija {
                 kirjoittaja.write(Integer.toString(ensimmainenSija) + System.lineSeparator());
                 kirjoittaja.write(Integer.toString(toinenSija));
             } else {
-                kirjoittaja.write(ensimmainenSija + System.lineSeparator());
+                kirjoittaja.write(Integer.toString(ensimmainenSija) + System.lineSeparator());
                 
                 if (saadutPisteet > toinenSija) {
                     kirjoittaja.write(Integer.toString(saadutPisteet) + System.lineSeparator());
                     kirjoittaja.write(Integer.toString(toinenSija));
                 } else {
-                    kirjoittaja.write(toinenSija + System.lineSeparator());
+                    kirjoittaja.write(Integer.toString(toinenSija) + System.lineSeparator());
                     
                     if (saadutPisteet > kolmasSija) {
                         kirjoittaja.write(Integer.toString(saadutPisteet));
                     } else {
-                        kirjoittaja.write(kolmasSija);
+                        kirjoittaja.write(Integer.toString(kolmasSija));
                     }
                 }
-                
             }
-                        
+            
             lukija.close();
             kirjoittaja.close();
         } catch (IOException | NumberFormatException e) {
             System.out.print(e);
         }
-        
     }
     
 }
