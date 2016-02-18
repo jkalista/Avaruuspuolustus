@@ -37,6 +37,6 @@
 **16.2.2016** 5 tuntia, Aiemmin "Avaruustaistelu" -luokka oli todella pitkä, joten tein luokat "ObjektienPoistaja", "ObjektienSiirtaja" ja "ObjektienTarkastaja" jotka saivat suuren osan "Avaruustaistelu" -luokan metodeista (Poistaja kaikki metodit missä poistetaan objekteja, Siirtaja kaikki metodit missä liikutetaan objekteja, 
 Tarkastaja kaikki metodit missä tarkastetaan yhteentörmäykset ja pelin jatkuminen).
 
-**17.2.2016** 4 tuntia, Kertasin Scanner ja FileWriter asioita OHJA materiaalista. Tein alkeellisen ennatyspisteet tekstitiedoston, johon tarkistetaan ennätyspisteet, kun peli päättyy.
+**17.2.2016** 4 tuntia, Kertasin Scanner ja FileWriter asioita OHJA materiaalista. Tein alkeellisen ennatykset.txt tekstitiedoston, johon tarkistetaan ennätyspisteet, kun peli päättyy.
 
 **18.2.2016** 1 tuntia, Piirsin sekvenssikaaviot viikon 5 palautusta varten. Tein uuden PIT ja CheckStyle raportin.

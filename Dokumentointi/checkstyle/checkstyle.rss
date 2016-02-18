@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 10,
-             Errors: 1,
+      <title>File: 14,
+             Errors: 0,
              Warnings: 0,
              Infos: 0
       </title>
@@ -46,35 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Avaruusalus.java">avaruustaistelu/objektit/Avaruusalus.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#avaruustaistelu.avaruustaistelu.Avaruustaistelu.java">avaruustaistelu/avaruustaistelu/Avaruustaistelu.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Objekti.java">avaruustaistelu/objektit/Objekti.java</a>
                 </td>
                 <td>
                   0
@@ -102,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#avaruustaistelu.tiedostojenkasittelija.TiedostojenKasittelija.java">avaruustaistelu/tiedostojenkasittelija/TiedostojenKasittelija.java</a>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.avaruustaistelu.ObjektienSiirtaja.java">avaruustaistelu/avaruustaistelu/ObjektienSiirtaja.java</a>
                 </td>
                 <td>
                   0
@@ -130,7 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Meteoroidi.java">avaruustaistelu/objektit/Meteoroidi.java</a>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.avaruustaistelu.ObjektienPoistaja.java">avaruustaistelu/avaruustaistelu/ObjektienPoistaja.java</a>
                 </td>
                 <td>
                   0
@@ -173,6 +145,90 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Ohjus.java">avaruustaistelu/objektit/Ohjus.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Avaruusalus.java">avaruustaistelu/objektit/Avaruusalus.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Elamapaketti.java">avaruustaistelu/objektit/Elamapaketti.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.avaruustaistelu.ObjektienTarkastaja.java">avaruustaistelu/avaruustaistelu/ObjektienTarkastaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Objekti.java">avaruustaistelu/objektit/Objekti.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.tiedostojenkasittelija.TiedostojenKasittelija.java">avaruustaistelu/tiedostojenkasittelija/TiedostojenKasittelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#avaruustaistelu.objektit.Meteoroidi.java">avaruustaistelu/objektit/Meteoroidi.java</a>
                 </td>
                 <td>
                   0

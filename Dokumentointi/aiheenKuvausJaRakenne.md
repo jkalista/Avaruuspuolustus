@@ -2,7 +2,7 @@
 
 ## Avaruuspuolustus
 
-**Aihe:** Avaruuspuolustus on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaisesti kuvaruudun alareunassa ja pyrkii tuhoamaan mahdollisimman monta y-akselin suuntaisesti ylh‰‰lt‰ p‰in tulevaa liikkuvaa meteoroidia ampumalla. Pelaaja ei saa osua meteoroideihin tai p‰‰st‰‰ montaa meteoroidia ohitseen, muuten peli p‰‰ttyy. Pelaajalla tulee siis olemaan el‰m‰pisteet, ja jokaisesta ohi p‰‰stetyst‰ meteoroidista menett‰‰ yhden el‰m‰pisteen. Jos pelaaja taas osuu meteoroidiin, niin peli loppuu suoraan. Riippuen siit‰, kuinka paljon ohjelmointiin kerke‰n k‰ytt‰‰ aikaa, voisi peliin lis‰t‰ muun muassa hyˆdyketavaroita, jotka palauttaa el‰m‰pisteit‰.
+**Aihe:** Avaruuspuolustus on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaisesti kuvaruudun alareunassa ja pyrkii tuhoamaan mahdollisimman monta y-akselin suuntaisesti ylh‰‰lt‰ p‰in tulevaa liikkuvaa meteoroidia ampumalla. Pelaaja ei saa osua meteoroideihin tai p‰‰st‰‰ viitt‰ (5) meteoroidia ohitseen, muuten peli p‰‰ttyy. Pelaajalla on siis el‰m‰pisteet, ja jokaisesta ohi p‰‰stetyst‰ meteoroidista menett‰‰ yhden (1) el‰m‰pisteen. Jos pelaaja taas osuu meteoroidiin, niin peli loppuu suoraan. Jokaista tuhottua meteoroidia kohden pelaaja saa yhden (1) pisteen. Pelaaja voi palauttaa avaruusaluksen el‰m‰pisteit‰ ker‰‰m‰ll‰ punaisella ristill‰ varustettuja el‰m‰paketteja.
 
 **K‰ytt‰j‰t:** Pelaaja
 
@@ -21,8 +21,11 @@
 
 **Sekvenssikaaviot:**
 
+* Pelaajan avaruusalus ampuu kaksi ohjusta, jotka lis‰t‰‰n avaruusaluksen ohjuksia sis‰lt‰v‰‰n listaan. ObjektienSiirtaja liikuttaa kaikkia listassa olevia ohjuksia.
 ![SekvenssikaavioYksi](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/sekvenssikaaviot/ohjustenAmpuminenJaNiidenLiike.JPG)
 
+* ObjektienTarkastaja tarkastaa pelin jatkumista tapauksissa, jossa avaruusaluksen el‰m‰pisteet ovat 5 ja 0.
 ![SekvenssikaavioKaksi](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/sekvenssikaaviot/tarkastetaanPelinJatkumista.JPG)
 
+* Uuden pelin k‰ynnist‰minen.
 ![SekvenssikaavioKolme](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/sekvenssikaaviot/uudenPelinKaynnistys.JPG)
