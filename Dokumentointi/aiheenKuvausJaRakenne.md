@@ -17,7 +17,7 @@
 
 **Luokkakaavio:**
 
-![Luokkakaavio](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/luokkakaaviot/LuokkakaavioVko4.JPG)
+![Luokkakaavio](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/luokkakaaviot/LuokkakaavioVko5.JPG)
 
 **Sekvenssikaaviot:**
 

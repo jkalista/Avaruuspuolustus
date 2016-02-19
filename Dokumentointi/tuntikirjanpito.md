@@ -40,3 +40,5 @@ Tarkastaja kaikki metodit missä tarkastetaan yhteentörmäykset ja pelin jatkumine
 **17.2.2016** 4 tuntia, Kertasin Scanner ja FileWriter asioita OHJA materiaalista. Tein alkeellisen ennatykset.txt tekstitiedoston, johon tarkistetaan ennätyspisteet, kun peli päättyy.
 
 **18.2.2016** 1 tuntia, Piirsin sekvenssikaaviot viikon 5 palautusta varten. Tein uuden PIT ja CheckStyle raportin.
+
+**19.2.2016** 15min, Päivitin luokkakaaviota viikon 5 palautusta varten.
