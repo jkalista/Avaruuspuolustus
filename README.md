@@ -4,6 +4,8 @@ Avaruustaistelu on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaisest
 
 Pelaaja liikkuu "A" ja "D" n‰pp‰imist‰ ja ampuu ohjuksia "H" n‰pp‰imest‰. Meteoroidit tuhoutuvat viidest‰ (5) ohjuksen osumasta.
 
+Pelaaja saa yhden pisteen jokaista tuhottua meteoroidia kohti. Pelaaja voi tankata el‰m‰pisteit‰‰n ker‰‰m‰ll‰ el‰m‰paketteja.
+
 ### Dokumentaatio
 
 * [Aiheen kuvaus ja rakenne](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/aiheenKuvausJaRakenne.md)
