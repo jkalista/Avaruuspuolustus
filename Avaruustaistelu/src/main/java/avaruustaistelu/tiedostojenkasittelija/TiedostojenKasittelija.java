@@ -1,6 +1,5 @@
 package avaruustaistelu.tiedostojenkasittelija;
 
-import avaruustaistelu.kayttoliittyma.MenuValikko;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileWriter;

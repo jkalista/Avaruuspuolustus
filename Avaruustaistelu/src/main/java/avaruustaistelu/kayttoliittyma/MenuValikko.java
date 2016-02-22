@@ -10,13 +10,14 @@ import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
 /**
- *
+ * Java Swing Menu -valikko.
+ * 
  * @author Jyri
  */
 public class MenuValikko extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuValikko
+     * Creates new form MenuValikko.
      */
     public MenuValikko() {
         initComponents();
@@ -24,13 +25,13 @@ public class MenuValikko extends javax.swing.JFrame {
         File tiedosto = new File("ennatykset.txt");
         
         try {
-        Scanner lukija = new Scanner(tiedosto);
-        int ensimmainenSija = Integer.parseInt(lukija.nextLine());
-        int toinenSija = Integer.parseInt(lukija.nextLine());
-        int kolmasSija = Integer.parseInt(lukija.nextLine());
-        this.jLabel2Eka.setText("1. sija: " + ensimmainenSija);
-        this.jLabel3Toka.setText("2. sija: " + toinenSija);
-        this.jLabel4Kolmas.setText("3. sija: " + kolmasSija);
+            Scanner lukija = new Scanner(tiedosto);
+            int ensimmainenSija = Integer.parseInt(lukija.nextLine());
+            int toinenSija = Integer.parseInt(lukija.nextLine());
+            int kolmasSija = Integer.parseInt(lukija.nextLine());
+            this.jLabel2Eka.setText("1. sija: " + ensimmainenSija);
+            this.jLabel3Toka.setText("2. sija: " + toinenSija);
+            this.jLabel4Kolmas.setText("3. sija: " + kolmasSija);
         } catch (FileNotFoundException | NumberFormatException e) {
             System.out.print(e);
         }
@@ -274,6 +275,11 @@ public class MenuValikko extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Pelin aloittava JButton.
+     * 
+     * @param evt Painettu näppäin
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
@@ -307,42 +313,66 @@ public class MenuValikko extends javax.swing.JFrame {
         swingWorker.execute();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * JButton, jolla pääsee ohjeisiin.
+     * 
+     * @param evt Painettu näppäin
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.jPanel1Valikko.setVisible(false);
         this.jPanel2Ohjeet.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * Lopeta peli JButton.
+     * 
+     * @param evt Painettu näppäin
+     */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    /**
+     * JButton, jolla pääsee ohjeista takaisin valikkoon.
+     * 
+     * @param evt Painettu näppäin
+     */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         this.jPanel2Ohjeet.setVisible(false);
         this.jPanel1Valikko.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    /**
+     * JButton, jolla pääsee valikosta ennätyksiin.
+     * 
+     * @param evt Painettu näppäin
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         this.jPanel1Valikko.setVisible(false);
         this.jPanel3Ennatykset.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    /**
+     * JButton, jolla pääsee ennätyksiin.
+     * 
+     * @param evt Painettu näppäin
+     */
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         File tiedosto = new File("ennatykset.txt");
         
         try {
-        Scanner lukija = new Scanner(tiedosto);
-        int ensimmainenSija = Integer.parseInt(lukija.nextLine());
-        int toinenSija = Integer.parseInt(lukija.nextLine());
-        int kolmasSija = Integer.parseInt(lukija.nextLine());
-        
-        this.jLabel2Eka.setText("1. sija: " + ensimmainenSija);
-        this.jLabel3Toka.setText("2. sija: " + toinenSija);
-        this.jLabel4Kolmas.setText("3. sija: " + kolmasSija);
+            Scanner lukija = new Scanner(tiedosto);
+            int ensimmainenSija = Integer.parseInt(lukija.nextLine());
+            int toinenSija = Integer.parseInt(lukija.nextLine());
+            int kolmasSija = Integer.parseInt(lukija.nextLine());
+            this.jLabel2Eka.setText("1. sija: " + ensimmainenSija);
+            this.jLabel3Toka.setText("2. sija: " + toinenSija);
+            this.jLabel4Kolmas.setText("3. sija: " + kolmasSija);
         } catch (FileNotFoundException | NumberFormatException e) {
             System.out.print(e);
         }
@@ -352,6 +382,8 @@ public class MenuValikko extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
+     * Main.
+     * 
      * @param args the command line arguments
      */
     public static void main(String args[]) {
