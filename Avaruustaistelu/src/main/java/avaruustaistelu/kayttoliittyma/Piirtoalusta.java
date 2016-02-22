@@ -135,6 +135,8 @@ public class Piirtoalusta extends JPanel {
             g.setFont(new Font("BAZOOKA", Font.BOLD, 20));
             g.drawString("Peli päättyi!", 280, 340);
             g.drawString("Onneksi olkoon! Sait " + this.avaruustaistelu.getAvaruusalus().getPisteet() + " pistettä.", 180, 380);
+            g.drawString("Paina [Y] -näppäintä, niin", 180, 440);
+            g.drawString("pääset takaisin valikkoon.", 180, 460);
         }
     }
 }

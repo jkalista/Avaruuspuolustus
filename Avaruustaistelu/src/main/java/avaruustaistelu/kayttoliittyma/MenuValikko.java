@@ -4,7 +4,10 @@ import avaruustaistelu.avaruustaistelu.Avaruustaistelu;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
 
 /**
  *
@@ -25,9 +28,9 @@ public class MenuValikko extends javax.swing.JFrame {
         int ensimmainenSija = Integer.parseInt(lukija.nextLine());
         int toinenSija = Integer.parseInt(lukija.nextLine());
         int kolmasSija = Integer.parseInt(lukija.nextLine());
-        this.jLabel2Eka.setText("1. " + ensimmainenSija);
-        this.jLabel3Toka.setText("2. " + toinenSija);
-        this.jLabel4Kolmas.setText("3. " + kolmasSija);
+        this.jLabel2Eka.setText("1. sija: " + ensimmainenSija);
+        this.jLabel3Toka.setText("2. sija: " + toinenSija);
+        this.jLabel4Kolmas.setText("3. sija: " + kolmasSija);
         } catch (FileNotFoundException | NumberFormatException e) {
             System.out.print(e);
         }
@@ -51,6 +54,8 @@ public class MenuValikko extends javax.swing.JFrame {
         jPanel2Ohjeet = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel3Ennatykset = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jLabel2Eka = new javax.swing.JLabel();
@@ -126,10 +131,9 @@ public class MenuValikko extends javax.swing.JFrame {
                 .addGap(228, 228, 228)
                 .addGroup(jPanel1ValikkoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1ValikkoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1ValikkoLayout.setVerticalGroup(
@@ -166,28 +170,42 @@ public class MenuValikko extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setText("Ohjeet");
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(204, 255, 102));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("-Pelaaja liikkuttaa avaruusalusta oikealle \"A\" näppäimestä ja \n vasemmalle \"D\" näppäimestä. Avaruusalus ampuu ohjuksia \"H\"\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai \n päästää ohitseen viittä (5) meteoroidia, muuten peli päättyy. \n Jokaisesta ohi päästetystä meteoroidista avaruusalus \n menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja.");
+        jTextArea1.setAutoscrolls(false);
+        jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
+        jTextArea1.setFocusable(false);
+        jScrollPane2.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel2OhjeetLayout = new javax.swing.GroupLayout(jPanel2Ohjeet);
         jPanel2Ohjeet.setLayout(jPanel2OhjeetLayout);
         jPanel2OhjeetLayout.setHorizontalGroup(
             jPanel2OhjeetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2OhjeetLayout.createSequentialGroup()
+            .addComponent(jScrollPane2)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2OhjeetLayout.createSequentialGroup()
                 .addContainerGap(205, Short.MAX_VALUE)
                 .addGroup(jPanel2OhjeetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2OhjeetLayout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addGap(192, 192, 192))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2OhjeetLayout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(165, 165, 165))))
+                        .addGap(165, 165, 165))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2OhjeetLayout.createSequentialGroup()
+                        .addComponent(jButton5)
+                        .addGap(192, 192, 192))))
         );
         jPanel2OhjeetLayout.setVerticalGroup(
             jPanel2OhjeetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2OhjeetLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel2Ohjeet, "card3");
@@ -258,21 +276,35 @@ public class MenuValikko extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Avaruustaistelu avaruustaistelu = new Avaruustaistelu();
         
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(avaruustaistelu);
-        SwingUtilities.invokeLater(kayttoliittyma);
-        
-        while (kayttoliittyma.getPiirtoalusta() == null) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                System.out.println("Piirtoalustaa ei ole vielä luotu.");
+        SwingWorker<Void, Void> swingWorker = new SwingWorker<Void, Void>() {
+            
+            public void sleep(int aikaMillisekunteina) {
+                try {
+                    Thread.sleep(aikaMillisekunteina);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(MenuValikko.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
+            
+            @Override
+            protected Void doInBackground() throws Exception {
+                Avaruustaistelu avaruustaistelu = new Avaruustaistelu();
+                Kayttoliittyma kayttoliittyma = new Kayttoliittyma(avaruustaistelu);
+                SwingUtilities.invokeLater(kayttoliittyma);
+                
+                while (kayttoliittyma.getPiirtoalusta() == null) {
+                    sleep(100);
+                }
+                
+                avaruustaistelu.setPiirtoalusta(kayttoliittyma.getPiirtoalusta());
+                avaruustaistelu.pelinLoop();
+                return null;
+            }
+            
+        };
         
-        avaruustaistelu.setPiirtoalusta(kayttoliittyma.getPiirtoalusta());
-        avaruustaistelu.pelinLoop();
+        swingWorker.execute();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -308,9 +340,9 @@ public class MenuValikko extends javax.swing.JFrame {
         int toinenSija = Integer.parseInt(lukija.nextLine());
         int kolmasSija = Integer.parseInt(lukija.nextLine());
         
-        this.jLabel2Eka.setText("1. " + ensimmainenSija);
-        this.jLabel3Toka.setText("2. " + toinenSija);
-        this.jLabel4Kolmas.setText("3. " + kolmasSija);
+        this.jLabel2Eka.setText("1. sija: " + ensimmainenSija);
+        this.jLabel3Toka.setText("2. sija: " + toinenSija);
+        this.jLabel4Kolmas.setText("3. sija: " + kolmasSija);
         } catch (FileNotFoundException | NumberFormatException e) {
             System.out.print(e);
         }
@@ -370,5 +402,7 @@ public class MenuValikko extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1Valikko;
     private javax.swing.JPanel jPanel2Ohjeet;
     private javax.swing.JPanel jPanel3Ennatykset;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

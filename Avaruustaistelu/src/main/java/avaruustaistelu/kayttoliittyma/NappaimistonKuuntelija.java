@@ -33,6 +33,9 @@ public class NappaimistonKuuntelija implements KeyListener {
      * näppäintä "D", ja LiikuVasemmalle booleanin trueksi silloin, kun painetaan
      * näppäintä "A".
      *
+     * Kun Avaruustaistelu peli on päättynyt ja peliKaynnissa boolean on muuttunut falseksi, niin
+     * painamalla näppäintä "Y" peliruutu saadaan suljettua.
+     * 
      * @param e Alas painettu näppäin
      */
     @Override
@@ -43,6 +46,11 @@ public class NappaimistonKuuntelija implements KeyListener {
             this.avaruustaistelu.getAvaruusalus().setLiikuVasemmalle(true);
         }
         
+        if (e.getKeyCode() == KeyEvent.VK_Y) {
+            if (this.avaruustaistelu.getPeliKaynnissa() == false) {
+                this.pelinKehykset.dispose();
+            }
+        }
     }
 
     /**
