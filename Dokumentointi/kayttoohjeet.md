@@ -1,9 +1,9 @@
 # K‰yttˆohjeet
 
-Pelaajan avaruusalus liikkuu oikealle "D" n‰pp‰imest‰ ja vasemmalle "A" n‰pp‰imest‰. Pelaajan avaruusalus ampuu ohjuksia "H" n‰pp‰imest‰.
+* Pelaajan avaruusalus liikkuu oikealle "D" n‰pp‰imest‰ ja vasemmalle "A" n‰pp‰imest‰. Pelaajan avaruusalus ampuu ohjuksia "H" n‰pp‰imest‰.
 
-Meteoroidit tuhoutuvat viidest‰ (5) ohjuksen osumasta. Pelaajan avaruusalus ei saa osua meteoroideihin tai p‰‰st‰‰ ohitsee viitt‰ (5) meteoroidia, muuten peli p‰‰ttyy.
+* Pelaaja ker‰‰ pisteit‰ tuhoamalla meteoroideja. Meteoroidit tuhoutuvat viidest‰ (5) ohjuksen osumasta. Jokaista tuhottua meteoroidia kohden pelaaja saa yhden (1) pisteen.
 
-Pelaaja ker‰‰ pisteit‰ tuhoamalla meteoroideja. Yhdest‰ meteoroidista saa yhden (1) pisteen.
+* Pelaajan avaruusalus ei saa osua meteoroideihin tai p‰‰st‰‰ ohitseen viitt‰ (5) meteoroidia, muuten peli p‰‰ttyy. Jokaisesta ohi p‰‰stetyst‰ meteoroidista pelaaja menett‰‰ yhden (1) el‰m‰pisteen.
 
-Pelaaja voi tankata avaruusaluksen el‰m‰pisteit‰ ker‰‰m‰ll‰ punaisella ristill‰ varustettuja el‰m‰paketteja, jotka lent‰v‰t peliruudun yl‰laidasta alasp‰in samalla tavalla kuin meteoroidit.
+* Pelaaja voi tankata avaruusaluksen el‰m‰pisteit‰ ker‰‰m‰ll‰ punaisella ristill‰ varustettuja el‰m‰paketteja, jotka lent‰v‰t peliruudun yl‰laidasta samalla tavalla kuin meteoroidit. T‰ydet el‰m‰ pisteet ovat viisi (5).

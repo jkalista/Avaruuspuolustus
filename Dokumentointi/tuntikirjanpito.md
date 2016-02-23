@@ -42,3 +42,9 @@ Tarkastaja kaikki metodit missä tarkastetaan yhteentörmäykset ja pelin jatkumine
 **18.2.2016** 1 tuntia, Piirsin sekvenssikaaviot viikon 5 palautusta varten. Tein uuden PIT ja CheckStyle raportin.
 
 **19.2.2016** 15min, Päivitin luokkakaaviota viikon 5 palautusta varten.
+
+**21.2.2016** 3 tuntia, Sekoilua Java Swingin kanssa, ja tein "MenuValikko" -luokan Swingillä.
+
+**22.2.2016** 4 tuntia, Menuvalikon muokkailua ja parantelua. Jar:rin lisäys pom.xml:ään.
+
+**23.2.2016** 2 tuntia, Vieläkin pientä hienosäätöä Menuvalikkoon. Dokumentaatioon myös muutoksia.

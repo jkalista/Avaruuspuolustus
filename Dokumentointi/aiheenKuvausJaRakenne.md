@@ -1,19 +1,26 @@
 # Aiheen kuvaus ja rakenne
 
-## Avaruuspuolustus
+## Avaruustaistelu
 
-**Aihe:** Avaruuspuolustus on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaisesti kuvaruudun alareunassa ja pyrkii tuhoamaan mahdollisimman monta y-akselin suuntaisesti ylhäältä päin tulevaa liikkuvaa meteoroidia ampumalla. Pelaaja ei saa osua meteoroideihin tai päästää viittä (5) meteoroidia ohitseen, muuten peli päättyy. Pelaajalla on siis elämäpisteet, ja jokaisesta ohi päästetystä meteoroidista menettää yhden (1) elämäpisteen. Jos pelaaja taas osuu meteoroidiin, niin peli loppuu suoraan. Jokaista tuhottua meteoroidia kohden pelaaja saa yhden (1) pisteen. Pelaaja voi palauttaa avaruusaluksen elämäpisteitä keräämällä punaisella ristillä varustettuja elämäpaketteja.
+**Aihe:** Avaruustaistelu on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaisesti kuvaruudun alareunassa ja pyrkii tuhoamaan mahdollisimman monta y-akselin suuntaisesti ylhäältä päin tulevaa liikkuvaa meteoroidia ampumalla. Pelaaja ei saa osua meteoroideihin tai päästää viittä (5) meteoroidia ohitseen, muuten peli päättyy. Pelaajalla on siis elämäpisteet, ja jokaisesta ohi päästetystä meteoroidista menettää yhden (1) elämäpisteen. Jos pelaaja taas osuu meteoroidiin, niin peli loppuu suoraan. Jokaista tuhottua meteoroidia kohden pelaaja saa yhden (1) pisteen. Pelaaja voi palauttaa avaruusaluksen elämäpisteitä keräämällä punaisella ristillä varustettuja elämäpaketteja.
 
 **Käyttäjät:** Pelaaja
 
-**Pelaajan toiminnot:** Alla listatut toiminnot tulevat olemaan lopullisessa versiossa, kunhan graafinen käyttöliittymä on tehty ("Menu" -valikosta pelaaja pääsee valitsemaan toiminnot "Aloita peli" (Aloittaa uuden pelin), "Ohjeet" (Avaa ikkunan, jossa ohjeet peliä varten) ja "Lopeta peli" (Sulkee pelin).)
+**Pelaajan toiminnot:** Alla on listattuna toiminnot ("Menu" -valikosta pelaaja pääsee valitsemaan toiminnot "Aloita peli" (Aloittaa uuden pelin), "Ohjeet" (Avaa ikkunan, jossa ohjeet peliä varten), "Ennätykset" (Avaa ikkunan, jossa parhaat pisteet) ja "Lopeta peli" (Sulkee pelin).)
 
 * Pelin aloittaminen.
  * Pelissä pelaaja voi liikkua ja ampua ohjuksia näppäimistöä käyttämällä.
 * Ohjeiden lukeminen.
+* Ennätyspisteiden lukeminen.
 * Pelin lopettaminen.
 
-**Rakenne:** Avaruuspuolus projektin "Main" -luokka luo ensin "Avaruuspuolustus" -luokasta ilmentymän, jonka jälkeen luodaan "Käyttöliittymä" -luokasta ilmentymä, joka saa parametriksi tämän Avaruuspuolustuksen. Käyttöliittymässä luodaan pelille frame ja siihen lisätään komponentit "Piirtoalusta" ja "NäppäimistönKuuntelija". Tämä näppäimistönkuuntelija saa parametrikseen Avaruuspuolustukselta "Pelaaja" -luokan ilmentymän "getPelaaja" -metodilla. Kun käyttöliittymä on luonut piirtoalustan, niin se asetetaan "Main" -luokassa Avaruuspuolustus pelille "setPiirtoalusta" -metodilla. "Main" -luokassa ruvetaan pyörittämään Avaruuspuolustuksen GameLooppia, joka siirtää pelaajaa ja sen tuntemia ohjuksia sekä meteoroideja. Piirtoalustan uudelleenpiirtoa kutsutaan aina jokaisen GameLoopin lopussa. Pelaaja saa tiedostojenkäsittelijältä BufferedImagena avaruusaluksen kuvan.
+**Rakenne:** Projektitiedostossa on "Main" -luokka ja Swingillä tehty "MenuValikko" -luokka, josta saa käynnistettyä pelin. Jätin "Main" -luokan sen takia, että siitä pääsee suoraan peliin, joka nopeuttaa hieman käsin testaamista ynnä muuta sellaista. "MenuValikko" -luokan "Aloita peli" -JButton ajaa siis oleellisesti saman asian, kuin "Main" -luokan koodi.
+
+Avaruuspuolus projektin "Main" -luokka luo ensin "Avaruustaistelu" -luokasta ilmentymän (joka luo pelaajan avaruusaluksen, listat pelissä olevista meteoroideista ja elämäpaketeista, kaksi timeriä uusien objektien luomiseen, peliKaynnissa booleanin, randomin objektien paikan arvontaan, objektiensiirtajan, objektienpoistajan ja objektientarkastajan), jonka jälkeen luodaan "Kayttoliittyma" -luokasta ilmentymä, joka saa parametriksi tämän avaruustaistelun. Käyttöliittymässä luodaan pelille jFrame ja siihen lisätään komponentit "Piirtoalusta" ja "NappaimistonKuuntelija". Tämä näppäimistönkuuntelija saa parametreikseen avaruustaistelun ja jframen. Näppäimistönkuuntelija hakee avaruustaistelulta pelaajan ohjaaman avaruusaluksen "getAvaruusalus" -metodilla, jolloin avaruusalusta voidaan liikuttaa näppäimistön näppäimillä. JFrame voidaan myös luonnollisesti sulkea määritellyllä näppäimellä käyttämällä "dispose" -komentoa, kun se on annettu näppäimistönkuuntelijalle parametrina.
+
+Piirtoalusta saa myös parametrikseen avaruustaistelun, sillä sitä kautta se saa piirrettäväkseen kaikki avaruustaisteluun liittyvät objektit get-metodien avulla. Kun käyttöliittymä on luonut piirtoalustan, niin se asetetaan "Main" -luokassa aiemmin luodulle avaruustaistelu pelille "setPiirtoalusta" -metodilla. "Main" -luokassa ruvetaan pyörittämään Avaruuspuolustuksen GameLooppia, joka siirtää avaruusalusta ja sen tuntemia ohjuksia, elämäpaketteja sekä meteoroideja objektiensiirtajan avulla. Lisäksi objektientarkastaja ja -poistaja tarkastavat jokaisessa loopissa objektien yhteentörmäykset ja niiden perusteella poistamiset. Piirtoalustan uudelleenpiirtoa kutsutaan aina jokaisen GameLoopin lopussa.
+
+Avaruusalus saa tiedostojenkäsittelijältä BufferedImagena avaruusaluksen kuvan, Elämäpaketti taas saa elämäpaketin kuvan. Lisäksi tiedostojenkäsittelijä tarkistaa pelin loputtua, että riittävätkö saadut pisteet ennätyslistalle, ja muokkaa tarvittaessa ennätyspisteitä sen mukaan.
 
 **Luokkakaavio:**
 
