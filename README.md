@@ -11,3 +11,7 @@ Pelaaja saa yhden pisteen jokaista tuhottua meteoroidia kohti. Pelaaja voi tanka
 * [Aiheen kuvaus ja rakenne](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/aiheenKuvausJaRakenne.md)
 
 * [Tuntikirjanpito](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/tuntikirjanpito.md)
+
+* [Käyttöohjeet](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/kayttoohjeet.md)
+
+* [Testausdokumentti](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/testausdokumentti.md)
