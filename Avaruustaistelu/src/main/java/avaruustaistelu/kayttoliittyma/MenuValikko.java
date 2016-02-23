@@ -21,20 +21,6 @@ public class MenuValikko extends javax.swing.JFrame {
      */
     public MenuValikko() {
         initComponents();
-        
-        File tiedosto = new File("ennatykset.txt");
-        
-        try {
-            Scanner lukija = new Scanner(tiedosto);
-            int ensimmainenSija = Integer.parseInt(lukija.nextLine());
-            int toinenSija = Integer.parseInt(lukija.nextLine());
-            int kolmasSija = Integer.parseInt(lukija.nextLine());
-            this.jLabel2Eka.setText("1. sija: " + ensimmainenSija);
-            this.jLabel3Toka.setText("2. sija: " + toinenSija);
-            this.jLabel4Kolmas.setText("3. sija: " + kolmasSija);
-        } catch (FileNotFoundException | NumberFormatException e) {
-            System.out.print(e);
-        }
     }
 
     /**
@@ -352,17 +338,23 @@ public class MenuValikko extends javax.swing.JFrame {
      */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        paivitaEnnatykset();
         this.jPanel1Valikko.setVisible(false);
         this.jPanel3Ennatykset.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
-     * JButton, jolla pääsee ennätyksiin.
+     * JButton, jolla pääsee ennätyksistä takaisin valikkoon.
      * 
      * @param evt Painettu näppäin
      */
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
+        this.jPanel3Ennatykset.setVisible(false);
+        this.jPanel1Valikko.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    public void paivitaEnnatykset() {
         File tiedosto = new File("ennatykset.txt");
         
         try {
@@ -376,11 +368,8 @@ public class MenuValikko extends javax.swing.JFrame {
         } catch (FileNotFoundException | NumberFormatException e) {
             System.out.print(e);
         }
-        
-        this.jPanel3Ennatykset.setVisible(false);
-        this.jPanel1Valikko.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
+    }
+    
     /**
      * Main.
      * 
