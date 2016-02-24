@@ -48,3 +48,5 @@ Tarkastaja kaikki metodit missä tarkastetaan yhteentörmäykset ja pelin jatkumine
 **22.2.2016** 4 tuntia, Menuvalikon muokkailua ja parantelua. Jar:rin lisäys pom.xml:ään.
 
 **23.2.2016** 2 tuntia, Vieläkin pientä hienosäätöä Menuvalikkoon. Dokumentaatioon myös muutoksia.
+
+**24.2.2016** 2 tuntia, Uusi checkstyle, pit ja javadocs. Pientä säätöä dokumentaatioon ja luokkakaavion päivitystä.
