@@ -52,7 +52,7 @@ public class ObjektienPoistajaTest {
         this.avaruustaistelu.getObjektienPoistaja().poistaTuhoutuneetMeteoroidit();
         assertEquals(0, this.avaruustaistelu.getMeteoroidit().size());
         assertEquals(1, this.avaruustaistelu.getAvaruusalus().getPisteet());
-        assertEquals(4950, this.avaruustaistelu.getLuoUusiMeteoroidi().getDelay());
+        assertEquals(3950, this.avaruustaistelu.getLuoUusiMeteoroidi().getDelay());
     }
     
     @Test

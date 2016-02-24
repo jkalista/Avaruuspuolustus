@@ -66,13 +66,13 @@ public class TiedostojenKasittelija {
         File tiedosto = new File("ennatykset.txt");
         
         try {
-            Scanner lukija = new Scanner(tiedosto);
+            Scanner lukija = new Scanner(tiedosto.getAbsoluteFile());
             
             int ensimmainenSija = Integer.parseInt(lukija.nextLine());
             int toinenSija = Integer.parseInt(lukija.nextLine());
             int kolmasSija = Integer.parseInt(lukija.nextLine());
             
-            FileWriter kirjoittaja = new FileWriter(tiedosto);
+            FileWriter kirjoittaja = new FileWriter(tiedosto.getAbsoluteFile());
             
             if (saadutPisteet > ensimmainenSija) {
                 kirjoittaja.write(Integer.toString(saadutPisteet) + System.lineSeparator());

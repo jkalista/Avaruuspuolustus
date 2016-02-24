@@ -26,7 +26,7 @@ public class Avaruustaistelu implements ActionListener {
     private final Avaruusalus avaruusalus;
     private final CopyOnWriteArrayList<Meteoroidi> meteoroidit;
     private final CopyOnWriteArrayList<Elamapaketti> elamapaketit;
-    Timer luoUusiMeteoroidi = new Timer(5000, this);
+    Timer luoUusiMeteoroidi = new Timer(4000, this);
     Timer luoUusiElamapaketti = new Timer(8000, this);
     private boolean peliKaynnissa;
     private final Random meteoroidinJaElamapaketinPaikanArpoja;

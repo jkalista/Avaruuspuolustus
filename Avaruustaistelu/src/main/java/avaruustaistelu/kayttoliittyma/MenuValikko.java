@@ -162,7 +162,7 @@ public class MenuValikko extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("-Pelaaja liikkuttaa avaruusalusta oikealle \"A\" näppäimestä ja \n vasemmalle \"D\" näppäimestä. Avaruusalus ampuu ohjuksia \"H\"\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai \n päästää ohitseen viittä (5) meteoroidia, muuten peli päättyy. \n Jokaisesta ohi päästetystä meteoroidista avaruusalus \n menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja.");
+        jTextArea1.setText("-Pelaaja liikkuttaa avaruusalusta oikealle \"D\" näppäimestä ja \n vasemmalle \"A\" näppäimestä. Avaruusalus ampuu ohjuksia \"H\"\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai \n päästää ohitseen viittä (5) meteoroidia, muuten peli päättyy. \n Jokaisesta ohi päästetystä meteoroidista avaruusalus \n menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja.");
         jTextArea1.setAutoscrolls(false);
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
         jTextArea1.setFocusable(false);
@@ -358,7 +358,7 @@ public class MenuValikko extends javax.swing.JFrame {
         File tiedosto = new File("ennatykset.txt");
         
         try {
-            Scanner lukija = new Scanner(tiedosto);
+            Scanner lukija = new Scanner(tiedosto.getAbsoluteFile());
             int ensimmainenSija = Integer.parseInt(lukija.nextLine());
             int toinenSija = Integer.parseInt(lukija.nextLine());
             int kolmasSija = Integer.parseInt(lukija.nextLine());
