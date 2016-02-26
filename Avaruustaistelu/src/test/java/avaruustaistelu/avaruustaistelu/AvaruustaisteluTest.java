@@ -54,7 +54,7 @@ public class AvaruustaisteluTest {
         this.avaruustaistelu.getMeteoroidit().add(new Meteoroidi(100, 100));
         this.avaruustaistelu.getMeteoroidit().get(0).setElamapisteet(0);
         this.avaruustaistelu.getObjektienPoistaja().poistaTuhoutuneetMeteoroidit();
-        assertEquals(3950, this.avaruustaistelu.luoUusiMeteoroidi.getDelay());
+        assertEquals(3950, this.avaruustaistelu.getLuoUusiMeteoroidi().getDelay());
     }
     
     @Test
@@ -283,13 +283,13 @@ public class AvaruustaisteluTest {
     
     @Test
     public void uudenMeteoroidinLuovanTimerinViiveOnOikeaKunPeliAlkaaEliViisituhattaMillisekuntia() {
-        assertEquals(4000, this.avaruustaistelu.luoUusiMeteoroidi.getDelay());
+        assertEquals(4000, this.avaruustaistelu.getLuoUusiMeteoroidi().getDelay());
     }
     
     @Test
     public void metodiVaikeutaPeliaVahentaaUudenMeteoroidinLuovanTimerinViivettaOikeinEliViisikymmentaMillisekuntia() {
         this.avaruustaistelu.vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa();
-        assertEquals(3950, this.avaruustaistelu.luoUusiMeteoroidi.getDelay());
+        assertEquals(3950, this.avaruustaistelu.getLuoUusiMeteoroidi().getDelay());
     }
     
     @Test
@@ -297,6 +297,6 @@ public class AvaruustaisteluTest {
         for(int i=0; i <= 500; i++) {
             this.avaruustaistelu.vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa();
         }
-        assertEquals(1000, this.avaruustaistelu.luoUusiMeteoroidi.getDelay());
+        assertEquals(1000, this.avaruustaistelu.getLuoUusiMeteoroidi().getDelay());
     }
 }

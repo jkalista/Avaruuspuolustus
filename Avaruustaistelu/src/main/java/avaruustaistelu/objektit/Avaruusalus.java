@@ -13,6 +13,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class Avaruusalus extends Objekti {
 
+    /**
+     * Tiedostojenkäsittelijä, jolla saadaan haettua avaruusaluksen kuva.
+     */
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
     private final CopyOnWriteArrayList<Ohjus> ohjukset;

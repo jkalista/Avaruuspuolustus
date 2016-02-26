@@ -356,7 +356,7 @@ public class MenuValikko extends javax.swing.JFrame {
 
     public void paivitaEnnatykset() {
         File tiedosto = new File("ennatykset.txt");
-        
+
         try {
             Scanner lukija = new Scanner(tiedosto.getAbsoluteFile());
             int ensimmainenSija = Integer.parseInt(lukija.nextLine());

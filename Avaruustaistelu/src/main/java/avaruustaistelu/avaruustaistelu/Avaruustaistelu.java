@@ -20,14 +20,17 @@ import javax.swing.Timer;
  */
 public class Avaruustaistelu implements ActionListener {
     
+    /**
+     * Tiedostojenkäsittelijä hoitaa pelin lopuksi ennätyspisteiden tarkastamisen.
+     */
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
     private Piirtoalusta piirtoalusta;
     private final Avaruusalus avaruusalus;
     private final CopyOnWriteArrayList<Meteoroidi> meteoroidit;
     private final CopyOnWriteArrayList<Elamapaketti> elamapaketit;
-    Timer luoUusiMeteoroidi = new Timer(4000, this);
-    Timer luoUusiElamapaketti = new Timer(8000, this);
+    private final Timer luoUusiMeteoroidi = new Timer(4000, this);
+    private final Timer luoUusiElamapaketti = new Timer(8000, this);
     private boolean peliKaynnissa;
     private final Random meteoroidinJaElamapaketinPaikanArpoja;
     private final ObjektienSiirtaja objektienSiirtaja;
@@ -138,7 +141,8 @@ public class Avaruustaistelu implements ActionListener {
     }
     
     /**
-     * Lyhentää uuden meteoroidin luovan ajastimen viiveaikaa vähentämällä kaksikymmentä millisekuntia.
+     * Lyhentää uuden meteoroidin luovan ajastimen viiveaikaa vähentämällä viisikymmentä millisekuntia silloin,
+     * kun viiveaika on yli 1000 millisekuntia eli sekunnin.
      */
     public void vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa() {
         if (this.luoUusiMeteoroidi.getDelay() > 1000) {

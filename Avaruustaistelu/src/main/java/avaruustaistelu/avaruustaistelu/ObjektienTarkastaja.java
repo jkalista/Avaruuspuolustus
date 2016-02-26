@@ -26,7 +26,8 @@ public class ObjektienTarkastaja {
     }
     
     /**
-     * Tarkastaa elämäpakettien osumisen pelaajan avaruusalukseen. Jos elämäpaketti osuu avaruusalukseen, niin avaruusalus saa yhden elämäpisteen.
+     * Tarkastaa elämäpakettien osumisen pelaajan avaruusalukseen. Jos elämäpaketti osuu avaruusalukseen, niin avaruusalus
+     * saa yhden elämäpisteen.
      */
     public void tarkastaElamapakettienOsuminenAvaruusalukseen() {
         ArrayList<Elamapaketti> avaruusalukseenOsuneetElamapaketit = new ArrayList<>();
@@ -41,7 +42,8 @@ public class ObjektienTarkastaja {
     }
     
     /**
-     * Tarkastaa meteoroidien osumisen pelaajan avaruusalukseen. Jos meteoroidi osuu avaruusalukseen, niin peliKäynnissä boolean muuttuu falseksi.
+     * Tarkastaa meteoroidien osumisen pelaajan avaruusalukseen. Jos meteoroidi osuu avaruusalukseen, niin peliKäynnissä
+     * boolean muuttuu falseksi.
      */
     public void tarkastaMeteoroidienOsuminenAvaruusalukseen() {
         for (Meteoroidi meteoroidi : this.avaruustaistelu.getMeteoroidit()) {

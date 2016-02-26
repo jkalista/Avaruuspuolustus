@@ -55,7 +55,8 @@ public class ObjektienPoistaja {
     }
     
     /**
-     * Poistaa meteoroidit, jotka eivät ole enää pelialueella. Vähentää yhden elämäpisteen avaruusalukselta jokaista poistunutta meteoroidia kohden.
+     * Poistaa meteoroidit, jotka eivät ole enää pelialueella. Vähentää yhden elämäpisteen avaruusalukselta jokaista
+     * poistunutta meteoroidia kohden.
      */
     public void poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta() {
         ArrayList<Meteoroidi> poistettavatMeteoroidit = new ArrayList<>();

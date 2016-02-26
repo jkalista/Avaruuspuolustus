@@ -11,6 +11,9 @@ import java.awt.Rectangle;
  */
 public class Elamapaketti extends Objekti {
 
+    /**
+     * Tiedostojenkäsittelijä, jolla saadaan haettua elämäpaketin kuva.
+     */
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
     /**

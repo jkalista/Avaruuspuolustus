@@ -13,7 +13,15 @@ import javax.swing.JFrame;
  */
 public class NappaimistonKuuntelija implements KeyListener {
     
+    /**
+     * Näppäimistönkuuntelija saa parametrikseen Avaruustaistelu pelin, jolta se saa pelaajan ohjaaman
+     * avaruusaluksen get-metodin avulla. Täten voidaan asettaa avaruusalukselle liikkumiset.
+     */
     Avaruustaistelu avaruustaistelu;
+    /**
+     * Näppäimistönkuuntelija saa parametrikseen käyttöliittymän JFramet, jotta pelin päätyttyä voidaan
+     * sulkea peli ikkuna näppäimistön näppäimellä.
+     */
     JFrame pelinKehykset;
     
     /**
