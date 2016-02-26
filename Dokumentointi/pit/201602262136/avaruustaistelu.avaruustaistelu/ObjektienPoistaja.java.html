@@ -887,7 +887,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>     * Poistaa meteoroidit, jotka eiv&#195;&#164;t ole en&#195;&#164;&#195;&#164; pelialueella. V&#195;&#164;hent&#195;&#164;&#195;&#164; yhden el&#195;&#164;m&#195;&#164;pisteen avaruusalukselta jokaista poistunutta meteoroidia kohden.</span></pre></td></tr>
+<td class=''><pre><span  class=''>     * Poistaa meteoroidit, jotka eiv&#195;&#164;t ole en&#195;&#164;&#195;&#164; pelialueella. V&#195;&#164;hent&#195;&#164;&#195;&#164; yhden el&#195;&#164;m&#195;&#164;pisteen avaruusalukselta jokaista</span></pre></td></tr>
 
 
 <tr>
@@ -901,7 +901,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+<td class=''><pre><span  class=''>     * poistunutta meteoroidia kohden.</span></pre></td></tr>
 
 
 <tr>
@@ -915,11 +915,11 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    public void poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta() {</span></pre></td></tr>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
 
 
 <tr>
-<td class='covered'>
+<td class='na'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_61'/>
 61
 </td>
@@ -929,11 +929,11 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        ArrayList&#60;Meteoroidi&#62; poistettavatMeteoroidit = new ArrayList&#60;&#62;();</span></pre></td></tr>
+<td class=''><pre><span  class=''>    public void poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta() {</span></pre></td></tr>
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_62'/>
 62
 </td>
@@ -943,17 +943,31 @@ body{
 <span>
 </span>
 </td>
+<td class='covered'><pre><span  class=''>        ArrayList&#60;Meteoroidi&#62; poistettavatMeteoroidit = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_63'></a>
+<span>
+</span>
+</td>
 <td class=''><pre><span  class=''>        </span></pre></td></tr>
 
 
 <tr>
 <td class='covered'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_63'/>
-63
+<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_64'/>
+64
 </td>
 <td class='killed'>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_63'>1</a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_64'>1</a>
 <span>
 
 1. poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta : negated conditional &rarr; KILLED<br/>
@@ -965,12 +979,12 @@ body{
 
 <tr>
 <td class='covered'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_64'/>
-64
+<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_65'/>
+65
 </td>
 <td class='killed'>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_64'>2</a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_65'>2</a>
 <span>
 
 1. poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta : changed conditional boundary &rarr; KILLED<br/>
@@ -984,12 +998,12 @@ body{
 
 <tr>
 <td class='covered'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_65'/>
-65
+<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_66'/>
+66
 </td>
 <td class=''>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_65'></a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_66'></a>
 <span>
 </span>
 </td>
@@ -998,12 +1012,12 @@ body{
 
 <tr>
 <td class='covered'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_66'/>
-66
+<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_67'/>
+67
 </td>
 <td class='killed'>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_66'>1</a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_67'>1</a>
 <span>
 
 1. poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta : removed call to avaruustaistelu/objektit/Avaruusalus::menetaElamapiste &rarr; KILLED<br/>
@@ -1015,20 +1029,6 @@ body{
 
 <tr>
 <td class='na'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_67'/>
-67
-</td>
-<td class=''>
-<span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_67'></a>
-<span>
-</span>
-</td>
-<td class=''><pre><span  class=''>            }</span></pre></td></tr>
-
-
-<tr>
-<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_68'/>
 68
 </td>
@@ -1038,11 +1038,11 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_69'/>
 69
 </td>
@@ -1052,11 +1052,11 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>        </span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
 
 
 <tr>
-<td class='covered'>
+<td class='na'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_70'/>
 70
 </td>
@@ -1066,7 +1066,7 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        this.avaruustaistelu.getMeteoroidit().removeAll(poistettavatMeteoroidit);</span></pre></td></tr>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
 
 
 <tr>
@@ -1080,11 +1080,11 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        this.avaruustaistelu.getMeteoroidit().removeAll(poistettavatMeteoroidit);</span></pre></td></tr>
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_72'/>
 72
 </td>
@@ -1094,7 +1094,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    </span></pre></td></tr>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
 
 
 <tr>
@@ -1108,7 +1108,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
 
 
 <tr>
@@ -1122,7 +1122,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>     * Poistaa tuhoutuneet meteoroidit (Meteoroidi, jolla 0 el&#195;&#164;m&#195;&#164;pistett&#195;&#164;). Lis&#195;&#164;&#195;&#164; yhden pisteen avaruusalukselle.</span></pre></td></tr>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
 
 
 <tr>
@@ -1136,7 +1136,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>     * Vaikeuttaa peli&#195;&#164; kutsumalla metodia, joka lyhent&#195;&#164;&#195;&#164; uuden meteoroidin luovan ajastimen viivett&#195;&#164;.</span></pre></td></tr>
+<td class=''><pre><span  class=''>     * Poistaa tuhoutuneet meteoroidit (Meteoroidi, jolla 0 el&#195;&#164;m&#195;&#164;pistett&#195;&#164;). Lis&#195;&#164;&#195;&#164; yhden pisteen avaruusalukselle.</span></pre></td></tr>
 
 
 <tr>
@@ -1150,7 +1150,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+<td class=''><pre><span  class=''>     * Vaikeuttaa peli&#195;&#164; kutsumalla metodia, joka lyhent&#195;&#164;&#195;&#164; uuden meteoroidin luovan ajastimen viivett&#195;&#164;.</span></pre></td></tr>
 
 
 <tr>
@@ -1164,11 +1164,11 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    public void poistaTuhoutuneetMeteoroidit() {</span></pre></td></tr>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
 
 
 <tr>
-<td class='covered'>
+<td class='na'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_78'/>
 78
 </td>
@@ -1178,11 +1178,11 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        ArrayList&#60;Meteoroidi&#62; tuhoutuneetMeteoroidit = new ArrayList&#60;&#62;();</span></pre></td></tr>
+<td class=''><pre><span  class=''>    public void poistaTuhoutuneetMeteoroidit() {</span></pre></td></tr>
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_79'/>
 79
 </td>
@@ -1192,24 +1192,21 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>        </span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        ArrayList&#60;Meteoroidi&#62; tuhoutuneetMeteoroidit = new ArrayList&#60;&#62;();</span></pre></td></tr>
 
 
 <tr>
-<td class='covered'>
+<td class='na'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_80'/>
 80
 </td>
-<td class='killed'>
+<td class=''>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_80'>1</a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_80'></a>
 <span>
-
-1. poistaTuhoutuneetMeteoroidit : negated conditional &rarr; KILLED<br/>
-
 </span>
 </td>
-<td class='covered'><pre><span  class='killed'>        for (Meteoroidi meteoroidi : this.avaruustaistelu.getMeteoroidit()) {</span></pre></td></tr>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
 
 
 <tr>
@@ -1226,7 +1223,7 @@ body{
 
 </span>
 </td>
-<td class='covered'><pre><span  class='killed'>            if (meteoroidi.getElamapisteet() == 0) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>        for (Meteoroidi meteoroidi : this.avaruustaistelu.getMeteoroidit()) {</span></pre></td></tr>
 
 
 <tr>
@@ -1234,13 +1231,16 @@ body{
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_82'/>
 82
 </td>
-<td class=''>
+<td class='killed'>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_82'></a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_82'>1</a>
 <span>
+
+1. poistaTuhoutuneetMeteoroidit : negated conditional &rarr; KILLED<br/>
+
 </span>
 </td>
-<td class='covered'><pre><span  class=''>                tuhoutuneetMeteoroidit.add(meteoroidi);</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>            if (meteoroidi.getElamapisteet() == 0) {</span></pre></td></tr>
 
 
 <tr>
@@ -1248,16 +1248,13 @@ body{
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_83'/>
 83
 </td>
-<td class='killed'>
+<td class=''>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_83'>1</a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_83'></a>
 <span>
-
-1. poistaTuhoutuneetMeteoroidit : removed call to avaruustaistelu/objektit/Avaruusalus::lisaaPiste &rarr; KILLED<br/>
-
 </span>
 </td>
-<td class='covered'><pre><span  class='killed'>                this.avaruustaistelu.getAvaruusalus().lisaaPiste();</span></pre></td></tr>
+<td class='covered'><pre><span  class=''>                tuhoutuneetMeteoroidit.add(meteoroidi);</span></pre></td></tr>
 
 
 <tr>
@@ -1270,6 +1267,23 @@ body{
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_84'>1</a>
 <span>
 
+1. poistaTuhoutuneetMeteoroidit : removed call to avaruustaistelu/objektit/Avaruusalus::lisaaPiste &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                this.avaruustaistelu.getAvaruusalus().lisaaPiste();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_85'>1</a>
+<span>
+
 1. poistaTuhoutuneetMeteoroidit : removed call to avaruustaistelu/avaruustaistelu/Avaruustaistelu::vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa &rarr; KILLED<br/>
 
 </span>
@@ -1279,20 +1293,6 @@ body{
 
 <tr>
 <td class='na'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_85'/>
-85
-</td>
-<td class=''>
-<span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_85'></a>
-<span>
-</span>
-</td>
-<td class=''><pre><span  class=''>            }</span></pre></td></tr>
-
-
-<tr>
-<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_86'/>
 86
 </td>
@@ -1302,11 +1302,11 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_87'/>
 87
 </td>
@@ -1316,11 +1316,11 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>        </span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
 
 
 <tr>
-<td class='covered'>
+<td class='na'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_88'/>
 88
 </td>
@@ -1330,7 +1330,7 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        this.avaruustaistelu.getMeteoroidit().removeAll(tuhoutuneetMeteoroidit);</span></pre></td></tr>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
 
 
 <tr>
@@ -1344,11 +1344,11 @@ body{
 <span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        this.avaruustaistelu.getMeteoroidit().removeAll(tuhoutuneetMeteoroidit);</span></pre></td></tr>
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_90'/>
 90
 </td>
@@ -1358,7 +1358,7 @@ body{
 <span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    </span></pre></td></tr>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
 
 
 <tr>
@@ -1369,6 +1369,20 @@ body{
 <td class=''>
 <span class='pop'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_91'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2525a5b8_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_92'></a>
 <span>
 </span>
 </td>
@@ -1424,46 +1438,35 @@ body{
 </tr>
 
 <tr>
-<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_63'>63</a></td> 
-<td></td>
-<td>
-
-<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_63'/> 
-
-<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> negated conditional &rarr; KILLED</p> 
-</td>
-</tr>
-
-<tr>
 <td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_64'>64</a></td> 
 <td></td>
 <td>
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_64'/> 
 
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_65'/> 
+
 <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.AvaruustaisteluTest.avaruustaistelu.avaruustaistelu.AvaruustaisteluTest</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> negated conditional &rarr; KILLED</p> 
 </td>
 </tr>
 
 <tr>
-<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_66'>66</a></td> 
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_67'>67</a></td> 
 <td></td>
 <td>
 
-<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_66'/> 
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_67'/> 
 
 <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaAlueeltaPoistuneetMeteoroiditJaMenetaElamapisteAvaruusalukselta<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> removed call to avaruustaistelu/objektit/Avaruusalus::menetaElamapiste &rarr; KILLED</p> 
-</td>
-</tr>
-
-<tr>
-<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_80'>80</a></td> 
-<td></td>
-<td>
-
-<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_80'/> 
-
-<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaTuhoutuneetMeteoroidit<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> negated conditional &rarr; KILLED</p> 
 </td>
 </tr>
 
@@ -1479,13 +1482,13 @@ body{
 </tr>
 
 <tr>
-<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_83'>83</a></td> 
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_82'>82</a></td> 
 <td></td>
 <td>
 
-<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_83'/> 
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_82'/> 
 
-<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaTuhoutuneetMeteoroidit<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> removed call to avaruustaistelu/objektit/Avaruusalus::lisaaPiste &rarr; KILLED</p> 
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaTuhoutuneetMeteoroidit<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> negated conditional &rarr; KILLED</p> 
 </td>
 </tr>
 
@@ -1495,6 +1498,17 @@ body{
 <td>
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaTuhoutuneetMeteoroidit<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> removed call to avaruustaistelu/objektit/Avaruusalus::lisaaPiste &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2525a5b8_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2525a5b8_85'/> 
 
 <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>poistaTuhoutuneetMeteoroidit<br/><b>Killed by : </b>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest</span></span> removed call to avaruustaistelu/avaruustaistelu/Avaruustaistelu::vaikeutaPeliaLyhentamallaUudenMeteoroidinAjastimenAikaa &rarr; KILLED</p> 
 </td>
@@ -1524,7 +1538,7 @@ body{
 
 <h2>Tests examined</h2>
 <ul>
-<li>avaruustaistelu.avaruustaistelu.AvaruustaisteluTest.avaruustaistelu.avaruustaistelu.AvaruustaisteluTest (457 ms)</li><li>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest (38 ms)</li>
+<li>avaruustaistelu.avaruustaistelu.AvaruustaisteluTest.avaruustaistelu.avaruustaistelu.AvaruustaisteluTest (470 ms)</li><li>avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest.avaruustaistelu.avaruustaistelu.ObjektienPoistajaTest (39 ms)</li>
 </ul>
 
 <br/>

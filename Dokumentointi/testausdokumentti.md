@@ -1,5 +1,7 @@
 # Testausdokumentti
 
+Näin alkuun sellainen maininta, että peli lagaa/pätkii jostain tuntemattomasta syystä laitoksen koneilla. Olen testannut peliä kolmella eri omalla läppärillä, joista surkein on noin 9 vuotta vanha, ja pyörii kaikilla täysin ongelmitta gameloopin määrittelemät 60 FPS. Koodikatselmoinnissakaan ei tullut mitään mainintaa siitä, että peli olisi pätkinyt.
+
 Automaattinen testaus (JUnit) kattaa luokat "Avaruusalus", "Meteoroidi", "Ohjus", "Elamapaketti", "Avaruustaistelu",
 "ObjektienPoistaja", "ObjektienSiirtaja" ja "ObjektienTarkastaja".
 

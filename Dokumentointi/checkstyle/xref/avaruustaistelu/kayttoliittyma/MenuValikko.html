@@ -170,7 +170,7 @@
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>         jTextArea1.setColumns(20);
 <a class="jxr_linenumber" name="L163" href="#L163">163</a>         jTextArea1.setFont(<strong class="jxr_keyword">new</strong> java.awt.Font(<span class="jxr_string">"Monospaced"</span>, 1, 15)); <em class="jxr_comment">// NOI18N</em>
 <a class="jxr_linenumber" name="L164" href="#L164">164</a>         jTextArea1.setRows(5);
-<a class="jxr_linenumber" name="L165" href="#L165">165</a>         jTextArea1.setText(<span class="jxr_string">"-Pelaaja liikkuttaa avaruusalusta oikealle \&quot;A\&quot; näppäimestä ja \n vasemmalle \&quot;D\&quot; näppäimestä. Avaruusalus ampuu ohjuksia \&quot;H\&quot;\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai \n päästää ohitseen viittä (5) meteoroidia, muuten peli päättyy. \n Jokaisesta ohi päästetystä meteoroidista avaruusalus \n menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja."</span>);
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>         jTextArea1.setText(<span class="jxr_string">"-Pelaaja liikkuttaa avaruusalusta oikealle \&quot;D\&quot; näppäimestä ja \n vasemmalle \&quot;A\&quot; näppäimestä. Avaruusalus ampuu ohjuksia \&quot;H\&quot;\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai \n päästää ohitseen viittä (5) meteoroidia, muuten peli päättyy. \n Jokaisesta ohi päästetystä meteoroidista avaruusalus \n menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja."</span>);
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>         jTextArea1.setAutoscrolls(false);
 <a class="jxr_linenumber" name="L167" href="#L167">167</a>         jTextArea1.setBorder(<strong class="jxr_keyword">new</strong> javax.swing.border.LineBorder(<strong class="jxr_keyword">new</strong> java.awt.Color(0, 0, 0), 5, <strong class="jxr_keyword">true</strong>));
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>         jTextArea1.setFocusable(false);
@@ -364,7 +364,7 @@
 <a class="jxr_linenumber" name="L356" href="#L356">356</a> 
 <a class="jxr_linenumber" name="L357" href="#L357">357</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> paivitaEnnatykset() {
 <a class="jxr_linenumber" name="L358" href="#L358">358</a>         File tiedosto = <strong class="jxr_keyword">new</strong> File(<span class="jxr_string">"ennatykset.txt"</span>);
-<a class="jxr_linenumber" name="L359" href="#L359">359</a>         
+<a class="jxr_linenumber" name="L359" href="#L359">359</a> 
 <a class="jxr_linenumber" name="L360" href="#L360">360</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L361" href="#L361">361</a>             Scanner lukija = <strong class="jxr_keyword">new</strong> Scanner(tiedosto.getAbsoluteFile());
 <a class="jxr_linenumber" name="L362" href="#L362">362</a>             <strong class="jxr_keyword">int</strong> ensimmainenSija = Integer.parseInt(lukija.nextLine());
