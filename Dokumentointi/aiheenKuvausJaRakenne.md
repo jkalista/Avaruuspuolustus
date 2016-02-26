@@ -2,7 +2,7 @@
 
 ## Avaruustaistelu
 
-**Aihe:** Avaruustaistelu on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaisesti kuvaruudun alareunassa ja pyrkii tuhoamaan mahdollisimman monta y-akselin suuntaisesti ylh‰‰lt‰ p‰in tulevaa liikkuvaa meteoroidia ampumalla. Pelaaja ei saa osua meteoroideihin tai p‰‰st‰‰ viitt‰ (5) meteoroidia ohitseen, muuten peli p‰‰ttyy. Pelaajalla on siis el‰m‰pisteet, ja jokaisesta ohi p‰‰stetyst‰ meteoroidista menett‰‰ yhden (1) el‰m‰pisteen. Jos pelaaja taas osuu meteoroidiin, niin peli loppuu suoraan. Jokaista tuhottua meteoroidia kohden pelaaja saa yhden (1) pisteen. Pelaaja voi palauttaa avaruusaluksen el‰m‰pisteit‰ ker‰‰m‰ll‰ punaisella ristill‰ varustettuja el‰m‰paketteja.
+**Aihe:** Avaruustaistelu on peli, jossa pelaaja ohjaa avaruusalusta x-akselin suuntaisesti kuvaruudun alareunassa ja pyrkii tuhoamaan mahdollisimman monta y-akselin suuntaisesti ylh‰‰lt‰ p‰in liikkuvaa meteoroidia ampumalla. Pelaaja ei saa osua meteoroideihin tai p‰‰st‰‰ meteoroideja ohitseen niin, ett‰ el‰m‰pisteet menev‰t nollaan, muuten peli p‰‰ttyy. Pelaajalla on siis el‰m‰pisteet, ja jokaisesta ohi p‰‰stetyst‰ meteoroidista menett‰‰ yhden (1) el‰m‰pisteen. Jos pelaaja taas osuu meteoroidiin, niin peli loppuu suoraan. Jokaista tuhottua meteoroidia kohden pelaaja saa yhden (1) pisteen. Pelaaja voi palauttaa avaruusaluksen el‰m‰pisteit‰ ker‰‰m‰ll‰ punaisella ristill‰ varustettuja el‰m‰paketteja.
 
 **K‰ytt‰j‰t:** Pelaaja
 
