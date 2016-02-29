@@ -69,7 +69,7 @@ public class Piirtoalusta extends JPanel {
     public void piirraPelaajanPisteet(Graphics g) {
         g.setFont(new Font("BAZOOKA", Font.BOLD, 24));
         g.setColor(Color.WHITE);
-        g.drawString("Pisteet: " + Integer.toString(this.avaruustaistelu.getAvaruusalus().getPisteet()), 510, 30);
+        g.drawString("Pisteet: " + Integer.toString(this.avaruustaistelu.getAvaruusalus().getPisteet()), 480, 30);
     }
     
     /**
@@ -132,11 +132,11 @@ public class Piirtoalusta extends JPanel {
             g.setColor(Color.DARK_GRAY);
             g.fillRoundRect(150, 280, 350, 240, 200, 50);
             g.setColor(Color.LIGHT_GRAY);
-            g.setFont(new Font("BAZOOKA", Font.BOLD, 20));
+            g.setFont(new Font("BAZOOKA", Font.BOLD, 16));
             g.drawString("Peli päättyi!", 280, 340);
             g.drawString("Onneksi olkoon! Sait " + this.avaruustaistelu.getAvaruusalus().getPisteet() + " pistettä.", 180, 380);
-            g.drawString("Paina [Y] -näppäintä, niin", 180, 440);
-            g.drawString("pääset takaisin valikkoon.", 180, 460);
+            g.drawString("Paina [Y] -näppäintä, niin pääset", 180, 440);
+            g.drawString("takaisin valikkoon.", 180, 460);
         }
     }
 }

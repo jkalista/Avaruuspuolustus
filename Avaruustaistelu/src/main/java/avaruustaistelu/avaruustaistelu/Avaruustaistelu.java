@@ -21,7 +21,8 @@ import javax.swing.Timer;
 public class Avaruustaistelu implements ActionListener {
     
     /**
-     * Tiedostojenkäsittelijä hoitaa pelin lopuksi ennätyspisteiden tarkastamisen.
+     * Tiedostojenkäsittelijä hoitaa kuvien hakemisen avaruusalukselle ja elämäpaketeille. Lisäksi pelin lopuksi
+     * se hoitaa ennätyspisteiden tarkastamisen.
      */
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
@@ -47,6 +48,7 @@ public class Avaruustaistelu implements ActionListener {
      */
     public Avaruustaistelu() {
         this.avaruusalus = new Avaruusalus(325, 770);
+        this.avaruusalus.setAvaruusaluksenKuva(this.tiedostojenKasittelija.getAvaruusaluksenKuva());
         this.meteoroidit = new CopyOnWriteArrayList<>();
         this.elamapaketit = new CopyOnWriteArrayList<>();
         this.luoUusiMeteoroidi.start();
@@ -60,7 +62,7 @@ public class Avaruustaistelu implements ActionListener {
 
     /**
      * Luo peliin uuden meteoroidin "luoUusiMeteoroidi" -ajastimen viiveen mukaan ja uuden elämäpaketin "luoUusiElamapaketti"
-     * -ajastimen viiveen mukaan.
+     * -ajastimen viiveen mukaan. Lisää uudelle luodulle elämäpaketille elämäpaketin kuvan.
      * 
      * @param e Ajastin
      */
@@ -71,6 +73,7 @@ public class Avaruustaistelu implements ActionListener {
         }
         if (e.getSource() == this.luoUusiElamapaketti) {
             this.elamapaketit.add(new Elamapaketti(this.meteoroidinJaElamapaketinPaikanArpoja.nextInt(126) * 5, 0));
+            this.elamapaketit.get(this.elamapaketit.size() - 1).setElamapaketinKuva(this.tiedostojenKasittelija.getElamapaketinKuva());
         }
     }
     

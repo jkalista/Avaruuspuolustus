@@ -3,6 +3,7 @@ package avaruustaistelu.objektit;
 import avaruustaistelu.tiedostojenkasittelija.TiedostojenKasittelija;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -12,17 +13,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author Jyri
  */
 public class Avaruusalus extends Objekti {
-
-    /**
-     * Tiedostojenkäsittelijä, jolla saadaan haettua avaruusaluksen kuva.
-     */
-    TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
     
     private final CopyOnWriteArrayList<Ohjus> ohjukset;
     private boolean liikuOikealle;
     private boolean liikuVasemmalle;
     private int elamapisteet;
     private int pisteet;
+    private BufferedImage avaruusaluksenKuva;
     
     /**
      * Luokan konstruktori, joka saa parametrikseen avaruusaluksen x- ja y-koordinaatit. Lisäksi konstruktori asettaa
@@ -63,13 +60,14 @@ public class Avaruusalus extends Objekti {
     }
     
     /**
-     * Piirtää pelaajan avaruusaluksen kuvan TiedostojenKasittelijan antaman kuvatiedoston perusteella.
+     * Piirtää pelaajan avaruusaluksen kuvan, joka asetetaan setAvaruusaluksenKuva -metodilla Avaruustaistelu luokan
+     * konstruktorissa.
      * 
      * @param g Avaruusaluksen grafiikka
      */
     @Override
     public void piirra(Graphics g) {
-        g.drawImage(this.tiedostojenKasittelija.getAvaruusaluksenKuva(), this.x, this.y, null);
+        g.drawImage(this.avaruusaluksenKuva, this.x, this.y, null);
     }
 
     /**
@@ -144,5 +142,9 @@ public class Avaruusalus extends Objekti {
     
     public void setElamapisteet(int elamapisteet) {
         this.elamapisteet = elamapisteet;
+    }
+    
+    public void setAvaruusaluksenKuva(BufferedImage avaruusaluksenKuva) {
+        this.avaruusaluksenKuva = avaruusaluksenKuva;
     }
 }

@@ -3,6 +3,7 @@ package avaruustaistelu.objektit;
 import avaruustaistelu.tiedostojenkasittelija.TiedostojenKasittelija;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 
 /**
  * Luokka, joka sisältää elämäpakettiin liittyvät tiedot ja metodit.
@@ -11,10 +12,7 @@ import java.awt.Rectangle;
  */
 public class Elamapaketti extends Objekti {
 
-    /**
-     * Tiedostojenkäsittelijä, jolla saadaan haettua elämäpaketin kuva.
-     */
-    TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
+    private BufferedImage elamapaketinKuva;
     
     /**
      * Luokan konstruktori, joka saa parametrikseen elämäpaketin x- ja y-koordinaatit.
@@ -34,13 +32,14 @@ public class Elamapaketti extends Objekti {
     }
     
     /**
-     * Piirtää elämäpaketin kuvan Tiedostojenkäsittelijän antaman kuvatiedoston perusteella.
+     * Piirtää elämäpaketin kuvan perusteella, joka asetetaan setElamapaketinKuva -metodin avulla Avaruustaistelu luokassa 
+     * Tiedostojenkäsittelijältä.
      * 
      * @param g Elämäpaketin kuva
      */
     @Override
     public void piirra(Graphics g) {
-        g.drawImage(this.tiedostojenKasittelija.getElamapaketinKuva(), this.x, this.y, null);
+        g.drawImage(this.elamapaketinKuva, this.x, this.y, null);
     }
 
     /**
@@ -52,6 +51,10 @@ public class Elamapaketti extends Objekti {
     @Override
     public Rectangle getObjektinSijainninAlue() {
         return new Rectangle(this.x, this.y, 20, 20);
+    }
+    
+    public void setElamapaketinKuva(BufferedImage elamapaketinKuva) {
+        this.elamapaketinKuva = elamapaketinKuva;
     }
     
 }
