@@ -7,6 +7,7 @@ import avaruustaistelu.objektit.Meteoroidi;
 import avaruustaistelu.tiedostojenkasittelija.TiedostojenKasittelija;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
@@ -25,7 +26,8 @@ public class Avaruustaistelu implements ActionListener {
      * se hoitaa ennätyspisteiden tarkastamisen.
      */
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
-    
+    private final BufferedImage elamapaketinKuva;
+    private final BufferedImage avaruusaluksenKuva;
     private Piirtoalusta piirtoalusta;
     private final Avaruusalus avaruusalus;
     private final CopyOnWriteArrayList<Meteoroidi> meteoroidit;
@@ -42,13 +44,14 @@ public class Avaruustaistelu implements ActionListener {
      * Luokan konstruktori, jossa luodaan pelille avaruusalus, meteoroidi lista, elamapaketit lista, käynnistetään ajastimet ja
      * asetetaan peliKaynnissa trueksi. Lisäksi luodaan meteoroidien ja elämäpakettien paikkojen arpoja.
      * 
-     * Luodaan myös ObjektienSiirtäjä (sisältää kaikki objektien liikuttamiseen liittyvät metodit), ObjektienPoistaja (sisältää kaikki
-     * objektien poistamiseen liittyvät metodit) ja ObjektienTarkastaja (sisältää kaikki objektien keskenäiseen törmäämiseen ja käyttäytymiseen
-     * liittyvät metodit).
+     * Luodaan myös ObjektienSiirtäjä (sisältää kaikki objektien liikuttamiseen liittyvät metodit), ObjektienPoistaja (sisältää kaikki objektien
+     * poistamiseen liittyvät metodit) ja ObjektienTarkastaja (sisältää kaikki objektien keskenäiseen käyttäytymiseen liittyvät metodit).
      */
     public Avaruustaistelu() {
+        this.elamapaketinKuva = this.tiedostojenKasittelija.getElamapaketinKuva();
+        this.avaruusaluksenKuva = this.tiedostojenKasittelija.getAvaruusaluksenKuva();
         this.avaruusalus = new Avaruusalus(325, 770);
-        this.avaruusalus.setAvaruusaluksenKuva(this.tiedostojenKasittelija.getAvaruusaluksenKuva());
+        this.avaruusalus.setAvaruusaluksenKuva(this.avaruusaluksenKuva);
         this.meteoroidit = new CopyOnWriteArrayList<>();
         this.elamapaketit = new CopyOnWriteArrayList<>();
         this.luoUusiMeteoroidi.start();
@@ -73,7 +76,7 @@ public class Avaruustaistelu implements ActionListener {
         }
         if (e.getSource() == this.luoUusiElamapaketti) {
             this.elamapaketit.add(new Elamapaketti(this.meteoroidinJaElamapaketinPaikanArpoja.nextInt(126) * 5, 0));
-            this.elamapaketit.get(this.elamapaketit.size() - 1).setElamapaketinKuva(this.tiedostojenKasittelija.getElamapaketinKuva());
+            this.elamapaketit.get(this.elamapaketit.size() - 1).setElamapaketinKuva(this.elamapaketinKuva);
         }
     }
     
@@ -98,9 +101,7 @@ public class Avaruustaistelu implements ActionListener {
                 Logger.getLogger(Avaruustaistelu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
         this.tiedostojenKasittelija.tarkastaRiittavatkoPisteetEnnatyslistalle(this.avaruusalus.getPisteet());
-        
     }
     
     /**
