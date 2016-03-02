@@ -24,7 +24,7 @@ Avaruusalus saa tiedostojenkäsittelijältä BufferedImagena avaruusaluksen kuvan, 
 
 **Luokkakaavio:**
 
-![Luokkakaavio](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/luokkakaaviot/LuokkakaavioVko6.JPG)
+![Luokkakaavio](https://github.com/jkalista/Avaruuspuolustus/blob/master/Dokumentointi/luokkakaaviot/LuokkakaavioViimeinen.JPG)
 
 **Sekvenssikaaviot:**
 

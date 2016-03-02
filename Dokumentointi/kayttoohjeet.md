@@ -7,3 +7,5 @@
 * Pelaajan avaruusalus ei saa osua meteoroideihin tai p‰‰st‰‰ ohitseen meteoroideja niin, ett‰ el‰m‰pisteet menev‰t nollaan, muuten peli p‰‰ttyy. Jokaisesta ohi p‰‰stetyst‰ meteoroidista pelaaja menett‰‰ yhden (1) el‰m‰pisteen.
 
 * Pelaaja voi tankata avaruusaluksen el‰m‰pisteit‰ ker‰‰m‰ll‰ punaisella ristill‰ varustettuja el‰m‰paketteja, jotka lent‰v‰t peliruudun yl‰laidasta samalla tavalla kuin meteoroidit. T‰ydet el‰m‰ pisteet ovat viisi (5).
+
+* Peli vaikeutuu jokaisen tuhotun meteoroidin j‰lkeen. Meteoroidien syntymisnopeus kasvaa.
