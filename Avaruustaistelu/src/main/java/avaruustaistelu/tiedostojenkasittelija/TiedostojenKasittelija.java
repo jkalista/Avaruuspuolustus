@@ -56,50 +56,5 @@ public class TiedostojenKasittelija {
     public BufferedImage getElamapaketinKuva() {
         return this.elamapaketinKuva;
     }
-    
-    /**
-     * Metodi, joka tarkistaa riittääkö pelistä saadut pisteet ennätyspisteluetteloon.
-     * 
-     * @param saadutPisteet Pisteet pelistä
-     */
-    public void tarkastaRiittavatkoPisteetEnnatyslistalle(int saadutPisteet) {
-        File tiedosto = new File("ennatykset.txt");
         
-        try {
-            Scanner lukija = new Scanner(tiedosto.getAbsoluteFile());
-            
-            int ensimmainenSija = Integer.parseInt(lukija.nextLine());
-            int toinenSija = Integer.parseInt(lukija.nextLine());
-            int kolmasSija = Integer.parseInt(lukija.nextLine());
-            
-            FileWriter kirjoittaja = new FileWriter(tiedosto.getAbsoluteFile());
-            
-            if (saadutPisteet > ensimmainenSija) {
-                kirjoittaja.write(Integer.toString(saadutPisteet) + System.lineSeparator());
-                kirjoittaja.write(Integer.toString(ensimmainenSija) + System.lineSeparator());
-                kirjoittaja.write(Integer.toString(toinenSija));
-            } else {
-                kirjoittaja.write(Integer.toString(ensimmainenSija) + System.lineSeparator());
-                
-                if (saadutPisteet > toinenSija) {
-                    kirjoittaja.write(Integer.toString(saadutPisteet) + System.lineSeparator());
-                    kirjoittaja.write(Integer.toString(toinenSija));
-                } else {
-                    kirjoittaja.write(Integer.toString(toinenSija) + System.lineSeparator());
-                    
-                    if (saadutPisteet > kolmasSija) {
-                        kirjoittaja.write(Integer.toString(saadutPisteet));
-                    } else {
-                        kirjoittaja.write(Integer.toString(kolmasSija));
-                    }
-                }
-            }
-            
-            lukija.close();
-            kirjoittaja.close();
-        } catch (IOException | NumberFormatException e) {
-            System.out.print(e);
-        }
-    }
-    
 }

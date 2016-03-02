@@ -1,5 +1,6 @@
 package avaruustaistelu.avaruustaistelu;
 
+import avaruustaistelu.ennatystenkasittelija.EnnatystenKasittelija;
 import avaruustaistelu.kayttoliittyma.Piirtoalusta;
 import avaruustaistelu.objektit.Avaruusalus;
 import avaruustaistelu.objektit.Elamapaketti;
@@ -26,6 +27,10 @@ public class Avaruustaistelu implements ActionListener {
      * se hoitaa ennätyspisteiden tarkastamisen.
      */
     TiedostojenKasittelija tiedostojenKasittelija = new TiedostojenKasittelija();
+    /**
+     * Ennätystenkäsittelijä hoitaa pelissä saatujen pisteiden tarkastamisen ennätyspistelistalle.
+     */
+    EnnatystenKasittelija ennatystenKasittelija = new EnnatystenKasittelija();
     private final BufferedImage elamapaketinKuva;
     private final BufferedImage avaruusaluksenKuva;
     private Piirtoalusta piirtoalusta;
@@ -94,14 +99,13 @@ public class Avaruustaistelu implements ActionListener {
 
             paivitaPelia();
             this.piirtoalusta.paivita();
-
             try {
                 Thread.sleep((viimeLoopinAika - System.nanoTime() + optimaalinenAika) / 1000000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Avaruustaistelu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        this.tiedostojenKasittelija.tarkastaRiittavatkoPisteetEnnatyslistalle(this.avaruusalus.getPisteet());
+        this.ennatystenKasittelija.tarkastaRiittavatkoPisteetEnnatyslistalle(this.avaruusalus.getPisteet());
     }
     
     /**

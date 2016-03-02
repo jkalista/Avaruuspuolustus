@@ -162,7 +162,7 @@ public class MenuValikko extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 1, 15)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("-Pelaaja liikkuttaa avaruusalusta oikealle \"D\" näppäimestä ja \n vasemmalle \"A\" näppäimestä. Avaruusalus ampuu ohjuksia \"H\"\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai \n päästää ohitseen viittä (5) meteoroidia, muuten peli päättyy. \n Jokaisesta ohi päästetystä meteoroidista avaruusalus \n menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja.");
+        jTextArea1.setText("-Pelaaja liikkuttaa avaruusalusta oikealle \"D\" näppäimestä ja \n vasemmalle \"A\" näppäimestä. Avaruusalus ampuu ohjuksia \"H\"\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai päästää\n ohitseen meteoroideja niin, että elämäpisteet menevät\n nollaan, muuten peli päättyy. Jokaisesta ohi päästetystä\n meteoroidista avaruusalus menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja.");
         jTextArea1.setAutoscrolls(false);
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
         jTextArea1.setFocusable(false);
@@ -262,7 +262,7 @@ public class MenuValikko extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Pelin aloittava JButton.
+     * JButton, jolla aloitetaan uusi peli.
      * 
      * @param evt Painettu näppäin
      */
@@ -300,7 +300,7 @@ public class MenuValikko extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-     * JButton, jolla pääsee ohjeisiin.
+     * JButton, jolla pääsee valikosta ohjeisiin.
      * 
      * @param evt Painettu näppäin
      */
@@ -311,7 +311,7 @@ public class MenuValikko extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
-     * Lopeta peli JButton.
+     * JButton, jolla lopetetaan peli, eli suljetaan ohjelma.
      * 
      * @param evt Painettu näppäin
      */
@@ -354,8 +354,12 @@ public class MenuValikko extends javax.swing.JFrame {
         this.jPanel1Valikko.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    /**
+     * Metodi, jota kutsutaan kun siirrytään valikosta ennätyksiin. Päivittää tiedostosta
+     * sen hetkiset ennätyspisteet.
+     */
     public void paivitaEnnatykset() {
-        File tiedosto = new File("ennatykset.txt");
+        File tiedosto = new File("./ennatykset/ennatykset.txt");
 
         try {
             Scanner lukija = new Scanner(tiedosto.getAbsoluteFile());
