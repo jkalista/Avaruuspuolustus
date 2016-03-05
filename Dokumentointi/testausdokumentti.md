@@ -2,6 +2,8 @@
 
 Näin alkuun sellainen maininta, että peli lagaa/pätkii jostain tuntemattomasta syystä laitoksen koneilla. Olen testannut peliä kolmella eri omalla läppärillä, joista surkein on noin 9 vuotta vanha, ja pyörii kaikilla täysin ongelmitta gameloopin määrittelemät 60 FPS. Koodikatselmoinnissakaan ei tullut mitään mainintaa siitä, että peli olisi pätkinyt.
 
+Lisäksi JAR-tiedosto toimii ongelmitta Windowssilla, eli kaikki toimii niin kuin pitääkin. Laitoksen koneilla kuitenkin JAR-tiedosto ei tunnista ennätyspistelistan tiedostopolkua, joka taitaa johtua Windowssin ja Ubuntun eroista / ja \ merkkien suhteen. Netbeanssissa kuitenkin toimii hyvin myös laitoksen koneilla ennätyspisteet.
+
 Automaattinen testaus (JUnit) kattaa luokat "Avaruusalus", "Meteoroidi", "Ohjus", "Elamapaketti", "Avaruustaistelu",
 "ObjektienPoistaja", "ObjektienSiirtaja" ja "ObjektienTarkastaja".
 
