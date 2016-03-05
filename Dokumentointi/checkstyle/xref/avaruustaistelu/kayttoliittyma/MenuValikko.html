@@ -170,7 +170,7 @@
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>         jTextArea1.setColumns(20);
 <a class="jxr_linenumber" name="L163" href="#L163">163</a>         jTextArea1.setFont(<strong class="jxr_keyword">new</strong> java.awt.Font(<span class="jxr_string">"Monospaced"</span>, 1, 15)); <em class="jxr_comment">// NOI18N</em>
 <a class="jxr_linenumber" name="L164" href="#L164">164</a>         jTextArea1.setRows(5);
-<a class="jxr_linenumber" name="L165" href="#L165">165</a>         jTextArea1.setText(<span class="jxr_string">"-Pelaaja liikkuttaa avaruusalusta oikealle \&quot;D\&quot; näppäimestä ja \n vasemmalle \&quot;A\&quot; näppäimestä. Avaruusalus ampuu ohjuksia \&quot;H\&quot;\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai \n päästää ohitseen viittä (5) meteoroidia, muuten peli päättyy. \n Jokaisesta ohi päästetystä meteoroidista avaruusalus \n menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja."</span>);
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>         jTextArea1.setText(<span class="jxr_string">"-Pelaaja liikkuttaa avaruusalusta oikealle \&quot;D\&quot; näppäimestä ja \n vasemmalle \&quot;A\&quot; näppäimestä. Avaruusalus ampuu ohjuksia \&quot;H\&quot;\n näppäimestä.\n\n-Pelaaja ei saa osua avaruusaluksella meteoroidiin tai päästää\n ohitseen meteoroideja niin, että elämäpisteet menevät\n nollaan, muuten peli päättyy. Jokaisesta ohi päästetystä\n meteoroidista avaruusalus menettää yhden (1) elämäpisteen.\n\n-Meteoroidit tuhoutuvat viidestä (5) ohjuksen osumasta.\n\n-Pelaaja saa yhden (1) pisteen jokaisesta tuhotusta\n meteoroidista.\n\n-Pelaaja voi tankata elämäpisteitään keräämällä\n elämäpaketteja."</span>);
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>         jTextArea1.setAutoscrolls(false);
 <a class="jxr_linenumber" name="L167" href="#L167">167</a>         jTextArea1.setBorder(<strong class="jxr_keyword">new</strong> javax.swing.border.LineBorder(<strong class="jxr_keyword">new</strong> java.awt.Color(0, 0, 0), 5, <strong class="jxr_keyword">true</strong>));
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>         jTextArea1.setFocusable(false);
@@ -270,7 +270,7 @@
 <a class="jxr_linenumber" name="L262" href="#L262">262</a>     }<em class="jxr_comment">// &lt;/editor-fold&gt;//GEN-END:initComponents</em>
 <a class="jxr_linenumber" name="L263" href="#L263">263</a> 
 <a class="jxr_linenumber" name="L264" href="#L264">264</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L265" href="#L265">265</a> <em class="jxr_javadoccomment">     * Pelin aloittava JButton.</em>
+<a class="jxr_linenumber" name="L265" href="#L265">265</a> <em class="jxr_javadoccomment">     * JButton, jolla aloitetaan uusi peli.</em>
 <a class="jxr_linenumber" name="L266" href="#L266">266</a> <em class="jxr_javadoccomment">     * </em>
 <a class="jxr_linenumber" name="L267" href="#L267">267</a> <em class="jxr_javadoccomment">     * @param evt Painettu näppäin</em>
 <a class="jxr_linenumber" name="L268" href="#L268">268</a> <em class="jxr_javadoccomment">     */</em>
@@ -308,7 +308,7 @@
 <a class="jxr_linenumber" name="L300" href="#L300">300</a>     }<em class="jxr_comment">//GEN-LAST:event_jButton1ActionPerformed</em>
 <a class="jxr_linenumber" name="L301" href="#L301">301</a> 
 <a class="jxr_linenumber" name="L302" href="#L302">302</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L303" href="#L303">303</a> <em class="jxr_javadoccomment">     * JButton, jolla pääsee ohjeisiin.</em>
+<a class="jxr_linenumber" name="L303" href="#L303">303</a> <em class="jxr_javadoccomment">     * JButton, jolla pääsee valikosta ohjeisiin.</em>
 <a class="jxr_linenumber" name="L304" href="#L304">304</a> <em class="jxr_javadoccomment">     * </em>
 <a class="jxr_linenumber" name="L305" href="#L305">305</a> <em class="jxr_javadoccomment">     * @param evt Painettu näppäin</em>
 <a class="jxr_linenumber" name="L306" href="#L306">306</a> <em class="jxr_javadoccomment">     */</em>
@@ -319,7 +319,7 @@
 <a class="jxr_linenumber" name="L311" href="#L311">311</a>     }<em class="jxr_comment">//GEN-LAST:event_jButton2ActionPerformed</em>
 <a class="jxr_linenumber" name="L312" href="#L312">312</a> 
 <a class="jxr_linenumber" name="L313" href="#L313">313</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L314" href="#L314">314</a> <em class="jxr_javadoccomment">     * Lopeta peli JButton.</em>
+<a class="jxr_linenumber" name="L314" href="#L314">314</a> <em class="jxr_javadoccomment">     * JButton, jolla lopetetaan peli, eli suljetaan ohjelma.</em>
 <a class="jxr_linenumber" name="L315" href="#L315">315</a> <em class="jxr_javadoccomment">     * </em>
 <a class="jxr_linenumber" name="L316" href="#L316">316</a> <em class="jxr_javadoccomment">     * @param evt Painettu näppäin</em>
 <a class="jxr_linenumber" name="L317" href="#L317">317</a> <em class="jxr_javadoccomment">     */</em>
@@ -362,79 +362,83 @@
 <a class="jxr_linenumber" name="L354" href="#L354">354</a>         <strong class="jxr_keyword">this</strong>.jPanel1Valikko.setVisible(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="L355" href="#L355">355</a>     }<em class="jxr_comment">//GEN-LAST:event_jButton6ActionPerformed</em>
 <a class="jxr_linenumber" name="L356" href="#L356">356</a> 
-<a class="jxr_linenumber" name="L357" href="#L357">357</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> paivitaEnnatykset() {
-<a class="jxr_linenumber" name="L358" href="#L358">358</a>         File tiedosto = <strong class="jxr_keyword">new</strong> File(<span class="jxr_string">"ennatykset.txt"</span>);
-<a class="jxr_linenumber" name="L359" href="#L359">359</a> 
-<a class="jxr_linenumber" name="L360" href="#L360">360</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L361" href="#L361">361</a>             Scanner lukija = <strong class="jxr_keyword">new</strong> Scanner(tiedosto.getAbsoluteFile());
-<a class="jxr_linenumber" name="L362" href="#L362">362</a>             <strong class="jxr_keyword">int</strong> ensimmainenSija = Integer.parseInt(lukija.nextLine());
-<a class="jxr_linenumber" name="L363" href="#L363">363</a>             <strong class="jxr_keyword">int</strong> toinenSija = Integer.parseInt(lukija.nextLine());
-<a class="jxr_linenumber" name="L364" href="#L364">364</a>             <strong class="jxr_keyword">int</strong> kolmasSija = Integer.parseInt(lukija.nextLine());
-<a class="jxr_linenumber" name="L365" href="#L365">365</a>             <strong class="jxr_keyword">this</strong>.jLabel2Eka.setText(<span class="jxr_string">"1. sija: "</span> + ensimmainenSija);
-<a class="jxr_linenumber" name="L366" href="#L366">366</a>             <strong class="jxr_keyword">this</strong>.jLabel3Toka.setText(<span class="jxr_string">"2. sija: "</span> + toinenSija);
-<a class="jxr_linenumber" name="L367" href="#L367">367</a>             <strong class="jxr_keyword">this</strong>.jLabel4Kolmas.setText(<span class="jxr_string">"3. sija: "</span> + kolmasSija);
-<a class="jxr_linenumber" name="L368" href="#L368">368</a>         } <strong class="jxr_keyword">catch</strong> (FileNotFoundException | NumberFormatException e) {
-<a class="jxr_linenumber" name="L369" href="#L369">369</a>             System.out.print(e);
-<a class="jxr_linenumber" name="L370" href="#L370">370</a>         }
-<a class="jxr_linenumber" name="L371" href="#L371">371</a>     }
-<a class="jxr_linenumber" name="L372" href="#L372">372</a>     
-<a class="jxr_linenumber" name="L373" href="#L373">373</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L374" href="#L374">374</a> <em class="jxr_javadoccomment">     * Main.</em>
-<a class="jxr_linenumber" name="L375" href="#L375">375</a> <em class="jxr_javadoccomment">     * </em>
-<a class="jxr_linenumber" name="L376" href="#L376">376</a> <em class="jxr_javadoccomment">     * @param args the command line arguments</em>
-<a class="jxr_linenumber" name="L377" href="#L377">377</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L378" href="#L378">378</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String args[]) {
-<a class="jxr_linenumber" name="L379" href="#L379">379</a>         <em class="jxr_comment">/* Set the Nimbus look and feel */</em>
-<a class="jxr_linenumber" name="L380" href="#L380">380</a>         <em class="jxr_comment">//&lt;editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) "&gt;</em>
-<a class="jxr_linenumber" name="L381" href="#L381">381</a>         <em class="jxr_comment">/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.</em>
-<a class="jxr_linenumber" name="L382" href="#L382">382</a> <em class="jxr_comment">         * For details see <a href="http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html" target="alexandria_uri">http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html</a> </em>
-<a class="jxr_linenumber" name="L383" href="#L383">383</a> <em class="jxr_comment">         */</em>
-<a class="jxr_linenumber" name="L384" href="#L384">384</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L385" href="#L385">385</a>             <strong class="jxr_keyword">for</strong> (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-<a class="jxr_linenumber" name="L386" href="#L386">386</a>                 <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"Nimbus"</span>.equals(info.getName())) {
-<a class="jxr_linenumber" name="L387" href="#L387">387</a>                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
-<a class="jxr_linenumber" name="L388" href="#L388">388</a>                     <strong class="jxr_keyword">break</strong>;
-<a class="jxr_linenumber" name="L389" href="#L389">389</a>                 }
-<a class="jxr_linenumber" name="L390" href="#L390">390</a>             }
-<a class="jxr_linenumber" name="L391" href="#L391">391</a>         } <strong class="jxr_keyword">catch</strong> (ClassNotFoundException ex) {
-<a class="jxr_linenumber" name="L392" href="#L392">392</a>             java.util.logging.Logger.getLogger(MenuValikko.<strong class="jxr_keyword">class</strong>.getName()).log(java.util.logging.Level.SEVERE, <strong class="jxr_keyword">null</strong>, ex);
-<a class="jxr_linenumber" name="L393" href="#L393">393</a>         } <strong class="jxr_keyword">catch</strong> (InstantiationException ex) {
-<a class="jxr_linenumber" name="L394" href="#L394">394</a>             java.util.logging.Logger.getLogger(MenuValikko.<strong class="jxr_keyword">class</strong>.getName()).log(java.util.logging.Level.SEVERE, <strong class="jxr_keyword">null</strong>, ex);
-<a class="jxr_linenumber" name="L395" href="#L395">395</a>         } <strong class="jxr_keyword">catch</strong> (IllegalAccessException ex) {
+<a class="jxr_linenumber" name="L357" href="#L357">357</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L358" href="#L358">358</a> <em class="jxr_javadoccomment">     * Metodi, jota kutsutaan kun siirrytään valikosta ennätyksiin. Päivittää tiedostosta</em>
+<a class="jxr_linenumber" name="L359" href="#L359">359</a> <em class="jxr_javadoccomment">     * sen hetkiset ennätyspisteet.</em>
+<a class="jxr_linenumber" name="L360" href="#L360">360</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L361" href="#L361">361</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> paivitaEnnatykset() {
+<a class="jxr_linenumber" name="L362" href="#L362">362</a>         File tiedosto = <strong class="jxr_keyword">new</strong> File(<span class="jxr_string">"./ennatykset/ennatykset.txt"</span>);
+<a class="jxr_linenumber" name="L363" href="#L363">363</a> 
+<a class="jxr_linenumber" name="L364" href="#L364">364</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L365" href="#L365">365</a>             Scanner lukija = <strong class="jxr_keyword">new</strong> Scanner(tiedosto.getAbsoluteFile());
+<a class="jxr_linenumber" name="L366" href="#L366">366</a>             <strong class="jxr_keyword">int</strong> ensimmainenSija = Integer.parseInt(lukija.nextLine());
+<a class="jxr_linenumber" name="L367" href="#L367">367</a>             <strong class="jxr_keyword">int</strong> toinenSija = Integer.parseInt(lukija.nextLine());
+<a class="jxr_linenumber" name="L368" href="#L368">368</a>             <strong class="jxr_keyword">int</strong> kolmasSija = Integer.parseInt(lukija.nextLine());
+<a class="jxr_linenumber" name="L369" href="#L369">369</a>             <strong class="jxr_keyword">this</strong>.jLabel2Eka.setText(<span class="jxr_string">"1. sija: "</span> + ensimmainenSija);
+<a class="jxr_linenumber" name="L370" href="#L370">370</a>             <strong class="jxr_keyword">this</strong>.jLabel3Toka.setText(<span class="jxr_string">"2. sija: "</span> + toinenSija);
+<a class="jxr_linenumber" name="L371" href="#L371">371</a>             <strong class="jxr_keyword">this</strong>.jLabel4Kolmas.setText(<span class="jxr_string">"3. sija: "</span> + kolmasSija);
+<a class="jxr_linenumber" name="L372" href="#L372">372</a>         } <strong class="jxr_keyword">catch</strong> (FileNotFoundException | NumberFormatException e) {
+<a class="jxr_linenumber" name="L373" href="#L373">373</a>             System.out.print(e);
+<a class="jxr_linenumber" name="L374" href="#L374">374</a>         }
+<a class="jxr_linenumber" name="L375" href="#L375">375</a>     }
+<a class="jxr_linenumber" name="L376" href="#L376">376</a>     
+<a class="jxr_linenumber" name="L377" href="#L377">377</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L378" href="#L378">378</a> <em class="jxr_javadoccomment">     * Main.</em>
+<a class="jxr_linenumber" name="L379" href="#L379">379</a> <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="L380" href="#L380">380</a> <em class="jxr_javadoccomment">     * @param args the command line arguments</em>
+<a class="jxr_linenumber" name="L381" href="#L381">381</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L382" href="#L382">382</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String args[]) {
+<a class="jxr_linenumber" name="L383" href="#L383">383</a>         <em class="jxr_comment">/* Set the Nimbus look and feel */</em>
+<a class="jxr_linenumber" name="L384" href="#L384">384</a>         <em class="jxr_comment">//&lt;editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) "&gt;</em>
+<a class="jxr_linenumber" name="L385" href="#L385">385</a>         <em class="jxr_comment">/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.</em>
+<a class="jxr_linenumber" name="L386" href="#L386">386</a> <em class="jxr_comment">         * For details see <a href="http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html" target="alexandria_uri">http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html</a> </em>
+<a class="jxr_linenumber" name="L387" href="#L387">387</a> <em class="jxr_comment">         */</em>
+<a class="jxr_linenumber" name="L388" href="#L388">388</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L389" href="#L389">389</a>             <strong class="jxr_keyword">for</strong> (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+<a class="jxr_linenumber" name="L390" href="#L390">390</a>                 <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"Nimbus"</span>.equals(info.getName())) {
+<a class="jxr_linenumber" name="L391" href="#L391">391</a>                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
+<a class="jxr_linenumber" name="L392" href="#L392">392</a>                     <strong class="jxr_keyword">break</strong>;
+<a class="jxr_linenumber" name="L393" href="#L393">393</a>                 }
+<a class="jxr_linenumber" name="L394" href="#L394">394</a>             }
+<a class="jxr_linenumber" name="L395" href="#L395">395</a>         } <strong class="jxr_keyword">catch</strong> (ClassNotFoundException ex) {
 <a class="jxr_linenumber" name="L396" href="#L396">396</a>             java.util.logging.Logger.getLogger(MenuValikko.<strong class="jxr_keyword">class</strong>.getName()).log(java.util.logging.Level.SEVERE, <strong class="jxr_keyword">null</strong>, ex);
-<a class="jxr_linenumber" name="L397" href="#L397">397</a>         } <strong class="jxr_keyword">catch</strong> (javax.swing.UnsupportedLookAndFeelException ex) {
+<a class="jxr_linenumber" name="L397" href="#L397">397</a>         } <strong class="jxr_keyword">catch</strong> (InstantiationException ex) {
 <a class="jxr_linenumber" name="L398" href="#L398">398</a>             java.util.logging.Logger.getLogger(MenuValikko.<strong class="jxr_keyword">class</strong>.getName()).log(java.util.logging.Level.SEVERE, <strong class="jxr_keyword">null</strong>, ex);
-<a class="jxr_linenumber" name="L399" href="#L399">399</a>         }
-<a class="jxr_linenumber" name="L400" href="#L400">400</a>         <em class="jxr_comment">//&lt;/editor-fold&gt;</em>
-<a class="jxr_linenumber" name="L401" href="#L401">401</a> 
-<a class="jxr_linenumber" name="L402" href="#L402">402</a>         <em class="jxr_comment">/* Create and display the form */</em>
-<a class="jxr_linenumber" name="L403" href="#L403">403</a>         java.awt.EventQueue.invokeLater(<strong class="jxr_keyword">new</strong> Runnable() {
-<a class="jxr_linenumber" name="L404" href="#L404">404</a>             <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> run() {
-<a class="jxr_linenumber" name="L405" href="#L405">405</a>                 <strong class="jxr_keyword">new</strong> <a href="../../avaruustaistelu/kayttoliittyma/MenuValikko.html">MenuValikko</a>().setVisible(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L406" href="#L406">406</a>             }
-<a class="jxr_linenumber" name="L407" href="#L407">407</a>         });
-<a class="jxr_linenumber" name="L408" href="#L408">408</a>     }
-<a class="jxr_linenumber" name="L409" href="#L409">409</a> 
-<a class="jxr_linenumber" name="L410" href="#L410">410</a>     <em class="jxr_comment">// Variables declaration - do not modify//GEN-BEGIN:variables</em>
-<a class="jxr_linenumber" name="L411" href="#L411">411</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton1;
-<a class="jxr_linenumber" name="L412" href="#L412">412</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton2;
-<a class="jxr_linenumber" name="L413" href="#L413">413</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton3;
-<a class="jxr_linenumber" name="L414" href="#L414">414</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton4;
-<a class="jxr_linenumber" name="L415" href="#L415">415</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton5;
-<a class="jxr_linenumber" name="L416" href="#L416">416</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton6;
-<a class="jxr_linenumber" name="L417" href="#L417">417</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel1;
-<a class="jxr_linenumber" name="L418" href="#L418">418</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel2Eka;
-<a class="jxr_linenumber" name="L419" href="#L419">419</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel3Toka;
-<a class="jxr_linenumber" name="L420" href="#L420">420</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel4Kolmas;
-<a class="jxr_linenumber" name="L421" href="#L421">421</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel5;
-<a class="jxr_linenumber" name="L422" href="#L422">422</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel6;
-<a class="jxr_linenumber" name="L423" href="#L423">423</a>     <strong class="jxr_keyword">private</strong> javax.swing.JPanel jPanel1Valikko;
-<a class="jxr_linenumber" name="L424" href="#L424">424</a>     <strong class="jxr_keyword">private</strong> javax.swing.JPanel jPanel2Ohjeet;
-<a class="jxr_linenumber" name="L425" href="#L425">425</a>     <strong class="jxr_keyword">private</strong> javax.swing.JPanel jPanel3Ennatykset;
-<a class="jxr_linenumber" name="L426" href="#L426">426</a>     <strong class="jxr_keyword">private</strong> javax.swing.JScrollPane jScrollPane2;
-<a class="jxr_linenumber" name="L427" href="#L427">427</a>     <strong class="jxr_keyword">private</strong> javax.swing.JTextArea jTextArea1;
-<a class="jxr_linenumber" name="L428" href="#L428">428</a>     <em class="jxr_comment">// End of variables declaration//GEN-END:variables</em>
-<a class="jxr_linenumber" name="L429" href="#L429">429</a> }
+<a class="jxr_linenumber" name="L399" href="#L399">399</a>         } <strong class="jxr_keyword">catch</strong> (IllegalAccessException ex) {
+<a class="jxr_linenumber" name="L400" href="#L400">400</a>             java.util.logging.Logger.getLogger(MenuValikko.<strong class="jxr_keyword">class</strong>.getName()).log(java.util.logging.Level.SEVERE, <strong class="jxr_keyword">null</strong>, ex);
+<a class="jxr_linenumber" name="L401" href="#L401">401</a>         } <strong class="jxr_keyword">catch</strong> (javax.swing.UnsupportedLookAndFeelException ex) {
+<a class="jxr_linenumber" name="L402" href="#L402">402</a>             java.util.logging.Logger.getLogger(MenuValikko.<strong class="jxr_keyword">class</strong>.getName()).log(java.util.logging.Level.SEVERE, <strong class="jxr_keyword">null</strong>, ex);
+<a class="jxr_linenumber" name="L403" href="#L403">403</a>         }
+<a class="jxr_linenumber" name="L404" href="#L404">404</a>         <em class="jxr_comment">//&lt;/editor-fold&gt;</em>
+<a class="jxr_linenumber" name="L405" href="#L405">405</a> 
+<a class="jxr_linenumber" name="L406" href="#L406">406</a>         <em class="jxr_comment">/* Create and display the form */</em>
+<a class="jxr_linenumber" name="L407" href="#L407">407</a>         java.awt.EventQueue.invokeLater(<strong class="jxr_keyword">new</strong> Runnable() {
+<a class="jxr_linenumber" name="L408" href="#L408">408</a>             <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> run() {
+<a class="jxr_linenumber" name="L409" href="#L409">409</a>                 <strong class="jxr_keyword">new</strong> <a href="../../avaruustaistelu/kayttoliittyma/MenuValikko.html">MenuValikko</a>().setVisible(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L410" href="#L410">410</a>             }
+<a class="jxr_linenumber" name="L411" href="#L411">411</a>         });
+<a class="jxr_linenumber" name="L412" href="#L412">412</a>     }
+<a class="jxr_linenumber" name="L413" href="#L413">413</a> 
+<a class="jxr_linenumber" name="L414" href="#L414">414</a>     <em class="jxr_comment">// Variables declaration - do not modify//GEN-BEGIN:variables</em>
+<a class="jxr_linenumber" name="L415" href="#L415">415</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton1;
+<a class="jxr_linenumber" name="L416" href="#L416">416</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton2;
+<a class="jxr_linenumber" name="L417" href="#L417">417</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton3;
+<a class="jxr_linenumber" name="L418" href="#L418">418</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton4;
+<a class="jxr_linenumber" name="L419" href="#L419">419</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton5;
+<a class="jxr_linenumber" name="L420" href="#L420">420</a>     <strong class="jxr_keyword">private</strong> javax.swing.JButton jButton6;
+<a class="jxr_linenumber" name="L421" href="#L421">421</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel1;
+<a class="jxr_linenumber" name="L422" href="#L422">422</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel2Eka;
+<a class="jxr_linenumber" name="L423" href="#L423">423</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel3Toka;
+<a class="jxr_linenumber" name="L424" href="#L424">424</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel4Kolmas;
+<a class="jxr_linenumber" name="L425" href="#L425">425</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel5;
+<a class="jxr_linenumber" name="L426" href="#L426">426</a>     <strong class="jxr_keyword">private</strong> javax.swing.JLabel jLabel6;
+<a class="jxr_linenumber" name="L427" href="#L427">427</a>     <strong class="jxr_keyword">private</strong> javax.swing.JPanel jPanel1Valikko;
+<a class="jxr_linenumber" name="L428" href="#L428">428</a>     <strong class="jxr_keyword">private</strong> javax.swing.JPanel jPanel2Ohjeet;
+<a class="jxr_linenumber" name="L429" href="#L429">429</a>     <strong class="jxr_keyword">private</strong> javax.swing.JPanel jPanel3Ennatykset;
+<a class="jxr_linenumber" name="L430" href="#L430">430</a>     <strong class="jxr_keyword">private</strong> javax.swing.JScrollPane jScrollPane2;
+<a class="jxr_linenumber" name="L431" href="#L431">431</a>     <strong class="jxr_keyword">private</strong> javax.swing.JTextArea jTextArea1;
+<a class="jxr_linenumber" name="L432" href="#L432">432</a>     <em class="jxr_comment">// End of variables declaration//GEN-END:variables</em>
+<a class="jxr_linenumber" name="L433" href="#L433">433</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016. All rights reserved.</div>
