@@ -52,3 +52,7 @@ Tarkastaja kaikki metodit missä tarkastetaan yhteentörmäykset ja pelin jatkumine
 **24.2.2016** 2 tuntia, Uusi checkstyle, pit ja javadocs. Pientä säätöä dokumentaatioon ja luokkakaavion päivitystä.
 
 **26.2.2016** 1 tunti, Pientä päivitystä javadocseihin ja dokumentaatioon.
+
+**1.2.2016** 1 tunti, Ennätysten päivittelyä.
+
+**2.2.2016** 1 tunti, Lisää ennätysten päivittelyä.

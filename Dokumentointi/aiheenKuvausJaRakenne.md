@@ -20,7 +20,7 @@ Avaruuspuolus projektin "Main" -luokka luo ensin "Avaruustaistelu" -luokasta ilm
 
 Piirtoalusta saa myös parametrikseen avaruustaistelun, sillä sitä kautta se saa piirrettäväkseen kaikki avaruustaisteluun liittyvät objektit get-metodien avulla. Kun käyttöliittymä on luonut piirtoalustan, niin se asetetaan "Main" -luokassa aiemmin luodulle avaruustaistelu pelille "setPiirtoalusta" -metodilla. "Main" -luokassa ruvetaan pyörittämään Avaruuspuolustuksen GameLooppia, joka siirtää avaruusalusta ja sen tuntemia ohjuksia, elämäpaketteja sekä meteoroideja objektiensiirtajan avulla. Lisäksi objektientarkastaja ja -poistaja tarkastavat jokaisessa loopissa objektien yhteentörmäykset ja niiden perusteella poistamiset. Piirtoalustan uudelleenpiirtoa kutsutaan aina jokaisen GameLoopin lopussa.
 
-Avaruusalus saa tiedostojenkäsittelijältä BufferedImagena avaruusaluksen kuvan, Elämäpaketti taas saa elämäpaketin kuvan. Lisäksi tiedostojenkäsittelijä tarkistaa pelin loputtua, että riittävätkö saadut pisteet ennätyslistalle, ja muokkaa tarvittaessa ennätyspisteitä sen mukaan.
+Avaruusalus saa tiedostojenkäsittelijältä BufferedImagena avaruusaluksen kuvan, Elämäpaketti taas saa elämäpaketin kuvan. Lisäksi tiedostojenkäsittelijä tarkistaa pelin loputtua, että riittävätkö saadut pisteet ennätyslistalle, ja muokkaa tarvittaessa ennätyspisteitä sen mukaan. Ennätystenkäsittelijä tarkastaa pelin lopuksi ennätyspisteet.
 
 **Luokkakaavio:**
 
